@@ -18,6 +18,14 @@ Bonus: Velocity
 
 
 #__Wireframes__
+* splash page
+* sign up view
+* sign in view
+* projects (index) view
+* project view
+* create new project view (modal)
+* story component detail
+
 
 #__React Components__
 *link to component-hierarchy.md*
