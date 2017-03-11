@@ -46,13 +46,18 @@ __Objective:__ Users can invite friends to their projects, and join other teams 
 __Objective:__ Stories belong to Projects that can be created, read, edited, and destroyed through the API
 
 ##__Phase 4: Story Workflow (2 days)__
-__Objective:__ Stories can be placed in an *ice box* or *current* collection. They are *ice box* by default. Users can toggle between these two views to filter results.
+__Objective:__ Stories can be placed in an *ice box*, *current* or *done* collection. They are *ice box* by default. Users can toggle between these two views to filter results.
 
 ##__Phase 5: Drag and Drop Prioritization (1 day)__
 __Objective:__ Stories can be dragged and dropped between collections, and within their own collections indicate prioritization.
 
 
 ##__Bonus Features (TBD)__
+:boom: Story comments  
+:boom: Assign stories to teammates  
+:boom: Markdown for stories and comments
 :boom: CSS EXPLOSIONS  
+:boom: Follow stories
+:boom: Filter by story type
 :boom: Iterations  
 :boom: Velocity  
