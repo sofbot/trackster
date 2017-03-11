@@ -17,11 +17,11 @@ Bonus: Iterations
 Bonus: Velocity
 
 #__Design Docs__
-* (./wireframes 'View Wireframes')
-* (./component-hierarchy.md 'React Components')
-* (./sample-state.md 'Sample State')
-* (./schema.md 'DB Schema')
-* (./api-endpoints.md 'API Endpoints')
+* [View Wireframes](./wireframes)
+* [React Components](./component-hierarchy.md)
+* [Sample State](./sample-state.md)
+* [DB Schema](./schema.md)
+* [API Endpoints](./api-endpoints.md)
 
 #__Wireframes MUST HAS__
 - [ ] splash page
