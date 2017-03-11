@@ -58,6 +58,10 @@
       <td>string</td>
       <td>not null</td>
     </tr>
+    <tr>
+      <td>description</td>
+      <td>text</td>
+    </tr>
   </tbody>
 </table>
 

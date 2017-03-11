@@ -23,14 +23,14 @@ Trackster is a web application inspired by PivotalTracker built using Ruby on Ra
 :point_right: [API Endpoints](./api-endpoints.md)  
 
 #__Wireframes MUST HAS__
-- [ ] home page
+- [x] home page
 - [x] sign up view
 - [x] sign in view
-- [ ] projects (index) view
-- [ ] project view
-- [ ] add member view
 - [ ] create new project view (modal)
+- [ ] dashboard (projects index) view
+- [ ] project view
 - [ ] story component detail
+- [ ] add member view
 
 #__Implementation Timeline__
 ##__Phase 1: Backend setup and Front End User Authentication (2 days)__
