@@ -1,4 +1,9 @@
 #__Component Hierarchy__
 
-AuthFormContainer
+__AuthFormContainer__  
 * AuthForm
+
+__HomeContainer__
+* header
+* main
+* footer

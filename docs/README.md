@@ -14,9 +14,6 @@ Trackster is a web application inspired by PivotalTracker built using Ruby on Ra
 :boom: Stories  
 :boom: Story Workflow  
 :boom: Drag and Drop Prioritization  
-__Bonus: CSS EXPLOSIONS__
-__Bonus: Iterations__  
-__Bonus: Velocity__
 
 #__Design Docs__
 :point_right: [View Wireframes](./wireframes)  
@@ -26,12 +23,36 @@ __Bonus: Velocity__
 :point_right: [API Endpoints](./api-endpoints.md)  
 
 #__Wireframes MUST HAS__
-- [ ] splash page
+- [ ] home page
 - [x] sign up view
 - [x] sign in view
 - [ ] projects (index) view
 - [ ] project view
+- [ ] add member view
 - [ ] create new project view (modal)
 - [ ] story component detail
 
 #__Implementation Timeline__
+##__Phase 1: Backend setup and Front End User Authentication (2 days)__
+__Objective:__ Functioning rails project with front-end authentication.
+
+##__Phase 2: Projects Model, API, and components (2 days)__
+__Objective:__ Projects can be created, read, edited, and destroyed through the API.
+
+##__Phase 3: Add Members  (1 day)__
+__Objective:__ Users can invite friends to their projects, and join other teams via invitation. Members of a team will be able to create, read, edit, and destroy stories associated with their projects.
+
+##__Phase 3: Stories (2 days)__
+__Objective:__ Stories belong to Projects that can be created, read, edited, and destroyed through the API
+
+##__Phase 4: Story Workflow (2 days)__
+__Objective:__ Stories can be placed in an *ice box* or *current* collection. They are *ice box* by default. Users can toggle between these two views to filter results.
+
+##__Phase 5: Drag and Drop Prioritization (1 day)__
+__Objective:__ Stories can be dragged and dropped between collections, and within their own collections indicate prioritization.
+
+
+##__Bonus Features (TBD)__
+:boom: CSS EXPLOSIONS  
+:boom: Iterations  
+:boom: Velocity  
