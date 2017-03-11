@@ -1,4 +1,4 @@
-TRACKSTER
+TRACKSTER :shipit:
 
 *heroku link*
 *trello link*
@@ -16,27 +16,20 @@ Trackster is a web application inspired by PivotalTracker built using Ruby on Ra
 Bonus: Iterations
 Bonus: Velocity
 
+#__Design Docs__
+* (./wireframes 'View Wireframes')
+* (./component-hierarchy.md 'React Components')
+* (./sample-state.md 'Sample State')
+* (./schema.md 'DB Schema')
+* (./api-endpoints.md 'API Endpoints')
 
-#__Wireframes__
-* splash page
-* sign up view
-* sign in view
-* projects (index) view
-* project view
-* create new project view (modal)
-* story component detail
-
-
-#__React Components__
-*link to component-hierarchy.md*
-
-#__Sample State__
-*link to sample-state.md*
-
-#__DB Schema__
-*link to schema.md*
-
-#__API Endpoints__
-*link to api-endpoints.md*
+#__Wireframes MUST HAS__
+- [ ] splash page
+- [ ] sign up view
+- [ ] sign in view
+- [ ] projects (index) view
+- [ ] project view
+- [ ] create new project view (modal)
+- [ ] story component detail
 
 #__Implementation Timeline__
