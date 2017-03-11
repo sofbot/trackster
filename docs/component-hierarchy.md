@@ -2,8 +2,12 @@
 
 __AuthFormContainer__  
 * AuthForm
+* Error
 
 __HomeContainer__
-* header
-* main
-* footer
+* Header
+* Main
+
+__DashboardContainer__
+* ProjectIndex
+* ProjectForm

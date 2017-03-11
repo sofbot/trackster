@@ -26,8 +26,8 @@ Trackster is a web application inspired by PivotalTracker built using Ruby on Ra
 - [x] home page
 - [x] sign up view
 - [x] sign in view
-- [ ] create new project view (modal)
-- [ ] dashboard (projects index) view
+- [x] dashboard (projects index) view
+- [x] create new project view (modal)
 - [ ] project view
 - [ ] story component detail
 - [ ] add member view
@@ -57,6 +57,7 @@ __Objective:__ Stories can be dragged and dropped between collections, and withi
 :boom: Assign stories to teammates  
 :boom: Markdown for stories and comments
 :boom: CSS EXPLOSIONS  
+:boom: Search Projects
 :boom: Follow stories
 :boom: Filter by story type
 :boom: Iterations  
