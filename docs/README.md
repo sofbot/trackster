@@ -1,8 +1,7 @@
 TRACKSTER  
+:shipit::shipit::shipit::shipit::shipit:
 
-:shipit::shipit::shipit:
-
-*heroku link*
+*heroku link*  
 *trello link*
 
 #__Minimum Viable Product__
