@@ -5,9 +5,7 @@
   },
   errors: {
     signUp: [],
-    logIn: [],
-    createProject: [],
-    members: []
+    logIn: []
   },
   projects: {
     1: {
