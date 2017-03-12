@@ -62,5 +62,9 @@ __ProjectContainer__
     <td>"/projects/:projectId/memberships"</td>
     <td>"MembersContainer"</td>
   </tr>
+  <tr>
+    <td>"/projects/:projectId/memberships/:memberId"</td>
+    <td>"MembersContainer"</td>
+  </tr>
   </tbody>
 </table>
