@@ -9,5 +9,21 @@ __HomeContainer__
 * Main
 
 __DashboardContainer__
-* ProjectIndex
-* ProjectForm
+* Dashboard
+  * ProjectIndexItem
+  * ProjectForm
+
+__ProjectContainer__
+* __ProjectNavContainer__
+  * ProjectHeader
+  * ProjectNav
+* __PanelContainer__
+* Panel
+  * __StoryContainer__
+  * Story
+    * __TaskContainer__
+    * Task
+* __MembersContainer__
+MembersIndex
+MembersForm
+Invites
