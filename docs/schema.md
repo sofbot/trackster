@@ -65,35 +65,6 @@
   </tbody>
 </table>
 
-##__works__
-<table>
-  <thead>
-    <tr>
-      <th>column type</th>
-      <th>data type</th>
-      <th>details</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>id</td>
-      <td>integer</td>
-      <td>not null, primary key</td>
-    </tr>
-    <tr>
-      <td>user_id</td>
-      <td>integer</td>
-      <td>not null, foreign key (references users), indexed</td>
-    </tr>
-    <tr>
-      <td>project_id</td>
-      <td>integer</td>
-      <td>not null, foreign key (references projects), indexed</td>
-    </tr>
-  </tbody>
-</table>
-
-
 ##__stories__
 <table>
   <thead>

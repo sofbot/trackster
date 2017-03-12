@@ -24,6 +24,6 @@ __ProjectContainer__
     * __TaskContainer__
     * Task
 * __MembersContainer__
-MembersIndex
-MembersForm
-Invites
+* MembersIndex
+* MembersForm
+* Invites
