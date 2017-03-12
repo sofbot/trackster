@@ -62,6 +62,11 @@
       <td>description</td>
       <td>text</td>
     </tr>
+    <tr>
+      <td>creator_id</td>
+      <td>integer</td>
+      <td>not null, foreign key (references users)</td>
+    </tr>
   </tbody>
 </table>
 
@@ -108,11 +113,6 @@
       <td>project_id</td>
       <td>integer</td>
       <td>not null, foreign key (references projects), indexed</td>
-    </tr>
-    <tr>
-      <td>user_id</td>
-      <td>integer</td>
-      <td>not null, foreign key (references users), indexed</td>
     </tr>
   </tbody>
 </table>
@@ -166,19 +166,19 @@
       <td>not null, primary key</td>
     </tr>
     <tr>
-      <td>project_id</td>
-      <td>integer</td>
-      <td>not null, foreign key (references projects), indexed</td>
-    </tr>
-    <tr>
       <td>inviter_id</td>
       <td>integer</td>
       <td>not null, foreign key (references users), indexed</td>
     </tr>
     <tr>
-      <td>invited_id</td>
+      <td>invitee_id</td>
       <td>integer</td>
       <td>not null, foreign key (references users), indexed</td>
+    </tr>
+    <tr>
+      <td>project_id</td>
+      <td>integer</td>
+      <td>not null, foreign key (references projects), indexed</td>
     </tr>
   </tbody>
 </table>
