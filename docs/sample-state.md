@@ -1,11 +1,10 @@
 {
-  currentUser: {
-    id: 1,
-    username: 'sofbot'
-  },
-  errors: {
-    signUp: [],
-    logIn: []
+  session: {
+    currentUser: {
+      id: 1,
+      username: 'sofbot'
+      },
+    errors: []
   },
   projects: {
     1: {
