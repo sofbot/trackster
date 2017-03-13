@@ -1,7 +1,7 @@
 TRACKSTER  
 :shipit::shipit::shipit::shipit::shipit:
 
-[heroku link](#)  
+[heroku link](http:/www.trackster.com)  
 [trello link](https://trello.com/b/5xpjhjV8/trackster)
 
 #__Minimum Viable Product__
