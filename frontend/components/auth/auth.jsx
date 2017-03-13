@@ -2,28 +2,22 @@ import React from 'react';
 import { Link } from 'react-router';
 import * as APIUtil from '../../actions/session_actions';
 
-class Auth extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const loggedOut = () => (
+  <div className="auth">
+    <Link to="/signup">Sign Up</Link> <br/>
+    <Link to="/login">Log In</Link>
+  </div>
+);
 
-  render () {
-    if (this.props.currentUser) {
-      return (
-        <div>
-          <h1> aloha { this.props.currentUser.username } </h1>
-          <button onClick={ APIUtil.logout() }>logout</button>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <Link to='/sign-up'>sign up</Link> <br/>
-          <Link to='/login'>login</Link>
-        </div>
-      );
-    }
-  }
-}
+const loggedIn = (currentUser, logout) => (
+  <div className="auth">
+    <h1> welcome { currentUser.username }</h1>
+    <button onClick={ logout }>logout</button>
+  </div>
+);
+
+const Auth = ({ logout, currentUser }) => (
+  currentUser ? loggedIn(currentUser, logout) : loggedOut()
+);
 
 export default Auth;

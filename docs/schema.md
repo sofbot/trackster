@@ -21,11 +21,6 @@
       <td>not null, indexed, unique</td>
     </tr>
     <tr>
-      <td>email</td>
-      <td>string</td>
-      <td>not null, indexed, unique</td>
-    </tr>
-    <tr>
       <td>password_digest</td>
       <td>string</td>
       <td>not null</td>

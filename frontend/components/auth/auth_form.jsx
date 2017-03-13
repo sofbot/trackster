@@ -3,44 +3,56 @@ import React from 'react';
 class AuthForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    this.handleSignUp = this.handleSignUp.bind(this);
-    this.demoSignUp = this.demoSignUp.bind(this);
-    console.log(this.props);
+    this.state = {
+      username: '',
+      password: ''
+    };
+    this.handleUsername = this.handleUsername.bind(this);
+    this.handlePassword = this.handlePassword.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSignUp(e) {
+  handleUsername(e) {
     e.preventDefault();
-    console.log('signup!');
+    this.setState({ username: e.target.value });
   }
 
-  demoSignUp(e) {
+  handlePassword(e) {
     e.preventDefault();
-    console.log('demo');
+    this.setState({ password: e.target.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user).then(() => this.redirect());
+  }
+
+  redirect() {
+    this.props.router.push('/dashboard');
   }
 
   render () {
     return (
       <div className="auth-container">
         <h3 className="auth title">Get started, it's free</h3>
-        <form className="auth-form">
+        <form className="auth-form" onSubmit={this.handleSubmit}>
+          <div>{this.props.errors}</div>
           <label>
             Username
-            <input type="text"></input>
-          </label>
-          <label>
-            Email
-            <input type="text"></input>
+            <input value={this.state.username}
+                    onChange={this.handleUsername}></input>
           </label>
           <label>
             Password
-            <input type="text"></input>
+            <input type="password"
+                    value={this.state.password}
+                    onChange={this.handlePassword}></input>
           </label>
-
           <input type="submit" onClick={this.handleSignUp}></input>
         </form>
         <p> or </p>
-        <button onClick={this.demoSignUp}>Demo</button>
+        <button>Demo</button>
       </div>
     );
   }

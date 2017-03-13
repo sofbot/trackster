@@ -1,13 +1,22 @@
 import AuthForm from './auth_form';
 import { connect } from 'react-redux';
-import { signup } from '../../actions/session_actions';
+import { signup, login } from '../../actions/session_actions';
 
-const mapDispatchToProps = dispatch => ({
-  handleSignUp: user => dispatch(signup(user))
+const mapStateToProps = (state, ownProps) => ({
+  loggedIn: Boolean(state.session.currentUser),
+  errors: state.session.errors,
+  formType: ownProps.location.pathname
 });
 
+const mapDispatchToProps = (dispatch, ownProps) => {
+  const action = (ownProps.location.pathname === '/signup' ? signup : login);
+
+  return ({
+    processForm: user => dispatch(action(user))
+  });
+};
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(AuthForm);
