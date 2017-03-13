@@ -4,7 +4,19 @@
       id: 1,
       username: 'sofbot'
       },
-    errors: []
+    errors: [],
+    invites: {
+      1: {
+        project: 'projectTitle',
+        buddy: 'inviter name',
+        state: 'unanswered'
+      },
+      2: {
+        project: 'something about food',
+        buddy: 'kate',
+        state: 'accepted'
+      }
+    }
   },
   projects: {
     1: {
