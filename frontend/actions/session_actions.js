@@ -20,7 +20,6 @@ export const login = user => dispatch => (
 );
 
 export const logout = () => dispatch => {
-  console.log(dispatch);
   return (
   APIUtil.logout()
           .then(() => (dispatch(receiveCurrentUser(null))),

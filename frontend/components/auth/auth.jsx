@@ -8,9 +8,7 @@ class Auth extends React.Component {
   }
 
   render () {
-    console.log(this.props);
     if (this.props.currentUser) {
-      console.log('logged in');
       return (
         <div>
           <h1> aloha { this.props.currentUser.username } </h1>
@@ -18,7 +16,6 @@ class Auth extends React.Component {
         </div>
       );
     } else {
-      console.log('logged out');
       return (
         <div>
           <Link to='/signup'>sign up</Link> <br/>
