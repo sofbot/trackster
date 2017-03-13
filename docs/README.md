@@ -45,10 +45,10 @@ __Objective:__ Stories can be dragged and dropped between collections, and withi
 ##__Bonus Features (TBD)__
 :boom: Story comments  
 :boom: Assign stories to teammates  
-:boom: Markdown for stories and comments
+:boom: Markdown for stories and comments  
 :boom: CSS EXPLOSIONS  
-:boom: Search Projects
-:boom: Follow stories
-:boom: Filter by story type
+:boom: Search Projects  
+:boom: Follow stories  
+:boom: Filter by story type  
 :boom: Iterations  
 :boom: Velocity  
