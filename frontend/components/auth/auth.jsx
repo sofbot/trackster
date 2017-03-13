@@ -18,7 +18,8 @@ class Auth extends React.Component {
     } else {
       return (
         <div>
-          <p>you should sign up, but later kthxbai</p>
+          <Link to='/sign-up'>sign up</Link> <br/>
+          <Link to='/login'>login</Link>
         </div>
       );
     }
