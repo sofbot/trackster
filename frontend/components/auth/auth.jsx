@@ -3,9 +3,12 @@ import { Link } from 'react-router';
 import * as APIUtil from '../../actions/session_actions';
 
 const loggedOut = () => (
-  <div className="auth">
-    <Link to="/signup">Sign Up</Link> <br/>
-    <Link to="/login">Log In</Link>
+  <div className="header">
+    <h1>trackster</h1>
+    <div className="auth-links">
+      <Link to="/login">Sign In</Link>
+      <Link to="/signup">Sign Up</Link>
+    </div>
   </div>
 );
 

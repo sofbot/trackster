@@ -1,10 +1,11 @@
 import React from 'react';
 import AuthContainer from './auth/auth_container';
+import Splash from './home/splash';
 
 const App = ({ children }) => (
   <div>
-    <h1>trackster</h1>
     <AuthContainer />
+    <Splash />
     { children }
   </div>
 );

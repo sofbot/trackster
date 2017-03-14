@@ -4,8 +4,7 @@ __AuthFormContainer__
 * AuthForm
 * Error
 
-__HomeContainer__
-* Header
+__SplashContainer__
 * Main
 
 __DashboardContainer__

@@ -175,10 +175,5 @@
       <td>integer</td>
       <td>not null, foreign key (references projects), indexed</td>
     </tr>
-    <tr>
-      <td>state</td>
-      <td>string</td>
-      <td>not null, default: 'unanswered'</td>
-    </tr>
   </tbody>
 </table>
