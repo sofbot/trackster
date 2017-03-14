@@ -20,11 +20,9 @@ const Root = ({ store }) => {
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path='/' component={ App } >
-          <Route path='/signup' onEnter={_redirectIfLoggedIn} component={ AuthFormContainer } />
-          <Route path='/login' onEnter={_redirectIfLoggedIn} component={ AuthFormContainer } />
-        </Route>
-
+        <Route path='/' component={ App } />
+        <Route path='/signup' onEnter={_redirectIfLoggedIn} component={ AuthFormContainer } />
+        <Route path='/login' onEnter={_redirectIfLoggedIn} component={ AuthFormContainer } />
         <Route path='/dashboard' component={ DashboardContainer } />
       </Router>
     </Provider>
