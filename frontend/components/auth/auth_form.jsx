@@ -33,9 +33,13 @@ class AuthForm extends React.Component {
   }
 
   render () {
+    const authTitle = (
+      this.props.formType === '/login' ? 'Sign In' : 'Get started, it\'s free'
+    );
+
     return (
       <div className="auth-container">
-        <h3 className="auth title">Get started, it's free</h3>
+        <h3 className="auth title">{ authTitle }</h3>
         <form className="auth-form" onSubmit={this.handleSubmit}>
           <div>{this.props.errors}</div>
           <label>

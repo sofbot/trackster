@@ -1,12 +1,11 @@
 import React from 'react';
 import AuthContainer from './auth/auth_container';
-import Splash from './home/splash';
+import { Header } from './header/header';
 
-const App = ({ children }) => (
+const App = state => (
   <div>
-    <AuthContainer />
-    <Splash />
-    { children }
+    <Header location={state.location} />
+    { state.children }
   </div>
 );
 

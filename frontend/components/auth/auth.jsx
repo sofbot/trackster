@@ -2,15 +2,9 @@ import React from 'react';
 import { Link } from 'react-router';
 import * as APIUtil from '../../actions/session_actions';
 
-const loggedOut = () => (
-  <div className="header">
-    <h1>trackster</h1>
-    <div className="auth-links">
-      <Link to="/login">Sign In</Link>
-      <Link to="/signup">Sign Up</Link>
-    </div>
-  </div>
-);
+// const loggedOut = () => (
+//   <HeaderContainer />
+// );
 
 const loggedIn = (currentUser, logout) => (
   <div className="auth">
@@ -20,7 +14,9 @@ const loggedIn = (currentUser, logout) => (
 );
 
 const Auth = ({ logout, currentUser }) => (
-  currentUser ? loggedIn(currentUser, logout) : loggedOut()
+  <h1>hi</h1>
 );
 
 export default Auth;
+
+// currentUser ? loggedIn(currentUser, logout) : loggedOut()

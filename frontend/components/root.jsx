@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import App from './app';
 import AuthFormContainer from './auth/auth_form_container';
 import DashboardContainer from './dashboard/dashboard_container';
+import SplashContainer from './home/splash-container';
 import {
   Router,
   Route,
@@ -20,10 +21,12 @@ const Root = ({ store }) => {
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path='/' component={ App } />
-        <Route path='/signup' onEnter={_redirectIfLoggedIn} component={ AuthFormContainer } />
-        <Route path='/login' onEnter={_redirectIfLoggedIn} component={ AuthFormContainer } />
-        <Route path='/dashboard' component={ DashboardContainer } />
+        <Route path='/' component={ App } >
+          <IndexRoute component={ SplashContainer } />
+          <Route path='/signup' onEnter={_redirectIfLoggedIn} component={ AuthFormContainer } />
+          <Route path='/login' onEnter={_redirectIfLoggedIn} component={ AuthFormContainer } />
+          <Route path='/dashboard' component={ DashboardContainer } />
+        </Route>
       </Router>
     </Provider>
   );
