@@ -9,6 +9,7 @@ export const SplashMiddle3 = () => {
     <section className="text-block">
       <div className="page-container">
         <div className="info">
+          <img className="info-img" src={img3URL} />
           <div className="info-text">
             <h3>Tools to help you adapt and evolve</h3>
             <p>
@@ -19,7 +20,6 @@ export const SplashMiddle3 = () => {
               momentum toward delivering.
             </p>
           </div>
-          <img className="info-img" src={img3URL} />
         </div>
       </div>
     </section>
