@@ -103,9 +103,19 @@ const Splash = ({ login, signup }) => {
           </div>
         </section>
       </div>
-      <div className="splash-footer">
-        <a href="mailto:me@sofiachen.com">Contact Me</a>
-      </div>
+      <footer>
+        <div className="splash-footer">
+          <div className="footer-left">
+            <a href="http://www.sofiachen.com">About Me</a>
+            <a href="mailto:me@sofiachen.com">Contact Me</a>
+            <h1>trackster</h1>
+          </div>
+          <div className="footer-right">
+            <Link to="/login">Sign In</Link>
+            <Link to="/signup">Sign Up</Link>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

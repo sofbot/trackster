@@ -27,6 +27,11 @@
   text-decoration: none;
 }
 
+figure {
+  border-bottom: 13px solid #f39e40;
+  background-color: #f39e40;
+}
+
 .splash-heading {
   color: white;
   padding: 15px;
@@ -34,7 +39,6 @@
 
 .auth-links > a {
   margin: 20px;
-  text-decoration: none;
   color: #5081b2;
 }
 
@@ -99,9 +103,42 @@ h2.text-block-secondary {
   padding-right: 16px;
 }
 
+.footer-left, .footer-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-left > a, .footer-right > a {
+  margin-bottom: 15px;
+  color: #5081b2;
+}
+
+.footer-right > a:last-of-type {
+  padding: 5px;
+  background-color: #f39e40;
+  border-radius: 3px;
+  color: white;
+}
+
+.footer-left > h1 {
+  color: white;
+}
+
 .splash-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  height: 100%;
+}
+
+footer {
   background-color: #4a7190;
-  border-top: 3px solid #f39e40;
+  border-top: 15px solid #f39e40;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
 }
 
 h3 {
