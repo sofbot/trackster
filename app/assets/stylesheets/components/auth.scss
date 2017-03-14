@@ -1,0 +1,82 @@
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 92vh;
+  background-color: #f3f4f4;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 475px;
+  background: white;
+  border-radius: 3px;
+  border: 1px solid #DDD;
+  padding: 32px 30px;
+  margin: 50px auto 0 auto;
+}
+
+.form-container > h3 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #444;
+  padding-bottom: 14px;
+}
+
+.form-container > label {
+  text-align: left;
+  color: #888;
+  font-weight: 400;
+  line-height: 15px;
+  width: 100%;
+  letter-spacing: 0.5px;
+}
+
+.form-container > input {
+  padding: 14px 8px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  margin-top: 8px;
+  border-radius: 3px;
+  border: 1px solid #5F5F5F
+}
+
+.form-container > input:last-of-type {
+  background: #5384AE;
+  color: white;
+  height: 44px;
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: system-ui;
+  -webkit-font-smoothing: antialiased;
+}
+
+.or-container {
+  width: 100%;
+  border-top: 1px solid;
+  margin-top: 2.5rem;
+  border-color: #C1C1C1;
+}
+
+.or {
+  display: block;
+  margin-top: -12px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #f3f4f4;
+  width: 55px;
+  text-align: center;
+  color: #A7A6A5;
+  font-size: 18px;
+  line-height: 1em;
+  font-weight: 500;
+}
+
+.contact-link {
+  background: url("https://www.pivotaltracker.com//images/v7/signin/social-mail-logo.svg");
+}

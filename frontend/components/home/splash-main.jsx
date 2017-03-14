@@ -7,9 +7,9 @@ export const SplashMain = () => {
       <h1 className="splash-heading">
         Changing how teams build software
       </h1>
-      <div className="splash-tour">
-        <Link to="/signup">Take a tour
-          <span className="splash-tour-btn"></span>
+      <div className="demo">
+        <Link to="#">Take a tour
+          <span></span>
         </Link>
       </div>
 

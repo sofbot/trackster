@@ -15,24 +15,27 @@ export const Header = ({ location }) => {
       );
     case '/login':
       return (
-        <div className="header">
-          <h1>trackster</h1>
+        <div className="header header-login">
+          <Link to="/">
+            <h1>trackster</h1>
+          </Link>
           <div className="auth-links">
-            <span> don't have an account? </span>
-            <Link to="/signup">Sign Up</Link>
+            <span> DON'T HAVE AN ACCOUNT? </span>
+            <Link to="/signup" id="signup-link">SIGN UP</Link>
           </div>
         </div>
       );
     case '/signup':
       return (
-        <div className="header">
-          <h1>trackster</h1>
+        <div className="header header-signup">
+          <Link to="/">
+            <h1>trackster</h1>
+          </Link>
           <div className="auth-links">
-            <span> already have an account? </span>
-            <Link to="/login">Sign In</Link>
+            <span> ALREADY HAVE AN ACCOUNT? </span>
+            <Link to="/login" id="signup-link">SIGN IN</Link>
           </div>
         </div>
       );
-
   }
 };

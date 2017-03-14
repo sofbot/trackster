@@ -1,0 +1,49 @@
+.demo > a > span {
+  background-image: url("https://www.pivotaltracker.com/marketing_assets/button-arrow-white-436ec49a23d02087fd4034eaf07d0c6eda66022064f06ce686a900a055417325.svg");
+  margin-left: 8px;
+  height: 32px;
+  width: 32px;
+}
+
+.demo > a {
+  background: transparent;
+  color: #ffffff;
+  font-size: 24px;
+  border: 1px solid #ffffff;
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: 300;
+}
+
+.demo > a:after {
+  content: url("https://www.pivotaltracker.com/marketing_assets/button-arrow-white-436ec49a23d02087fd4034eaf07d0c6eda66022064f06ce686a900a055417325.svg");
+  vertical-align: -webkit-baseline-middle;
+}
+.demo > a:hover:after {
+  content: url("https://www.pivotaltracker.com/marketing_assets/button-arrow-c856bd22ee864fcfceb6073671a7b0208ca6226fa7617c8003b577931963f62c.svg")
+}
+
+.demo > a:hover {
+  background-color: #ffffff;
+  color: rgba(80,129,178,0.88);
+}
+
+.demo-auth {
+  width: 290px;
+  background: #ffffff;
+  display: block;
+  box-sizing: border-box;
+  margin: 1.5rem auto;
+  height: 42px;
+  border-radius: 3px;
+  box-shadow: 0px 1px #BDBDBD;
+  border: 1px solid #F3F3F3;
+  line-height: 42px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.demo-auth > a {
+  color: #757575;
+}

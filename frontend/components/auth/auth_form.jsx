@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class AuthForm extends React.Component {
   constructor(props) {
@@ -34,29 +35,34 @@ class AuthForm extends React.Component {
 
   render () {
     const authTitle = (
-      this.props.formType === '/login' ? 'Sign In' : 'Get started, it\'s free'
+      this.props.formType === '/login' ? 'Sign In' : 'Get started - it\'s free!'
     );
 
     return (
       <div className="auth-container">
-        <h3 className="auth title">{ authTitle }</h3>
         <form className="auth-form" onSubmit={this.handleSubmit}>
-          <div>{this.props.errors}</div>
-          <label>
-            Username
+          <div className="form-container">
+            <h3 className="auth title">{ authTitle }</h3>
+            <div>{this.props.errors}</div>
+            <label> Username</label>
             <input value={this.state.username}
-                    onChange={this.handleUsername}></input>
-          </label>
-          <label>
-            Password
+              onChange={this.handleUsername}></input>
+
+            <label>Password</label>
             <input type="password"
-                    value={this.state.password}
-                    onChange={this.handlePassword}></input>
-          </label>
-          <input type="submit" onClick={this.handleSignUp}></input>
+              value={this.state.password}
+              onChange={this.handlePassword}></input>
+            <input type="submit" value="SUBMIT" onClick={this.handleSignUp}></input>
+          </div>
+          <div className="or-container">
+            <span className="or"> or </span>
+          </div>
         </form>
-        <p> or </p>
-        <button>Demo</button>
+        <div className="demo-auth">
+          <Link to="#"> Demo
+            <span></span>
+          </Link>
+        </div>
       </div>
     );
   }
