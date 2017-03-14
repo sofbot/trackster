@@ -2,13 +2,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 90px;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding: 0 115px;
+  padding-bottom: 16px;
+  padding-top: 16px;
 }
 
 .header > h1 {
-  color: orange;
+  color: #f39e40;
+  font-weight: 500;
+  font-size: 29px;
 }
 
 .splash-main {
@@ -16,6 +18,7 @@
   top: 40vh;
   width: 100%;
   padding: 10px;
+  font-weight: 600;
 }
 
 .splash-main > a {
@@ -28,13 +31,51 @@
 }
 
 figure {
-  border-bottom: 13px solid #f39e40;
-  background-color: #f39e40;
+  border-bottom: 3px solid #f39e40;
+  background-color: rgba(80, 129, 178, 0.88);
+}
+
+figure > img {
+  margin-top: 1px;
+  margin-bottom: -4px;
+  height: 538px;
 }
 
 .splash-heading {
   color: white;
   padding: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.splash-tour > a > span {
+  background-image: url("https://www.pivotaltracker.com/marketing_assets/button-arrow-white-436ec49a23d02087fd4034eaf07d0c6eda66022064f06ce686a900a055417325.svg");
+  margin-left: 8px;
+  height: 32px;
+  width: 32px;
+}
+
+.splash-tour > a {
+  background: transparent;
+  color: #ffffff;
+  font-size: 24px;
+  border: 1px solid #ffffff;
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: 300;
+}
+
+.splash-tour > a:after {
+  content: url("https://www.pivotaltracker.com/marketing_assets/button-arrow-white-436ec49a23d02087fd4034eaf07d0c6eda66022064f06ce686a900a055417325.svg");
+  vertical-align: -webkit-baseline-middle;
+}
+.splash-tour > a:hover:after {
+  content: url("https://www.pivotaltracker.com/marketing_assets/button-arrow-c856bd22ee864fcfceb6073671a7b0208ca6226fa7617c8003b577931963f62c.svg")
+}
+
+.splash-tour > a:hover {
+  background-color: #ffffff;
+  color: rgba(80,129,178,0.88);
 }
 
 .auth-links > a {
@@ -48,6 +89,34 @@ figure {
   padding: 4px 8px;
   font-size: 14px;
   color: white;
+}
+
+.splash-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://www.pivotaltracker.com/marketing_assets/home/android/bg-icons-532228cc6c8316ef688d7f2d6d87a8a4cc2b4216d86a9152e8919c6e016b66f6.png");
+  background-color: rgba(80,129,178,0.88);
+  width: 100%;
+  height: 200px;
+}
+
+.contact-txt {
+  border-right: 2px solid rgba(255,255,255,0.5);
+  color: #ffffff;
+  padding-right: 10vw;
+}
+
+.contact-txt > h3 {
+  font-weight: 300;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 20vw;
+  padding-left: 10vw;
 }
 
 .page-container {
@@ -103,28 +172,34 @@ h2.text-block-secondary {
   padding-right: 16px;
 }
 
-.footer-left, .footer-right {
-  display: flex;
-  flex-direction: column;
+.footer-left, .footer-right, .footer-center {
+  margin-left: 5%
 }
 
-.footer-left > a, .footer-right > a {
+.footer-left > a, .footer-right > a, .footer-center > a,
+.cl-left > a, .cl-right > a {
   margin-bottom: 15px;
-  color: #5081b2;
+  color: #a9bfd7;
+  display: block;
+  text-align: left;
 }
 
-.footer-right > a:last-of-type {
-  padding: 5px;
-  background-color: #f39e40;
-  border-radius: 3px;
-  color: white;
+.footer-base {
+  width: 100%;
+  height: 14vh;
+  background-color: #426581;
+
 }
 
-.footer-left > h1 {
-  color: white;
+.footer-base > h1 {
+  color: #a9bfd7;
+  text-align: left;
+  margin-left: 40px;
+  padding-top: 3vh;
 }
 
-.splash-footer {
+
+.footer-links {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -135,10 +210,8 @@ h2.text-block-secondary {
 
 footer {
   background-color: #4a7190;
-  border-top: 15px solid #f39e40;
-  height: 40vh;
-  display: flex;
-  justify-content: center;
+  border-top: 3px solid #f39e40;
+  height: 30vh;
 }
 
 h3 {
