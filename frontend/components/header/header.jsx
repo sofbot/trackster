@@ -1,19 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-export const Header = ({ location }) => {
-  switch(location.pathname) {
-    case '/':
-      return (
-        <div className="header">
-          <h1>trackster</h1>
-          <div className="auth-links">
-            <Link to="/login">Sign In</Link>
-            <Link to="/signup">Sign Up</Link>
+class Header extends React.Component {
+  constructor(props){
+    super(props);
+    console.log(props);
+  }
+
+  render() {
+    switch(this.props.currentLocation) {
+      case '/':
+      if (window.currentUser) {
+        return (
+          <div className="header">
+            <h1>trackster</h1>
+            <div className="auth-links">
+              <a href="#" id="logout-home" onClick={ this.props.logout }>log out</a>
+            </div>
           </div>
-        </div>
-      );
-    case '/login':
+        );
+      } else {
+        return (
+          <div className="header">
+            <h1>trackster</h1>
+            <div className="auth-links">
+              <Link to="/login">Sign In</Link>
+              <Link to="/signup">Sign Up</Link>
+            </div>
+          </div>
+        );
+      }
+      case '/login':
       return (
         <div className="header header-login">
           <Link to="/">
@@ -25,7 +42,7 @@ export const Header = ({ location }) => {
           </div>
         </div>
       );
-    case '/signup':
+      case '/signup':
       return (
         <div className="header header-signup">
           <Link to="/">
@@ -37,5 +54,17 @@ export const Header = ({ location }) => {
           </div>
         </div>
       );
+      case '/dashboard':
+      return (
+        <div className="header dashboard-header">
+          <h1>trackster</h1>
+          <div className="auth-links">
+            <a href="#" id="logout-dashboard" onClick={ this.props.logout }>log out</a>
+          </div>
+        </div>
+      );
+    }
   }
-};
+}
+
+export default Header;

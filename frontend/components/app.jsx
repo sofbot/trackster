@@ -1,10 +1,10 @@
 import React from 'react';
 import AuthContainer from './auth/auth_container';
-import { Header } from './header/header';
+import HeaderContainer from './header/header-container';
 
 const App = state => (
   <div>
-    <Header location={state.location} />
+    <HeaderContainer location={state.location}/>
     { state.children }
   </div>
 );

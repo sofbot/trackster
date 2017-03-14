@@ -38,12 +38,19 @@ class AuthForm extends React.Component {
       this.props.formType === '/login' ? 'Sign In' : 'Get started - it\'s free!'
     );
 
+    let errs;
+    if (this.props.errors.length > 0) {
+      errs = <div className="errors">{this.props.errors}</div>;
+    } else {
+      errs = <div></div>;
+    }
+
     return (
       <div className="auth-container">
         <form className="auth-form" onSubmit={this.handleSubmit}>
           <div className="form-container">
             <h3 className="auth title">{ authTitle }</h3>
-            <div>{this.props.errors}</div>
+            { errs }
             <label> Username</label>
             <input value={this.state.username}
               onChange={this.handleUsername}></input>
