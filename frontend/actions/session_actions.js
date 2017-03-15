@@ -17,8 +17,7 @@ export const receiveErrors = errors => ({
 export const login = user => dispatch => (
   APIUtil.login(user)
           .then(user => (dispatch(receiveCurrentUser(user))),
-                err => dispatch(receiveErrors(err.responseJSON))
-          .then(hashHistory.push('/dashboard')))
+                err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const logout = () => dispatch => {
@@ -26,7 +25,6 @@ export const logout = () => dispatch => {
   APIUtil.logout()
           .then(() => (dispatch(receiveCurrentUser(null))),
                 err => dispatch(receiveErrors(err.responseJSON))))
-          // .then(hashHistory.push('/')));
 };
 
 export const signup = user => dispatch => (
