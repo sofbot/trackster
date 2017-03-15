@@ -30,9 +30,11 @@ class AuthForm extends React.Component {
     this.props.processForm(user).then(() => this.redirect());
   }
 
-  handleLogin() {
+  handleLogin(e) {
+    console.log('handling login');
+    e.preventDefault();
     let demoUser = { username: 'sofbot', password: 'password' };
-    this.props.processForm(demoUser).then(() => this.redirect());
+    this.props.login(demoUser).then(() => this.redirect());
   }
 
   redirect() {
@@ -70,10 +72,8 @@ class AuthForm extends React.Component {
             <span className="or"> or </span>
           </div>
         </form>
-        <div className="demo-auth">
-          <Link onClick={ this.props.handleLogin }>
+        <div className="demo-auth" onClick={ this.handleLogin }>
             <span>Demo</span>
-          </Link>
         </div>
       </div>
     );
