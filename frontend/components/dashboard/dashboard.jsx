@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Dashboard = () => (
-  <h1>DASHBOARD</h1>
+  <div className="dashboard header">
+    <h1 id="placeholder">dashboard coming soon</h1>
+  </div>
 );
 
 export default Dashboard;

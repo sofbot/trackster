@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
 
-
 class SplashMain extends React.Component {
   constructor(props) {
     super(props);
@@ -33,7 +32,7 @@ class SplashMain extends React.Component {
           </h1>
           <div className="demo">
             <Link onClick={ this.handleLogin }>
-              <span></span>
+              <span>Take a tour</span>
             </Link>
           </div>
 
@@ -42,10 +41,5 @@ class SplashMain extends React.Component {
     );
   }
 }
-
-
-// <a href="#" onClick={ handleLogin }>Take a tour
-//   <span></span>
-// </a>
 
 export default SplashMain;
