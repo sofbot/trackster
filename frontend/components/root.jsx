@@ -18,6 +18,14 @@ const Root = ({ store }) => {
       replace('/dashboard');
     }
   };
+
+  const _ensureLoggedIn = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (!currentUser) {
+      replace('/');
+    }
+  };
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
@@ -25,7 +33,7 @@ const Root = ({ store }) => {
           <IndexRoute component={ SplashContainer } />
           <Route path='/signup' onEnter={_redirectIfLoggedIn} component={ AuthFormContainer } />
           <Route path='/login' onEnter={_redirectIfLoggedIn} component={ AuthFormContainer } />
-          <Route path='/dashboard' component={ DashboardContainer } />
+          <Route path='/dashboard' onEnter={ _ensureLoggedIn } component={ DashboardContainer } />
         </Route>
       </Router>
     </Provider>

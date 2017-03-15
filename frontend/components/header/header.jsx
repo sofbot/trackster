@@ -4,13 +4,12 @@ import { Link } from 'react-router';
 class Header extends React.Component {
   constructor(props){
     super(props);
-    console.log(props);
   }
 
   render() {
     switch(this.props.currentLocation) {
       case '/':
-      if (window.currentUser) {
+      if (this.props.currentUser) {
         return (
           <div className="header">
             <h1>trackster</h1>
