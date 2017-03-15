@@ -1,5 +1,4 @@
 import React from 'react';
-import AuthContainer from './auth/auth_container';
 import HeaderContainer from './header/header-container';
 
 const App = state => (
