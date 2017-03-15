@@ -11,6 +11,7 @@ class AuthForm extends React.Component {
     this.handleUsername = this.handleUsername.bind(this);
     this.handlePassword = this.handlePassword.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
   }
 
   handleUsername(e) {
@@ -27,6 +28,11 @@ class AuthForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => this.redirect());
+  }
+
+  handleLogin() {
+    let demoUser = { username: 'sofbot', password: 'password' };
+    this.props.processForm(demoUser).then(() => this.redirect());
   }
 
   redirect() {
@@ -54,7 +60,6 @@ class AuthForm extends React.Component {
             <label> Username</label>
             <input value={this.state.username}
               onChange={this.handleUsername}></input>
-
             <label>Password</label>
             <input type="password"
               value={this.state.password}
@@ -66,8 +71,8 @@ class AuthForm extends React.Component {
           </div>
         </form>
         <div className="demo-auth">
-          <Link to="#"> Demo
-            <span></span>
+          <Link onClick={ this.props.handleLogin }>
+            <span>Demo</span>
           </Link>
         </div>
       </div>
