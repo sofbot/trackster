@@ -9,17 +9,17 @@ import { merge } from 'lodash';
 
 const projectReducer = (state = {}, action) => {
   Object.freeze(state);
+  const newState = Object.assign({}, state);
   switch(action.type) {
     case RECEIVE_PROJECT:
-      console.log('right!');
       const newProject = { [action.project.id]: action.project };
       return merge({}, state, newProject);
     case RECEIVE_PROJECTS:
-      console.log('wrong');
-      return action.projects;
+      action.projects.forEach((project) => (
+        newState[project.id] = project
+      ));
+      return newState;
     case REMOVE_PROJECT:
-      console.log('remove');
-      const newState = Object.assign({}, state);
       delete newState[action.project.id];
       return newState;
     case RECEIVE_ERRORS:

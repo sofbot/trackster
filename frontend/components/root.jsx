@@ -31,9 +31,15 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path='/' component={ App } >
           <IndexRoute component={ SplashContainer } />
-          <Route path='/signup' onEnter={_redirectIfLoggedIn} component={ AuthFormContainer } />
-          <Route path='/login' onEnter={_redirectIfLoggedIn} component={ AuthFormContainer } />
-          <Route path='/dashboard' onEnter={ _ensureLoggedIn } component={ DashboardContainer } />
+          <Route path='/signup'
+                  onEnter={_redirectIfLoggedIn}
+                  component={ AuthFormContainer } />
+          <Route path='/login'
+                  onEnter={_redirectIfLoggedIn}
+                  component={ AuthFormContainer } />
+          <Route path='/dashboard'
+                  onEnter={ _ensureLoggedIn }
+                  component={ DashboardContainer } />
         </Route>
       </Router>
     </Provider>

@@ -1,8 +1,11 @@
 import React from 'react';
+import ProjectIndexContainer from '../project/project_index_container';
+
 
 const Dashboard = () => (
-  <div className="dashboard header">
-    <h1 id="placeholder">dashboard coming soon</h1>
+  <div>
+    <h3>My Projects</h3>
+    <ProjectIndexContainer />
   </div>
 );
 
