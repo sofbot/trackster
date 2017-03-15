@@ -159,6 +159,11 @@ h2.text-block-secondary {
   text-align: left;
 }
 
+.cl-left > a, .cl-right > a {
+  color: black;
+  font-weight: 300;
+}
+
 
 footer {
   width: 100%;
