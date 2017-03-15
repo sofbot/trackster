@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import * as PUtil from './util/projects_api_util';
+import * as PActions from './actions/project_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  window.fetchAllProjects = PUtil.fetchAllProjects;
-  window.fetchProject = PUtil.fetchProject;
-  window.createProject = PUtil.createProject;
-  window.updateProject = PUtil.updateProject;
-  window.deleteProject = PUtil.deleteProject;
+  window.fetchAllProjects = PActions.fetchAllProjects;
+  window.fetchProject = PActions.fetchProject;
+  window.createProject = PActions.createProject;
+  window.updateProject = PActions.updateProject;
+  window.deleteProject = PActions.deleteProject;
   window.store = store;
 
   const root = document.getElementById('root');
