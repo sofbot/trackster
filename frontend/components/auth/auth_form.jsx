@@ -9,20 +9,16 @@ class AuthForm extends React.Component {
       username: '',
       password: ''
     };
-    this.handleUsername = this.handleUsername.bind(this);
-    this.handlePassword = this.handlePassword.bind(this);
+
+    this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
   }
 
-  handleUsername(e) {
-    e.preventDefault();
-    this.setState({ username: e.target.value });
-  }
-
-  handlePassword(e) {
-    e.preventDefault();
-    this.setState({ password: e.target.value });
+  update(field) {
+    return e => (
+      this.setState({[field]: e.target.value})
+    );
   }
 
   handleSubmit(e) {
@@ -61,11 +57,11 @@ class AuthForm extends React.Component {
             { errs }
             <label> Username</label>
             <input value={this.state.username}
-              onChange={this.handleUsername}></input>
+              onChange={this.update('username')}></input>
             <label>Password</label>
             <input type="password"
               value={this.state.password}
-              onChange={this.handlePassword}></input>
+              onChange={this.update('password')}></input>
             <input type="submit" value="SUBMIT" onClick={this.handleSignUp}></input>
           </div>
           <div className="or-container">
