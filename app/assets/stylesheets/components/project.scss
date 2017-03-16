@@ -1,0 +1,29 @@
+.fa-undo:hover, .fa-floppy-o:hover  {
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.edit-title, .edit-body {
+  box-shadow: 0 0 5px #44acf6;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #44acf6;
+}
+
+.edit-body {
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 66%;
+}
+
+.edit-body-container {
+  display: flex;
+}
+
+.project-index-body > p{
+  max-height: 55px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

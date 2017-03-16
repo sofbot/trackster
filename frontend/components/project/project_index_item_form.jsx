@@ -43,18 +43,24 @@ class ProjectIndexItemForm extends React.Component {
       return (
         <form className="project-index-item" onSubmit={ this.handleSubmit }>
           <div className="project-index-item-header">
-            <input className="edit-title-field"
+            <i className="fa fa-code-fork header-icon" aria-hidden="true"></i>
+            <input className="edit-title project-title-field"
               value={this.state.title}
               onChange={this.handleTitleChange}></input>
-            <span className="update-project"
-              onClick={ this.toggleEdit }> cancel </span>
+            <i className="fa fa-floppy-o header-icon"
+                onClick={ this.handleSubmit }
+                aria-hidden="true">
+              <input type="submit" value=""></input>
+            </i>
+            <i className="fa fa-undo undo header-icon"
+                  aria-hidden="true"
+                  onClick={ this.toggleEdit }></i>
           </div>
-          <div className="project-index-body">
-            <input className="edit-description-field"
+          <div className="edit-body-container">
+            <input className="edit-description-field edit-body"
               value={this.state.description}
               onChange={this.handleDescriptionChange}></input>
           </div>
-          <input type="submit" value="update project"></input>
         </form>
       );
     }

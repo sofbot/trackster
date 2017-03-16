@@ -57,7 +57,7 @@ class Header extends React.Component {
       return (
         <div className="header dashboard-header">
           <h1>trackster</h1>
-          <div className="auth-links">
+          <div className="auth-links dashboard-logout">
             <a href="#" id="logout-dashboard" onClick={ this.props.logout }>log out</a>
           </div>
         </div>

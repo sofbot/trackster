@@ -30,9 +30,7 @@ class ProjectIndexItem extends React.Component {
         <div className="project-index-item">
           <div className="project-index-item-header">
             <div className="project-index-item-title">
-              <div className="icon-container">
                 <i className="fa fa-code-fork header-icon" aria-hidden="true"></i>
-              </div>
               <Link to={showURL}>
                 { this.props.project.title }
               </Link>
@@ -40,15 +38,11 @@ class ProjectIndexItem extends React.Component {
             <div className="header-action-btns">
               <span className="delete-project"
                 onClick={ this.handleDelete }>
-                <div className="icon-container">
-                  <i className="fa fa-trash-o header-icon" aria-hidden="true"></i>
-                </div>
+              <i className="fa fa-trash-o header-icon" aria-hidden="true"></i>
               </span>
               <span className="update-project"
                 onClick={ this.toggleEdit }>
-                <div className="icon-container">
-                  <i className="fa fa-pencil-square-o header-icon" aria-hidden="true"></i>
-                </div>
+                <i className="fa fa-pencil-square-o header-icon" aria-hidden="true"></i>
               </span>
             </div>
           </div>
