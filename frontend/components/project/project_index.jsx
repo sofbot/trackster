@@ -11,6 +11,7 @@ class ProjectIndex extends React.Component {
   }
 
   render() {
+    delete this.props.projects['title'];
     return(
       <div className="projects-index-container">
         <ul>

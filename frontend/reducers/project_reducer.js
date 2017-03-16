@@ -13,7 +13,7 @@ const _defaultState = {
 
 const ProjectReducer = (state = _defaultState, action) => {
   Object.freeze(state);
-  const newState = Object.assign({}, state);
+  let newState = Object.assign({}, state);
   switch(action.type) {
     case RECEIVE_PROJECT:
       const newProject = { [action.project.id]: action.project };
@@ -21,6 +21,7 @@ const ProjectReducer = (state = _defaultState, action) => {
     case RECEIVE_SINGLE_PROJECT:
       return action.project;
     case RECEIVE_PROJECTS:
+      newState = {};
       action.projects.forEach((project) => (
         newState[project.id] = project
       ));

@@ -19,7 +19,6 @@ class Project extends React.Component {
           <p>bloop</p>
           <p>members</p>
         </div>
-
       </div>
     );
   }
