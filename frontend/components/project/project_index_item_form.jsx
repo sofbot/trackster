@@ -57,9 +57,9 @@ class ProjectIndexItemForm extends React.Component {
                   onClick={ this.toggleEdit }></i>
           </div>
           <div className="edit-body-container">
-            <input className="edit-description-field edit-body"
+            <textarea className="edit-description-field edit-body"
               value={this.state.description}
-              onChange={this.handleDescriptionChange}></input>
+              onChange={this.handleDescriptionChange}></textarea>
           </div>
         </form>
       );

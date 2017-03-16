@@ -4,20 +4,18 @@ import { values } from 'lodash';
 class Project extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      title: ''
-    };
+    console.log(this.props);
   }
 
   componentWillMount() {
-    this.setState({ title: this.props.fetchProject(this.props.params.id) });
+    this.props.fetchProject(this.props.params.id);
   }
 
   render() {
-    console.log(this.state.title);
     return (
       <div className="project-container">
         <div className="project-header">
+          { this.props.project.title }
           <p>bloop</p>
           <p>members</p>
         </div>

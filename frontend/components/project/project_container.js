@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import Project from './project';
 import { fetchProject } from '../../actions/project_actions';
 
-const mapStateToProps = state => ({
-  state: state
+const mapStateToProps = (state, ownProps) => ({
+  project: state.projects
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import * as PActions from './actions/project_actions';
+import Modal from 'react-modal';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -17,13 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  window.fetchAllProjects = PActions.fetchAllProjects;
-  window.fetchProject = PActions.fetchProject;
   window.createProject = PActions.createProject;
-  window.updateProject = PActions.updateProject;
-  window.deleteProject = PActions.deleteProject;
+  window.fetchProject = PActions.fetchProject;
   window.store = store;
 
   const root = document.getElementById('root');
+  Modal.setAppElement(document.body);
   ReactDOM.render(<Root store={ store }/>, root);
 });

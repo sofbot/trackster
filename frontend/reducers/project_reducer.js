@@ -1,18 +1,25 @@
 import {
   RECEIVE_PROJECT,
+  RECEIVE_SINGLE_PROJECT,
   RECEIVE_PROJECTS,
-  REMOVE_PROJECT,
+  REMOVE_PROJECT
 } from '../actions/project_actions';
 
 import { merge } from 'lodash';
 
-const ProjectReducer = (state = {}, action) => {
+const _defaultState = {
+  title: ''
+}
+
+const ProjectReducer = (state = _defaultState, action) => {
   Object.freeze(state);
   const newState = Object.assign({}, state);
   switch(action.type) {
     case RECEIVE_PROJECT:
       const newProject = { [action.project.id]: action.project };
       return merge({}, state, newProject);
+    case RECEIVE_SINGLE_PROJECT:
+      return action.project;
     case RECEIVE_PROJECTS:
       action.projects.forEach((project) => (
         newState[project.id] = project

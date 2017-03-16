@@ -1,12 +1,18 @@
 import * as PUtil from '../util/projects_api_util';
 
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
+export const RECEIVE_SINGLE_PROJECT = "RECEIVE_SINGLE_PROJECT";
 export const RECEIVE_PROJECTS = "RECEIVE_PROJECTS";
 export const REMOVE_PROJECT = "REMOVE_PROJECT";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 export const receiveProject = project => ({
   type: RECEIVE_PROJECT,
+  project
+});
+
+export const receiveSingleProject = project => ({
+  type: RECEIVE_SINGLE_PROJECT,
   project
 });
 
@@ -27,7 +33,7 @@ export const receiveErrors = errors => ({
 
 export const fetchProject = projectId => dispatch => (
   PUtil.fetchProject(projectId)
-        .then(project => dispatch(receiveProject(project)),
+        .then(project => dispatch(receiveSingleProject(project)),
         err => dispatch(receiveErrors(err)))
 );
 

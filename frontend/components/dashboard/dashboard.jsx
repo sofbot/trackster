@@ -1,6 +1,8 @@
 import React from 'react';
 import ProjectIndexContainer from '../project/project_index_container';
+import CreateProjectModalContainer from '../modal/create_project_modal_container';
 import { Link } from 'react-router';
+
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -21,7 +23,7 @@ class Dashboard extends React.Component {
             <span>Projects</span>
           </div>
           <div className="dashboard-l-right">
-            <Link onClick={ this.createProjectModal }>Create Project</Link>
+            <CreateProjectModalContainer />
           </div>
         </div>
         <div className="dashboard-body-content">
