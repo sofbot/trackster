@@ -15,9 +15,9 @@ class ProjectIndex extends React.Component {
       <div className="projects-index-container">
         <ul>
           {
-            this.props.projects.map(project => (
+            this.props.projects.map((project, idx) => (
               <ProjectIndexItemContainer
-                key={project.id}
+                key={idx}
                 project={project} />
             ))
           }

@@ -169,7 +169,7 @@
   justify-content: center;
 }
 
-.header-action-btns > span:hover {
+.header-action-btns > span:hover, .close-modal:hover {
   background-color: #eee;
   cursor: pointer;
   border-radius: 2px;

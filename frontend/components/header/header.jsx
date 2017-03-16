@@ -13,8 +13,8 @@ class Header extends React.Component {
         return (
           <div className="header">
             <h1>trackster</h1>
-            <div className="auth-links">
-              <a href="#" id="logout-home" onClick={ this.props.logout }>log out</a>
+            <div className="auth-links" onClick={ this.props.clearErrors }>
+              <a href="/" id="logout-home" onClick={ this.props.logout }>log out</a>
             </div>
           </div>
         );
@@ -22,7 +22,7 @@ class Header extends React.Component {
         return (
           <div className="header">
             <h1>trackster</h1>
-            <div className="auth-links">
+            <div className="auth-links" onClick={ this.props.clearErrors }>
               <Link to="/login">Sign In</Link>
               <Link to="/signup">Sign Up</Link>
             </div>
@@ -35,7 +35,7 @@ class Header extends React.Component {
           <Link to="/">
             <h1>trackster</h1>
           </Link>
-          <div className="auth-links">
+          <div className="auth-links" onClick={ this.props.clearErrors }>
             <span> DON'T HAVE AN ACCOUNT? </span>
             <Link to="/signup" id="signup-link">SIGN UP</Link>
           </div>
@@ -47,7 +47,7 @@ class Header extends React.Component {
           <Link to="/">
             <h1>trackster</h1>
           </Link>
-          <div className="auth-links">
+          <div className="auth-links" onClick={ this.props.clearErrors }>
             <span> ALREADY HAVE AN ACCOUNT? </span>
             <Link to="/login" id="signup-link">SIGN IN</Link>
           </div>
@@ -58,7 +58,7 @@ class Header extends React.Component {
         <div className="header dashboard-header">
           <h1>trackster</h1>
           <div className="auth-links dashboard-logout">
-            <a href="#" id="logout-dashboard" onClick={ this.props.logout }>log out</a>
+            <a href="/" id="logout-dashboard" onClick={ this.props.logout }>log out</a>
           </div>
         </div>
       );

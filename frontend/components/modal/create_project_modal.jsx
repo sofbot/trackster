@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { modalStyle } from './modal_style';
 import Modal from 'react-modal';
+import { values } from 'lodash';
 
 class CreateProjectModal extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class CreateProjectModal extends React.Component {
     this.state = {
       modalOpen: false,
       title: '',
-      description: ''
+      friend: ''
     };
 
     this.closeModal = this.closeModal.bind(this);
@@ -19,6 +20,7 @@ class CreateProjectModal extends React.Component {
   }
 
   closeModal() {
+    this.props.clearErrors()
     this.setState({ modalOpen: false });
   }
 
@@ -28,6 +30,7 @@ class CreateProjectModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.clearErrors()
     this.props.createProject(this.state).then(() => this.closeModal());
   }
 
@@ -38,6 +41,15 @@ class CreateProjectModal extends React.Component {
   }
 
   render() {
+
+    let errs;
+    if (values(this.props.errors).length > 0) {
+      errs = <div className="errors">{values(this.props.errors)}</div>;
+    } else {
+      errs = <div></div>;
+    }
+
+    console.log(errs);
     return (
       <div className='dashboard-l-right'>
         <Link onClick={ this.openModal }>Create Project</Link>
@@ -50,24 +62,30 @@ class CreateProjectModal extends React.Component {
           <div className="create-project-modal-title">
             <h2>Create a new project</h2>
           </div>
+          { errs }
           <form className="create-project-form" onSubmit={ this.handleSubmit }>
             <label className="modal-label">Project Title</label>
             <input className="modal-input"
                     onChange={ this.update('title') }></input>
-            <label className="modal-label">Description</label>
-            <textarea className="modal-textarea"
-                      onChange={ this.update('description') }></textarea>
+                  <label className="modal-label">Add friends</label>
+            <input className="modal-input"
+                      onChange={ this.update('friend') }></input>
+          </form>
+            <div className="modal-footer">
+            <span className="close-modal"
+              onClick={ this.closeModal }>
+              <i className="fa fa-trash-o header-icon" aria-hidden="true"></i>
+            </span>
             <i className="fa fa-floppy-o header-icon"
               onClick={ this.handleSubmit }
               aria-hidden="true">
               <input type="submit" value=""></input>
             </i>
-          </form>
+          </div>
         </Modal>
       </div>
     );
   }
 }
-
 
 export default CreateProjectModal;

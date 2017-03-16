@@ -9,7 +9,7 @@ import { merge } from 'lodash';
 
 const _defaultState = {
   title: ''
-}
+};
 
 const ProjectReducer = (state = _defaultState, action) => {
   Object.freeze(state);

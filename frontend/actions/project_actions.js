@@ -34,29 +34,29 @@ export const receiveErrors = errors => ({
 export const fetchProject = projectId => dispatch => (
   PUtil.fetchProject(projectId)
         .then(project => dispatch(receiveSingleProject(project)),
-        err => dispatch(receiveErrors(err)))
+        err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const fetchAllProjects = () => dispatch => (
   PUtil.fetchAllProjects()
         .then(projects => dispatch(receiveProjects(projects)),
-        err => dispatch(receiveErrors(err)))
+        err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const createProject = project => dispatch => (
   PUtil.createProject(project)
         .then(newProject => dispatch(receiveProject(newProject)),
-        err => dispatch(receiveErrors(err)))
+        err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const updateProject = project => dispatch => (
   PUtil.updateProject(project)
         .then(updatedProject => dispatch(receiveProject(updatedProject)),
-        err => dispatch(receiveErrors(err)))
+        err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const deleteProject = projectId => dispatch => (
   PUtil.deleteProject(projectId)
         .then(project => dispatch(removeProject(project)),
-        err => dispatch(receiveErrors(err)))
+        err => dispatch(receiveErrors(err.responseJSON)))
 );

@@ -9,7 +9,7 @@ export const modalStyle = {
     zIndex          : 10,
     display         : 'flex',
     justifyContent  : 'center',
-    alignItems      : 'center'
+    alignItems      : 'center',
   },
 
   content : {
@@ -21,7 +21,9 @@ export const modalStyle = {
     border          : '1px solid #ccc',
     padding         : 0,
     width           : '545px',
-    height          : '550px',
-    zIndex          : 11
+    height          : '500px',
+    zIndex          : 11,
+    backgroundColor : '#f6f6f6',
+    boxShadow       : '0 2px 5px rgba(0,0,0,.4)'
   }
 };

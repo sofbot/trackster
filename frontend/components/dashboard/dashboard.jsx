@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
   componentDidMount() {
     this.props.router.setRouteLeaveHook(this.props.route, () => {
       document.documentElement.style.backgroundColor = 'initial';
-    })
+    });
   }
 
   createProjectModal() {

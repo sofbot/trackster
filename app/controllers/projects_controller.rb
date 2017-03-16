@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
     else
       @project = Project.new(project_params)
       @project.creator_id = current_user.id
-      if @project.save!
+      if @project.save
         render 'projects/show'
       else
         render json: @project.errors.full_messages, status: 422

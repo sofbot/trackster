@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import { values } from 'lodash';
 
 class AuthForm extends React.Component {
@@ -23,12 +23,14 @@ class AuthForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.clearErrors();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => this.redirect());
   }
 
   handleLogin(e) {
     e.preventDefault();
+    this.props.clearErrors();
     let demoUser = { username: 'sofbot', password: 'password' };
     this.props.login(demoUser).then(() => this.redirect());
   }
@@ -62,7 +64,7 @@ class AuthForm extends React.Component {
             <input type="password"
               value={this.state.password}
               onChange={this.update('password')}></input>
-            <input type="submit" value="SUBMIT" onClick={this.handleSignUp}></input>
+            <input type="submit" value="SUBMIT"></input>
           </div>
           <div className="or-container">
             <span className="or"> or </span>
