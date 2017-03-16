@@ -2,3 +2,23 @@ form.create-project-form {
   display: flex;
   flex-direction: column;
 }
+
+.create-project-modal-title {
+  color: #333;
+  font-weight: 100;
+  padding: 9pt 23px;
+  background-color: white;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.4);
+  border-bottom: 1px solid #ddd;
+}
+
+.create-project-modal-title > h2 {
+  text-align: left;
+  line-height: 36px;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-rendering: optimizeLegibility;
+}

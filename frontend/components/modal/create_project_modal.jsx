@@ -47,8 +47,9 @@ class CreateProjectModal extends React.Component {
           onRequestClose={ this.closeModal }
           contentLabel="CreateProjectModal"
           style={ modalStyle }>
-
-          <h2>Create a new project</h2>
+          <div className="create-project-modal-title">
+            <h2>Create a new project</h2>
+          </div>
           <form className="create-project-form" onSubmit={ this.handleSubmit }>
             <label className="modal-label">Project Title</label>
             <input className="modal-input"
