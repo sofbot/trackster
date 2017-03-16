@@ -1,13 +1,19 @@
 import React from 'react';
 import ProjectIndexContainer from '../project/project_index_container';
 import CreateProjectModalContainer from '../modal/create_project_modal_container';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.createProjectModal = this.createProjectModal.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.router.setRouteLeaveHook(this.props.route, () => {
+      document.documentElement.style.backgroundColor = 'initial';
+    })
   }
 
   createProjectModal() {
