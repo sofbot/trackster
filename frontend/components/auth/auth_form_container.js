@@ -4,7 +4,7 @@ import { signup, login } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
-  errors: state.session.errors,
+  errors: state.errors,
   formType: ownProps.location.pathname
 });
 

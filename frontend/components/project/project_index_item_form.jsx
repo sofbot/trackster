@@ -1,0 +1,66 @@
+import React from 'react';
+import ProjectIndexItem from './project_index_item';
+
+class ProjectIndexItemForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      editMode: true,
+      title: this.props.project.title,
+      description: this.props.project.description
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTitleChange = this.handleTitleChange.bind(this);
+    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
+    this.toggleEdit = this.toggleEdit.bind(this);
+  }
+
+  handleTitleChange(e) {
+    this.setState({ title: e.target.value });
+  }
+
+  handleDescriptionChange(e) {
+    this.setState({ description: e.target.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.state['id'] = this.props.project.id;
+    this.props.updateProject(this.state);
+    this.setState({ editMode: false });
+  }
+
+  toggleEdit() {
+    this.setState({ editMode: false });
+  }
+
+  render () {
+    if (!this.state.editMode) {
+      return (
+        <ProjectIndexItem project={this.props.project} />
+      );
+    } else {
+      return (
+        <form className="project-index-item" onSubmit={ this.handleSubmit }>
+          <div className="project-index-item-header">
+            <input className="edit-title-field"
+              value={this.state.title}
+              onChange={this.handleTitleChange}></input>
+            <span className="update-project"
+              onClick={ this.toggleEdit }> cancel </span>
+          </div>
+          <div className="project-index-body">
+            <input className="edit-description-field"
+              value={this.state.description}
+              onChange={this.handleDescriptionChange}></input>
+          </div>
+          <input type="submit" value="update project"></input>
+        </form>
+      );
+    }
+  }
+}
+
+
+
+export default ProjectIndexItemForm;

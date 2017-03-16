@@ -15,6 +15,10 @@
   font-weight: 300;
 }
 
+.demo > a > span {
+    margin-right: 10px;
+}
+
 .demo > a:after {
   content: url("https://www.pivotaltracker.com/marketing_assets/button-arrow-white-436ec49a23d02087fd4034eaf07d0c6eda66022064f06ce686a900a055417325.svg");
   vertical-align: -webkit-baseline-middle;

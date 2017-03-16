@@ -2,12 +2,11 @@ import {
   RECEIVE_PROJECT,
   RECEIVE_PROJECTS,
   REMOVE_PROJECT,
-  RECEIVE_ERRORS
 } from '../actions/project_actions';
 
 import { merge } from 'lodash';
 
-const projectReducer = (state = {}, action) => {
+const ProjectReducer = (state = {}, action) => {
   Object.freeze(state);
   const newState = Object.assign({}, state);
   switch(action.type) {
@@ -22,12 +21,9 @@ const projectReducer = (state = {}, action) => {
     case REMOVE_PROJECT:
       delete newState[action.project.id];
       return newState;
-    case RECEIVE_ERRORS:
-      const errors = action.errors;
-      return merge({}, state, { errors });
     default:
       return state;
   }
 };
 
-export default projectReducer;
+export default ProjectReducer;

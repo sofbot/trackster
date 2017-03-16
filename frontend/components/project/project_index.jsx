@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectIndexItem from './project_index_item';
+import ProjectIndexItemContainer from './project_index_item_container';
 
 class ProjectIndex extends React.Component {
   constructor(props) {
@@ -16,10 +16,8 @@ class ProjectIndex extends React.Component {
         <ul>
           {
             this.props.projects.map(project => (
-              <ProjectIndexItem
+              <ProjectIndexItemContainer
                 key={project.id}
-                deleteProject={this.props.deleteProject}
-                updateProject={this.props.updateProject}
                 project={project} />
             ))
           }

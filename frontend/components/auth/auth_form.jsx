@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { values } from 'lodash';
 
 class AuthForm extends React.Component {
   constructor(props) {
@@ -31,7 +32,6 @@ class AuthForm extends React.Component {
   }
 
   handleLogin(e) {
-    console.log('handling login');
     e.preventDefault();
     let demoUser = { username: 'sofbot', password: 'password' };
     this.props.login(demoUser).then(() => this.redirect());
@@ -47,8 +47,8 @@ class AuthForm extends React.Component {
     );
 
     let errs;
-    if (this.props.errors.length > 0) {
-      errs = <div className="errors">{this.props.errors}</div>;
+    if (values(this.props.errors).length > 0) {
+      errs = <div className="errors">{values(this.props.errors)}</div>;
     } else {
       errs = <div></div>;
     }
