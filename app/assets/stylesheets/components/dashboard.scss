@@ -3,6 +3,15 @@
   color: white;
 }
 
+.dashboard-body {
+  background-color: #eee;
+}
+
+.dashboard-body-content {
+  display: flex;
+  flex-direction: column;
+}
+
 .dashboard-header {
   background-color: #3e7293;
   padding-top: 0;
@@ -75,4 +84,103 @@
   transition: all .3s ease-out;
   text-rendering: auto;
   transition-property: background-color, color, opacity;
+}
+
+.project-index-header {
+  padding-bottom: 60px;
+  display: flex;
+  padding: 5vw 12vw;
+  color: #4f575e;
+}
+
+.project-index-heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: 500;
+  margin-left: 6px;
+  color: #4f575e;
+}
+
+.fa {
+  height: 20px;
+  width: 20px;
+  display: flex !important;
+}
+
+.projects-index-container {
+  margin-left: 10vw;
+}
+
+.projects-index-container > ul {
+  margin-left: 0;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-index-item {
+  flex-direction: column;
+  height: 140px;
+  min-width: 315px;
+  background: white;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  display: flex;
+  margin-bottom: 40px;
+  margin-right: 40px;
+}
+
+.project-index-item-header {
+  border-bottom: 2px solid #efefef;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 4px;
+}
+
+.project-index-item-title {
+  display: flex;
+  align-items: center;
+}
+
+.project-index-item-title > a {
+  line-height: 26px;
+  font-size: 1pc;
+  font-weight: 600;
+  color: #3c4858;
+  vertical-align: top;
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-index-item-title > a:hover {
+  color: #2c6ebd;
+}
+
+.header-icon {
+  width: 42px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-action-btns > span:hover {
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.header-action-btns {
+  display: flex;
+}
+
+.project-index-body > p {
+  font-weight: 500;
+  font-size: 14px;
+  padding-left: 20px;
+  color: #666
 }

@@ -29,13 +29,28 @@ class ProjectIndexItem extends React.Component {
       return (
         <div className="project-index-item">
           <div className="project-index-item-header">
-            <h3> <Link to={showURL}>
-              { this.props.project.title }
-            </Link></h3>
-            <span className="delete-project"
-              onClick={ this.handleDelete }> X </span>
-            <span className="update-project"
-              onClick={ this.toggleEdit }> U </span>
+            <div className="project-index-item-title">
+              <div className="icon-container">
+                <i className="fa fa-code-fork header-icon" aria-hidden="true"></i>
+              </div>
+              <Link to={showURL}>
+                { this.props.project.title }
+              </Link>
+            </div>
+            <div className="header-action-btns">
+              <span className="delete-project"
+                onClick={ this.handleDelete }>
+                <div className="icon-container">
+                  <i className="fa fa-trash-o header-icon" aria-hidden="true"></i>
+                </div>
+              </span>
+              <span className="update-project"
+                onClick={ this.toggleEdit }>
+                <div className="icon-container">
+                  <i className="fa fa-pencil-square-o header-icon" aria-hidden="true"></i>
+                </div>
+              </span>
+            </div>
           </div>
           <div className="project-index-body">
             <p>{ this.props.project.description }</p>

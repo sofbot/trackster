@@ -15,7 +15,7 @@ class Dashboard extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="dashboard-body">
         <div className="dashboard-header d-lower">
           <div className="dashboard-l-left">
             <span>Projects</span>
@@ -24,8 +24,13 @@ class Dashboard extends React.Component {
             <Link onClick={ this.createProjectModal }>Create Project</Link>
           </div>
         </div>
-        <h3>My Projects</h3>
-        <ProjectIndexContainer />
+        <div className="dashboard-body-content">
+          <div className="project-index-header">
+            <i className="fa fa-stack-overflow" aria-hidden="true"></i>
+            <span className="project-index-heading">My Projects</span>
+          </div>
+          <ProjectIndexContainer />
+        </div>
       </div>
     );
   }
