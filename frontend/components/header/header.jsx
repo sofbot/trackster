@@ -53,7 +53,7 @@ class Header extends React.Component {
           </div>
         </div>
       );
-      case '/dashboard':
+      default:
       return (
         <div className="header dashboard-header">
           <h1>trackster</h1>

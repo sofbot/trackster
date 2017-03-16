@@ -4,6 +4,7 @@ import App from './app';
 import AuthFormContainer from './auth/auth_form_container';
 import DashboardContainer from './dashboard/dashboard_container';
 import SplashContainer from './home/splash-container';
+import ProjectContainer from './project/project_container';
 import {
   Router,
   Route,
@@ -40,6 +41,7 @@ const Root = ({ store }) => {
           <Route path='/dashboard'
                   onEnter={ _ensureLoggedIn }
                   component={ DashboardContainer } />
+                <Route path='/projects/:id' component={ProjectContainer}/>
         </Route>
       </Router>
     </Provider>
