@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
           <div className="dashboard-l-left">
             <span>Projects</span>
           </div>
-          <div className="dashboard-l-right">
+          <div>
             <CreateProjectModalContainer />
           </div>
         </div>

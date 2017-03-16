@@ -29,8 +29,8 @@ class CreateProjectModal extends React.Component {
     super(props);
     this.state = {
       modalOpen: false,
-      projectName: 'Enter a name for your project',
-      projectDescription: 'What are you working on?'
+      projectName: '',
+      projectDescription: ''
     };
 
     this.closeModal = this.closeModal.bind(this);
@@ -48,8 +48,9 @@ class CreateProjectModal extends React.Component {
     this.setState({ modalOpen: true });
   }
 
-  handleSubmit() {
-    this.props.createProject(this.state);
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createProject(this.state).then(() => this.closeModal());
   }
 
   changeTitle(e) {
@@ -62,7 +63,7 @@ class CreateProjectModal extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='dashboard-l-right'>
         <Link onClick={ this.openModal }>Create Project</Link>
 
         <Modal
@@ -72,14 +73,12 @@ class CreateProjectModal extends React.Component {
           style={ style }>
 
           <h2>Create a new project</h2>
-          <form onSubmit={ this.handleSubmit }>
+          <form className="create-project-form" onSubmit={ this.handleSubmit }>
             <label className="modal-label">Project Name</label>
             <input className="modal-input"
-              value={ this.state.projectName }
               onChange={ this.changeTitle }></input>
-            <label className="modal-label">Account</label>
+            <label className="modal-label">Description</label>
             <textarea className="modal-textarea"
-              value={ this.state.projectDescription }
               onChange={ this.changeDescription }></textarea>
             <i className="fa fa-floppy-o header-icon"
               onClick={ this.handleSubmit }
