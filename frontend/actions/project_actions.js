@@ -1,4 +1,5 @@
 import * as PUtil from '../util/projects_api_util';
+import * as InviteUtil from '../util/invite_api_util';
 
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const RECEIVE_SINGLE_PROJECT = "RECEIVE_SINGLE_PROJECT";
@@ -59,4 +60,18 @@ export const deleteProject = projectId => dispatch => (
   PUtil.deleteProject(projectId)
         .then(project => dispatch(removeProject(project)),
         err => dispatch(receiveErrors(err.responseJSON)))
+);
+
+export const destroyInvite = id => dispatch => {
+  return (
+    InviteUtil.destroyInvite(id)
+    .then(project => dispatch(removeProject(project)),
+    err => dispatch(receiveErrors(err.responseJSON)))
+  );
+};
+
+export const createInvite = invite => dispatch => (
+  InviteUtil.createInvite(invite)
+            .then(project => dispatch(receiveProject(project)),
+                  err => dispatch(receiveErrors(err.responseJson)))
 );

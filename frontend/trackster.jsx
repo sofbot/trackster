@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import * as SActions from './util/story_api_util';
-import { clearErrors } from './actions/session_actions';
+import * as IActions from './actions/project_actions';
+import { createInvite } from './util/invite_api_util';
 import Modal from 'react-modal';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,13 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  window.createStory = SActions.createStory;
-  window.fetchStory = SActions.fetchStory;
-  window.fetchAllStories = SActions.fetchAllStories;
-  window.createStory = SActions.createStory;
-  window.updateStory = SActions.updateStory;
-  window.destroyStory = SActions.destroyStory;
-  window.clearErrors = clearErrors;
+  window.createInvite = IActions.createInvite;
+  window.destroyInvite = IActions.destroyInvite;
   window.store = store;
 
   const root = document.getElementById('root');
