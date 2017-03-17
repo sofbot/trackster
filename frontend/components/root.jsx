@@ -44,9 +44,10 @@ const Root = ({ store }) => {
                   component={ AuthFormContainer } />
           <Route path='/dashboard'
                   onEnter={ _ensureLoggedIn }
-                  onEnter={ _setBackground }
                   component={ DashboardContainer } />
-                <Route path='/projects/:id' component={ProjectContainer}/>
+          <Route path='/projects/:id'
+                  component={ProjectContainer}
+                  onEnter={ _ensureLoggedIn }/>
         </Route>
       </Router>
     </Provider>

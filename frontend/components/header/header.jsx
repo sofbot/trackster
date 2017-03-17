@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import ProjectShowHeaderContainer from './project_show_header_container';
 
 class Header extends React.Component {
   constructor(props){
@@ -53,7 +54,7 @@ class Header extends React.Component {
           </div>
         </div>
       );
-      default:
+      case '/dashboard':
       return (
         <div className="header dashboard-header">
           <h1>trackster</h1>
@@ -61,6 +62,10 @@ class Header extends React.Component {
             <a href="/" id="logout-dashboard" onClick={ this.props.logout }>log out</a>
           </div>
         </div>
+      );
+      default:
+      return (
+        <ProjectShowHeaderContainer />
       );
     }
   }

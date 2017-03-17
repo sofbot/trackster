@@ -1,5 +1,6 @@
 import React from 'react';
-import { values } from 'lodash';
+import { Link } from 'react-router';
+import ProjectShowHeader from '../header/project_show_header';
 
 class Project extends React.Component {
   constructor(props){
@@ -13,11 +14,7 @@ class Project extends React.Component {
   render() {
     return (
       <div className="project-container">
-        <div className="project-header">
-          { this.props.project.title }
-          <p>bloop</p>
-          <p>members</p>
-        </div>
+        PROJECT STUFF
       </div>
     );
   }
