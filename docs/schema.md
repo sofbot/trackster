@@ -82,14 +82,14 @@
       <td>not null</td>
     </tr>
     <tr>
-      <td>state</td>
+      <td>internal_state</td>
       <td>string</td>
       <td>not null</td>
     </tr>
     <tr>
-      <td>type</td>
+      <td>story_type</td>
       <td>string</td>
-      <td>not null</td>
+      <td>not null, default: feature</td>
     </tr>
     <tr>
       <td>description</td>
@@ -104,6 +104,16 @@
       <td>project_id</td>
       <td>integer</td>
       <td>not null, foreign key (references projects), indexed</td>
+    </tr>
+    <tr>
+      <td>user_id</td>
+      <td>integer</td>
+      <td>not null, foreign key (references users), indexed</td>
+    </tr>
+    <tr>
+      <td>priority</td>
+      <td>integer</td>
+      <td>not null</td>
     </tr>
   </tbody>
 </table>
