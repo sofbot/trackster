@@ -7,20 +7,14 @@ class ProjectIndexItemForm extends React.Component {
     this.state = {
       editMode: true,
       title: this.props.project.title,
-      description: this.props.project.description
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
-    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
   }
 
   handleTitleChange(e) {
     this.setState({ title: e.target.value });
-  }
-
-  handleDescriptionChange(e) {
-    this.setState({ description: e.target.value });
   }
 
   handleSubmit(e) {
@@ -55,11 +49,6 @@ class ProjectIndexItemForm extends React.Component {
             <i className="fa fa-undo undo header-icon"
                   aria-hidden="true"
                   onClick={ this.toggleEdit }></i>
-          </div>
-          <div className="edit-body-container">
-            <textarea className="edit-description-field edit-body"
-              value={this.state.description}
-              onChange={this.handleDescriptionChange}></textarea>
           </div>
         </form>
       );

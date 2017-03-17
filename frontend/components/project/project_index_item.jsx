@@ -47,7 +47,7 @@ class ProjectIndexItem extends React.Component {
             </div>
           </div>
           <div className="project-index-body">
-            <p>{ this.props.project.description }</p>
+            <p> % progress goes here, mby member list too </p>
           </div>
         </div>
       );

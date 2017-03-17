@@ -22,7 +22,6 @@
   projects: {
     1: {
       title: 'trackster',
-      description: 'cool tracking app',
       creator_id: 1
     }
   },
@@ -36,7 +35,6 @@
       title: 'deploy to heroku',
       state: 'done',
       type: 'chore',
-      description: '',
       ice_boxed: false,
       project_id: 1,
       tasks: {

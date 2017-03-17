@@ -54,10 +54,6 @@
       <td>not null</td>
     </tr>
     <tr>
-      <td>description</td>
-      <td>text</td>
-    </tr>
-    <tr>
       <td>creator_id</td>
       <td>integer</td>
       <td>not null, foreign key (references users)</td>
