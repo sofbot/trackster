@@ -7,18 +7,12 @@ import { Link, withRouter } from 'react-router';
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
-    this.createProjectModal = this.createProjectModal.bind(this);
   }
 
   componentDidMount() {
     this.props.router.setRouteLeaveHook(this.props.route, () => {
       document.documentElement.style.backgroundColor = 'initial';
     });
-  }
-
-  createProjectModal() {
-    console.log('launch modal');
-    console.log(this.props.createProject);
   }
 
   render() {

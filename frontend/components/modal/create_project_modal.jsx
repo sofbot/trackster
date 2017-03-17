@@ -50,7 +50,6 @@ class CreateProjectModal extends React.Component {
       errs = <div></div>;
     }
 
-    console.log(errs);
     return (
       <div className='dashboard-l-right'>
         <Link onClick={ this.openModal }>Create Project</Link>
