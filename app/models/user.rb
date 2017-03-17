@@ -5,8 +5,10 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
-  has_many :projects, foreign_key: :creator_id
   has_many :stories
+  has_many :projects, foreign_key: :creator_id
+  has_many :invites
+  has_many :team_projects, through: :invites, source: :project
 
   after_initialize :ensure_session_token
 

@@ -167,12 +167,7 @@
       <td>not null, primary key</td>
     </tr>
     <tr>
-      <td>inviter_id</td>
-      <td>integer</td>
-      <td>not null, foreign key (references users), indexed</td>
-    </tr>
-    <tr>
-      <td>invitee_id</td>
+      <td>user_id</td>
       <td>integer</td>
       <td>not null, foreign key (references users), indexed</td>
     </tr>

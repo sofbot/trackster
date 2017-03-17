@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317013147) do
+ActiveRecord::Schema.define(version: 20170317173149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "invites", force: :cascade do |t|
+    t.integer "user_id",    null: false
+    t.integer "project_id", null: false
+    t.index ["user_id", "project_id"], name: "index_invites_on_user_id_and_project_id", using: :btree
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string   "title",      null: false
