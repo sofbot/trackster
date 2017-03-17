@@ -6,9 +6,9 @@ export const createInvite = invite => (
   })
 );
 
-export const destroyInvite = id => (
+export const destroyInvite = projectId => (
   $.ajax({
     method: 'DELETE',
-    url: `/invites/${id}`
+    url: `/invites/${projectId}`
   })
 );

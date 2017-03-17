@@ -8,6 +8,7 @@ class ProjectIndexItem extends React.Component {
     this.state = { editMode: false };
     this.handleDelete = this.handleDelete.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
+    console.log(this.props);
   }
 
   handleDelete() {
@@ -18,8 +19,38 @@ class ProjectIndexItem extends React.Component {
     this.setState({ editMode: true });
   }
 
+  handleLeave() {
+    this.props.destroyInvite(this.props.project.id);
+  }
+
+  deleteBtn() {
+    return (
+      <span className="delete-project"
+        onClick={ this.handleDelete }>
+        <i className="fa fa-trash-o header-icon" aria-hidden="true"></i>
+      </span>
+    );
+  }
+
+  leaveBtn() {
+    return (
+      <span className="delete-project"
+        onClick={ this.handleLeave.bind(this) }>
+        <i className="fa fa-sign-out header-icon" aria-hidden="true"></i>
+      </span>
+    );
+  }
+
+
   render () {
     const showURL = `/projects/${this.props.project.id}`;
+
+    let removeBtn;
+    if (this.props.project.creator_id === this.props.currentUserId) {
+      removeBtn = this.deleteBtn();
+    } else {
+      removeBtn = this.leaveBtn();
+    }
 
     if (this.state.editMode) {
       return(
@@ -36,10 +67,7 @@ class ProjectIndexItem extends React.Component {
               </Link>
             </div>
             <div className="header-action-btns">
-              <span className="delete-project"
-                onClick={ this.handleDelete }>
-              <i className="fa fa-trash-o header-icon" aria-hidden="true"></i>
-              </span>
+              { removeBtn }
               <span className="update-project"
                 onClick={ this.toggleEdit }>
                 <i className="fa fa-pencil-square-o header-icon" aria-hidden="true"></i>
