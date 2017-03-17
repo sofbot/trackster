@@ -22,13 +22,14 @@ class ProjectShowHeader extends React.Component {
     return (
       <div className="project-show-header">
         <div className="upper-header">
-          <h1>{ this.props.project.title }</h1>
-          <Link onClick={ this.handleLogout }>Logout</Link>
+          <span>{ this.props.project.title }</span>
+          <Link className="header-txt"
+                onClick={ this.handleLogout }>Logout</Link>
         </div>
-        <div className="lower-header">
-          <Link to={ storiesURL }>Stories</Link>
-          <Link to="/dashboard">Projects</Link>
-          <Link to="#">Members</Link>
+        <div className="lower-header header-txt">
+          <Link to={ storiesURL }><span>Stories</span></Link>
+          <Link to="/dashboard"><span>Projects</span></Link>
+          <Link to="#"><span>Members</span></Link>
         </div>
       </div>
     );

@@ -1,3 +1,80 @@
 // Place all the styles related to the stories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.project-show-header {
+    background-color: #3e7293;
+    height: 60px;
+    line-height: 34px;
+    color: #fff;
+    position: relative;
+    padding: 0 5px 0 0;
+    border-bottom: 1px solid #212121;
+    min-width: 750pt;
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.upper-header > span {
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+}
+
+.lower-header {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  line-height: 11px;
+  top: 30px;
+  position: absolute;
+  text-rendering: optimizeLegibility;
+}
+
+
+.header-txt > a, .header-txt {
+  display: inline-block;
+  height: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #cadce4;
+}
+
+.lower-header > a {
+  padding: 4px 0 0 23px;
+  transition: color .1s ease-in;
+  -moz-transition: color .1s ease-in;
+  -webkit-transition: color .1s ease-in;
+  -o-transition: color .1s ease-in;
+}
+
+.lower-header > a:after {
+  content: '';
+  height: 9pt;
+  width: 1px;
+  display: inline-block;
+  margin-left: 22px;
+  position: relative;
+  top: 2px;
+  background-color: #fff;
+  opacity: .1;
+}
+
+.lower-header > a:hover {
+  color: white;
+}
+
+.lower-header > a:first-of-type {
+  margin-top: 3px;
+  color: #fff;
+  border-bottom: 3px solid #9fb8c8;
+  cursor: default;
+}
