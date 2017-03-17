@@ -46,7 +46,9 @@ class AuthForm extends React.Component {
 
     let errs;
     if (values(this.props.errors).length > 0) {
-      errs = <div className="errors">{values(this.props.errors)}</div>;
+      errs = <div className="errors">
+                { values(this.props.errors)[0].join(' & ') }
+              </div>;
     } else {
       errs = <div></div>;
     }

@@ -20,7 +20,7 @@ class CreateProjectModal extends React.Component {
   }
 
   closeModal() {
-    this.props.clearErrors()
+    this.props.clearErrors();
     this.setState({ modalOpen: false });
   }
 
@@ -30,7 +30,7 @@ class CreateProjectModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.clearErrors()
+    this.props.clearErrors();
     this.props.createProject(this.state).then(() => this.closeModal());
   }
 
@@ -41,10 +41,11 @@ class CreateProjectModal extends React.Component {
   }
 
   render() {
-
     let errs;
     if (values(this.props.errors).length > 0) {
-      errs = <div className="errors">{values(this.props.errors)}</div>;
+      errs = <div className="errors modal-errors">
+                { values(this.props.errors)[0].join(' & ') }
+              </div>;
     } else {
       errs = <div></div>;
     }
