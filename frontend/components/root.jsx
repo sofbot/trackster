@@ -27,10 +27,6 @@ const Root = ({ store }) => {
     }
   };
 
-  const _setBackground = (nextState, replace ) => {
-    document.documentElement.style.backgroundColor = '#eee';
-  };
-
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
