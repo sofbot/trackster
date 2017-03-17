@@ -10,16 +10,12 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    if !current_user
-      render json: ["nope"]
+    @project = Project.new(project_params)
+    @project.creator_id = current_user.id
+    if @project.save
+      render 'projects/show'
     else
-      @project = Project.new(project_params)
-      @project.creator_id = current_user.id
-      if @project.save
-        render 'projects/show'
-      else
-        render json: @project.errors.full_messages, status: 422
-      end
+      render json: @project.errors.full_messages, status: 422
     end
   end
 
@@ -39,6 +35,7 @@ class ProjectsController < ApplicationController
   end
 
   private
+
   def project_params
     params.require(:project).permit(:title)
   end

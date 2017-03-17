@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   has_many :projects, foreign_key: :creator_id
+  has_many :stories
 
   after_initialize :ensure_session_token
 
