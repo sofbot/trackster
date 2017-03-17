@@ -3,7 +3,6 @@ import { logout } from '../../actions/session_actions';
 import ProjectShowHeader from './project_show_header';
 
 const mapStateToProps = (state, ownProps) => {
-    console.log(ownProps);
   return ({
     project: state.projects
 

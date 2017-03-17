@@ -3,6 +3,7 @@ form.create-project-form {
     flex-direction: column;
     padding-left: 5%;
     padding-right: 5%;
+    margin-top: 25px;
 }
 
 .create-project-modal-title {
@@ -36,6 +37,10 @@ label.modal-label {
   font-size: 9pt;
   font-weight: 600;
   text-align: left;
+}
+
+label.modal-label:last-of-type {
+    margin-top: 10px;
 }
 
 input.modal-input {

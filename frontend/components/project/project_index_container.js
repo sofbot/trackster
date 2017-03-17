@@ -14,8 +14,6 @@ const mapStateToProps = state => ({
   currentUser: state.session.currentUser
 });
 
-
-
 const mapDispatchToProps = dispatch => ({
   fetchAllProjects: () => dispatch(fetchAllProjects()),
   createProject: project => dispatch(createProject(project)),

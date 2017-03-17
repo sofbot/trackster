@@ -28,7 +28,7 @@ class SplashMain extends React.Component {
       (
         <div className="splash-main">
           <h1 className="splash-heading">
-            Changing how teams build software
+            Helping teams build software
           </h1>
           <div className="demo">
             <Link onClick={ this.handleLogin }>

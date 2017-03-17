@@ -18,9 +18,9 @@ const Splash = ({ login }) => {
     <div className="main">
       <figure>
         <img src={imgURL} />
+        <SplashMainContainer />
       </figure>
       <SplashContact />
-      <SplashMainContainer />
       <div className="splash-middle">
         <SplashMiddle1 />
         <SplashMiddle2 />
