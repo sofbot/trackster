@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import * as PActions from './actions/project_actions';
+import * as SActions from './util/story_api_util';
 import { clearErrors } from './actions/session_actions';
 import Modal from 'react-modal';
 
@@ -19,8 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  window.createProject = PActions.createProject;
-  window.fetchProject = PActions.fetchProject;
+  window.createStory = SActions.createStory;
+  window.fetchStory = SActions.fetchStory;
+  window.fetchAllStories = SActions.fetchAllStories;
+  window.createStory = SActions.createStory;
+  window.updateStory = SActions.updateStory;
+  window.destroyStory = SActions.destroyStory;
   window.clearErrors = clearErrors;
   window.store = store;
 
