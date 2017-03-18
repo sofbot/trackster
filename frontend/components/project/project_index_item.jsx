@@ -24,7 +24,7 @@ class ProjectIndexItem extends React.Component {
 
   deleteBtn() {
     return (
-      <span className='delete-project' tooltip="delete"
+      <span className='delete-project'
         onClick={ this.handleDelete }>
         <i className="fa fa-trash-o header-icon" aria-hidden="true"></i>
       </span>

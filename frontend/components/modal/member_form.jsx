@@ -19,7 +19,7 @@ class MemberForm extends React.Component {
 
   findFriend() {
     fetchUser(this.state.member)
-    .then(user => this.props.addMembers(user));
+    .then(user => this.props.addMembers(user))
   }
 
   handleChange(e) {

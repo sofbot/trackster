@@ -44,8 +44,13 @@ class CreateProjectModal extends React.Component {
 
   addMembers(member) {
     const newMembers = this.state.memberIds.concat(member['id']);
+
+    if (this.state.memberIds.indexOf(member['id']) === -1) {
+      this.addMemberToList(member);
+    }
+
     this.setState({ memberIds: newMembers });
-    this.addMemberToList(member);
+    this.resetForm();
   }
 
   addMemberToList(member) {
@@ -54,7 +59,6 @@ class CreateProjectModal extends React.Component {
     newMember.className = 'teammate';
     newMember.innerHTML = member.username;
     memberList.appendChild(newMember);
-    this.resetForm();
   }
 
   resetForm() {
@@ -91,7 +95,8 @@ class CreateProjectModal extends React.Component {
                     onChange={ this.update('title') }></input>
           </form>
 
-          <MemberForm addMembers={this.addMembers} />
+          <MemberForm addMembers={this.addMembers}
+                      receiveErrors={this.props.receiveErrors}/>
 
           <div className="members-list-container">
             <ul id="members-list"></ul>
