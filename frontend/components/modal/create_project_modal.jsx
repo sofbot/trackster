@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { modalStyle } from './modal_style';
 import { values, merge } from 'lodash';
 import Modal from 'react-modal';
-import NewMemberContainer from './new_member_container';
+import NewMember from './new_member';
 
 class CreateProjectModal extends React.Component {
   constructor(props) {
@@ -78,14 +78,14 @@ class CreateProjectModal extends React.Component {
                     onChange={ this.update('title') }></input>
           </form>
 
-          <NewMemberContainer addMembers={this.addMembers} />
+          <NewMember addMembers={this.addMembers} />
 
           <div className="modal-footer">
             <span className="close-modal"
               onClick={ this.closeModal }>
-              <i className="fa fa-trash-o header-icon" aria-hidden="true"></i>
+              <i className="fa fa-trash-o fa-2x header-icon" aria-hidden="true"></i>
             </span>
-            <i className="fa fa-floppy-o header-icon"
+            <i className="fa fa-floppy-o fa-2x header-icon"
               onClick={ this.handleSubmit }
               aria-hidden="true">
               <input type="submit" value=""></input>

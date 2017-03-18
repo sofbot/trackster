@@ -27,16 +27,17 @@ class NewMember extends React.Component {
 
   render() {
     return (
-      <form className="add-members-form">
-        <label className="modal-label">Add teammates</label>
-        <input className="modal-input"
-          onChange={ this.handleChange }></input>
-        <span onClick={ this.findFriend }>
-          <i className="fa fa-plus" aria-hidden="true"></i>
-        </span>
+      <form className="add-members-form" onSubmit={ this.findFriend }>
+        <div className="modal-inputs">
+          <label className="modal-label">Add teammates</label>
+          <input className="modal-input teammates-field"
+            onChange={ this.handleChange }></input>
+        </div>
+        <span onClick={ this.findFriend }></span>
       </form>
     );
   }
 }
 
+// <i className="fa fa-plus-square-o fa-2x" aria-hidden="true"></i>
 export default NewMember;

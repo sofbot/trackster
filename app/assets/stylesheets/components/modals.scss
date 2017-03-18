@@ -70,7 +70,7 @@ input.modal-input {
 }
 
 .modal-footer > i {
-    margin-right: 20px;
+    margin-right: 25px;
 }
 
 .modal-errors {
@@ -79,4 +79,45 @@ input.modal-input {
   margin-bottom: 10px;
   margin-top: 10px;
   border-radius: 3px;
+}
+
+.modal-inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-members-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 28px;
+  margin-top: 10px;
+}
+
+.add-members-form > span {
+  width: 40px;
+  display: flex;
+  align-content: center;
+  align-items: flex-end;
+  height: 40px;
+  margin-left: 0px;
+  opacity: 0.4;
+  background-image: url(https://cdn4.iconfinder.com/data/icons/keyboard-solid-style/24/arrow-enter-128.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 31px;
+  cursor: pointer;
+}
+
+.teammates-field {
+  width: 419px;
+}
+
+i.fa.fa-floppy-o.fa-2x.header-icon {
+    opacity: 0.6;
+    margin-left: 10px;
+}
+
+i.fa.fa-trash-o.header-icon.fa-2x {
+    opacity: 0.4;
 }
