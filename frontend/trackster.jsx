@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import * as IActions from './actions/project_actions';
-import { createInvite } from './util/invite_api_util';
+import { fetchUser } from './util/invite_api_util';
 import Modal from 'react-modal';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,8 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  window.createInvite = IActions.createInvite;
-  window.destroyInvite = IActions.destroyInvite;
+  window.fetchUser = fetchUser;
   window.store = store;
 
   const root = document.getElementById('root');

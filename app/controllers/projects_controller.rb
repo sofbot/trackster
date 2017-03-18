@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.creator_id = current_user.id
     if @project.save
+      @project.member_ids = params[:project][:member_ids]
       render 'projects/show'
     else
       render json: @project.errors.full_messages, status: 422

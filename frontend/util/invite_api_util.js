@@ -12,3 +12,10 @@ export const destroyInvite = projectId => (
     url: `/invites/${projectId}`
   })
 );
+
+export const fetchUser = username => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/users/${username}`
+  })
+);

@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { modalStyle } from './modal_style';
+import { values, merge } from 'lodash';
 import Modal from 'react-modal';
-import { values } from 'lodash';
+import NewMemberContainer from './new_member_container';
 
 class CreateProjectModal extends React.Component {
   constructor(props) {
@@ -10,13 +11,14 @@ class CreateProjectModal extends React.Component {
     this.state = {
       modalOpen: false,
       title: '',
-      friend: ''
+      memberIds: []
     };
 
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.addMembers = this.addMembers.bind(this);
   }
 
   closeModal() {
@@ -38,6 +40,13 @@ class CreateProjectModal extends React.Component {
     return e => (
       this.setState({[field]: e.target.value})
     );
+  }
+
+  addMembers(member) {
+    const newMembers = this.state.memberIds.concat(member['id'])
+    console.log(newMembers);
+    this.setState({ memberIds: newMembers });
+    console.log(this.state.memberIds);
   }
 
   render() {
@@ -67,11 +76,11 @@ class CreateProjectModal extends React.Component {
             <label className="modal-label">Project Title</label>
             <input className="modal-input"
                     onChange={ this.update('title') }></input>
-                  <label className="modal-label">Add friends</label>
-            <input className="modal-input"
-                      onChange={ this.update('friend') }></input>
           </form>
-            <div className="modal-footer">
+
+          <NewMemberContainer addMembers={this.addMembers} />
+
+          <div className="modal-footer">
             <span className="close-modal"
               onClick={ this.closeModal }>
               <i className="fa fa-trash-o header-icon" aria-hidden="true"></i>
