@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { modalStyle } from './modal_style';
 import { values, merge } from 'lodash';
 import Modal from 'react-modal';
-import MemberForm from './member_form';
+import MemberFormContainer from './member_form_container';
 
 class CreateProjectModal extends React.Component {
   constructor(props) {
@@ -75,9 +75,8 @@ class CreateProjectModal extends React.Component {
                     onChange={ this.update('title') }></input>
           </form>
 
-          <MemberForm memberIds={this.state.memberIds}
-                      addMembersToState={ this.addMembersToState }
-                      receiveErrors={this.props.receiveErrors}/>
+          <MemberFormContainer memberIds={this.state.memberIds}
+                      addMembersToState={ this.addMembersToState } />
 
           <div className="modal-footer">
             <span className="close-modal"

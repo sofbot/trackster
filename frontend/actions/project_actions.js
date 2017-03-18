@@ -61,17 +61,3 @@ export const deleteProject = projectId => dispatch => (
         .then(project => dispatch(removeProject(project)),
         err => dispatch(receiveErrors(err.responseJSON)))
 );
-
-export const destroyInvite = projectId => dispatch => {
-  return (
-    InviteUtil.destroyInvite(projectId)
-    .then(project => dispatch(removeProject(project)),
-    err => dispatch(receiveErrors(err.responseJSON)))
-  );
-};
-
-export const createInvite = invite => dispatch => (
-  InviteUtil.createInvite(invite)
-            .then(project => dispatch(receiveProject(project)),
-                  err => dispatch(receiveErrors(err.responseJson)))
-);

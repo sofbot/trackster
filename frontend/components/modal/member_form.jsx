@@ -9,7 +9,6 @@ class MemberForm extends React.Component {
     };
     this.findFriend = this.findFriend.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    console.log(this.props);
   }
 
   update(field) {
@@ -20,8 +19,18 @@ class MemberForm extends React.Component {
 
   findFriend() {
     fetchUser(this.state.member)
-    .then(user => this.addMembers(user))
+              .then((user => this.addMembers(user)),
+                      err => this.displayError());
   }
+
+  displayError() {
+    document.getElementById('member-error').style.visibility = 'visible';
+  }
+
+  removeError() {
+    document.getElementById('member-error').style.visibility = 'hidden';
+  }
+
 
   handleChange(e) {
     this.setState({ member: e.target.value });
@@ -36,7 +45,8 @@ class MemberForm extends React.Component {
 
     this.props.addMembersToState(newMembers);
     this.resetForm();
-  };
+    this.removeError();
+  }
 
   addMemberToList(member) {
     const memberList = document.getElementById('members-list');
@@ -44,19 +54,24 @@ class MemberForm extends React.Component {
     newMember.className = 'teammate';
     newMember.innerHTML = member.username;
     memberList.appendChild(newMember);
-  };
+  }
 
   resetForm() {
     const form = document.getElementsByClassName('add-members-form')[0];
     form.reset();
-  };
+  }
 
   render() {
     return (
       <div className="members-container">
         <form className="add-members-form" onSubmit={ this.findFriend }>
           <div className="modal-inputs">
-            <label className="modal-label">Add teammates</label>
+            <div className="member-input-label">
+              <label className="modal-label">Add teammates</label>
+              <span id="member-error" className="modal-label">
+                member not found
+              </span>
+            </div>
             <input className="modal-input teammates-field"
               onChange={ this.handleChange }></input>
           </div>
