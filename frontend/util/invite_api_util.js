@@ -1,5 +1,3 @@
-import { userErrors } from '../actions/invite_actions';
-
 export const createInvite = invite => (
   $.ajax({
     method: 'POST',

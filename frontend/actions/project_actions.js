@@ -1,11 +1,11 @@
 import * as PUtil from '../util/projects_api_util';
 import * as InviteUtil from '../util/invite_api_util';
+import { receiveErrors } from './session_actions';
 
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const RECEIVE_SINGLE_PROJECT = "RECEIVE_SINGLE_PROJECT";
 export const RECEIVE_PROJECTS = "RECEIVE_PROJECTS";
 export const REMOVE_PROJECT = "REMOVE_PROJECT";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 export const receiveProject = project => ({
   type: RECEIVE_PROJECT,
@@ -25,11 +25,6 @@ export const receiveProjects = projects => ({
 export const removeProject = project => ({
   type: REMOVE_PROJECT,
   project
-});
-
-export const receiveErrors = errors => ({
-  type: RECEIVE_ERRORS,
-  errors
 });
 
 export const fetchProject = projectId => dispatch => (
