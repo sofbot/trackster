@@ -121,3 +121,17 @@ i.fa.fa-floppy-o.fa-2x.header-icon {
 i.fa.fa-trash-o.header-icon.fa-2x {
     opacity: 0.4;
 }
+
+.teammate {
+  list-style: none;
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.teammate:before {
+  font-family: 'FontAwesome';
+  content: '\f067';
+  margin: 0 5px 0 -15px;
+  opacity: 0.5
+}

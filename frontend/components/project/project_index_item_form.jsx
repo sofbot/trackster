@@ -37,7 +37,6 @@ class ProjectIndexItemForm extends React.Component {
       return (
         <form className="project-index-item" onSubmit={ this.handleSubmit }>
           <div className="project-index-item-header">
-            <i className="fa fa-code-fork header-icon" aria-hidden="true"></i>
             <input className="edit-title project-title-field"
               value={this.state.title}
               onChange={this.handleTitleChange}></input>

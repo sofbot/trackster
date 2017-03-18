@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { modalStyle } from './modal_style';
 import { values, merge } from 'lodash';
 import Modal from 'react-modal';
-import NewMember from './new_member';
+import MemberForm from './member_form';
 
 class CreateProjectModal extends React.Component {
   constructor(props) {
@@ -43,10 +43,23 @@ class CreateProjectModal extends React.Component {
   }
 
   addMembers(member) {
-    const newMembers = this.state.memberIds.concat(member['id'])
-    console.log(newMembers);
+    const newMembers = this.state.memberIds.concat(member['id']);
     this.setState({ memberIds: newMembers });
-    console.log(this.state.memberIds);
+    this.addMemberToList(member);
+  }
+
+  addMemberToList(member) {
+    const memberList = document.getElementById('members-list');
+    const newMember = document.createElement('li');
+    newMember.className = 'teammate';
+    newMember.innerHTML = member.username;
+    memberList.appendChild(newMember);
+    this.resetForm();
+  }
+
+  resetForm() {
+    const form = document.getElementsByClassName('add-members-form')[0];
+    form.reset();
   }
 
   render() {
@@ -78,7 +91,11 @@ class CreateProjectModal extends React.Component {
                     onChange={ this.update('title') }></input>
           </form>
 
-          <NewMember addMembers={this.addMembers} />
+          <MemberForm addMembers={this.addMembers} />
+
+          <div className="members-list-container">
+            <ul id="members-list"></ul>
+          </div>
 
           <div className="modal-footer">
             <span className="close-modal"

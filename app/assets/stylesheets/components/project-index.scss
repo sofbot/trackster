@@ -4,12 +4,14 @@
   border-radius: 2px;
 }
 
-.edit-title, .edit-body {
+.edit-title {
   box-shadow: 0 0 5px #44acf6;
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
   border: 1px solid #44acf6;
   text-align: left;
+  margin-left: 15px;
+  margin-right: 40px;
 }
 
 .edit-body {

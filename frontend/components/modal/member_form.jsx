@@ -1,7 +1,7 @@
 import React from 'react';
 import { fetchUser } from '../../util/invite_api_util';
 
-class NewMember extends React.Component {
+class MemberForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +18,8 @@ class NewMember extends React.Component {
   }
 
   findFriend() {
-    fetchUser(this.state.member).then(user => this.props.addMembers(user));
+    fetchUser(this.state.member)
+    .then(user => this.props.addMembers(user));
   }
 
   handleChange(e) {
@@ -39,5 +40,4 @@ class NewMember extends React.Component {
   }
 }
 
-// <i className="fa fa-plus-square-o fa-2x" aria-hidden="true"></i>
-export default NewMember;
+export default MemberForm;

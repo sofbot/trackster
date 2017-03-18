@@ -141,8 +141,9 @@
 }
 
 .project-index-item-title {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
 }
 
 .project-index-item-title > a, .edit-title {

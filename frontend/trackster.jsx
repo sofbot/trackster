@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  window.fetchUser = fetchUser;
   window.store = store;
 
   const root = document.getElementById('root');
