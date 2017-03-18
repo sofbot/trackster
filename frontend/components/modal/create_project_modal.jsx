@@ -18,7 +18,7 @@ class CreateProjectModal extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    this.addMembers = this.addMembers.bind(this);
+    this.addMembersToState = this.addMembersToState.bind(this);
   }
 
   closeModal() {
@@ -42,28 +42,8 @@ class CreateProjectModal extends React.Component {
     );
   }
 
-  addMembers(member) {
-    const newMembers = this.state.memberIds.concat(member['id']);
-
-    if (this.state.memberIds.indexOf(member['id']) === -1) {
-      this.addMemberToList(member);
-    }
-
+  addMembersToState(newMembers) {
     this.setState({ memberIds: newMembers });
-    this.resetForm();
-  }
-
-  addMemberToList(member) {
-    const memberList = document.getElementById('members-list');
-    const newMember = document.createElement('li');
-    newMember.className = 'teammate';
-    newMember.innerHTML = member.username;
-    memberList.appendChild(newMember);
-  }
-
-  resetForm() {
-    const form = document.getElementsByClassName('add-members-form')[0];
-    form.reset();
   }
 
   render() {
@@ -95,17 +75,15 @@ class CreateProjectModal extends React.Component {
                     onChange={ this.update('title') }></input>
           </form>
 
-          <MemberForm addMembers={this.addMembers}
+          <MemberForm memberIds={this.state.memberIds}
+                      addMembersToState={ this.addMembersToState }
                       receiveErrors={this.props.receiveErrors}/>
-
-          <div className="members-list-container">
-            <ul id="members-list"></ul>
-          </div>
 
           <div className="modal-footer">
             <span className="close-modal"
               onClick={ this.closeModal }>
-              <i className="fa fa-trash-o fa-2x header-icon" aria-hidden="true"></i>
+              <i className="fa fa-trash-o fa-2x header-icon"
+                  aria-hidden="true"></i>
             </span>
             <i className="fa fa-floppy-o fa-2x header-icon"
               onClick={ this.handleSubmit }
