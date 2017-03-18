@@ -18,7 +18,6 @@ class NewMember extends React.Component {
   }
 
   findFriend() {
-    console.log(this.state.member);
     fetchUser(this.state.member).then(user => this.props.addMembers(user));
   }
 
