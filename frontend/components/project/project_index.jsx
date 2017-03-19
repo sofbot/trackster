@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectIndexItemContainer from './project_index_item_container';
+import { myProjects, teamProjects } from '../../reducers/selectors';
 
 class ProjectIndex extends React.Component {
   constructor(props) {
@@ -12,12 +13,11 @@ class ProjectIndex extends React.Component {
   }
 
   getVisibleProjects(projects, filter) {
-    const mine = project => this.props.currentUser.id === project.creator_id;
-    switch (filter) {
+    switch(filter) {
       case 'my-projects':
-        return projects.filter(project => mine(project));
+        return myProjects(projects);
       case 'team-projects':
-        return projects.filter(project => !mine(project));
+        return teamProjects(projects);
     }
   }
 

@@ -6,12 +6,10 @@ import {
   updateProject
 } from '../../actions/project_actions';
 
-const mapStateToProps = state => {
-  console.log(state.session.currentUser.id);
-  return ({
-    currentUserId: state.session.currentUser.id
-  });
-};
+const mapStateToProps = state => ({
+  currentUserId: state.session.currentUser.id
+});
+
 
 const mapDispatchToProps = dispatch => ({
   destroyInvite: projectId => dispatch(destroyInvite(projectId)),

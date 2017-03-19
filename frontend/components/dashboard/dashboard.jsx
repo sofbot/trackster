@@ -8,7 +8,6 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.newInvite = this.newInvite.bind(this);
-    console.log(this.props);
   }
 
   componentDidMount() {
@@ -49,6 +48,7 @@ class Dashboard extends React.Component {
               <span className="project-index-heading">Team Projects</span>
             </div>
             <span className="create-invite-btn"
+                  id="demo-project-invite"
                   onClick={ this.newInvite } >
                   Demo Project Invite
             </span>

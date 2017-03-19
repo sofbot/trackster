@@ -9,6 +9,7 @@ class ProjectIndexItem extends React.Component {
     this.state = { editMode: false };
     this.handleDelete = this.handleDelete.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
+    console.log(this.props);
   }
 
   handleDelete() {
@@ -21,6 +22,7 @@ class ProjectIndexItem extends React.Component {
 
   handleLeave() {
     this.props.destroyInvite(this.props.project.id);
+
   }
 
   deleteBtn() {
@@ -45,7 +47,7 @@ class ProjectIndexItem extends React.Component {
   render () {
     const showURL = `/projects/${this.props.project.id}`;
     let removeBtn;
-    if (this.props.project.creator_id === this.props.currentUserId) {
+    if (this.props.project.creator_id === window.currentUser.id) {
       removeBtn = this.deleteBtn();
     } else {
       removeBtn = this.leaveBtn();
