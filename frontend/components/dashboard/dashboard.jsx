@@ -7,6 +7,7 @@ import { Link, withRouter } from 'react-router';
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
+    this.newInvite = this.newInvite.bind(this);
   }
 
   componentDidMount() {
@@ -15,6 +16,11 @@ class Dashboard extends React.Component {
     });
 
     document.documentElement.style.backgroundColor = '#eee';
+  }
+
+  newInvite() {
+    const invite = { user_id: currentUser.id, project_id: 6 };
+    this.props.createInvite(invite);
   }
 
   render() {
@@ -37,8 +43,14 @@ class Dashboard extends React.Component {
         </div>
         <div className="dashboard-body-content team-content">
           <div className="project-index-header">
-            <i className="fa fa-stack-overflow" aria-hidden="true"></i>
-            <span className="project-index-heading">Team Projects</span>
+            <div className="project-index-header-left">
+              <i className="fa fa-stack-overflow" aria-hidden="true"></i>
+              <span className="project-index-heading">Team Projects</span>
+            </div>
+            <span className="create-invite-btn"
+                  onClick={ this.newInvite } >
+                  Demo Project Invite
+            </span>
           </div>
           <ProjectIndexContainer filter={ "team-projects" } />
         </div>

@@ -1,2 +1,2 @@
-json.array! @projects, :id, :title, :creator_id
-json.array! @team_projects, :id, :title, :creator_id
+json.array! @projects, :id, :title, :creator_id, :member_ids
+json.array! @team_projects, :id, :title, :creator_id, :member_ids

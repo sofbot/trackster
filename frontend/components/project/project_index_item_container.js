@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
 import ProjectIndexItem from './project_index_item';
+import { destroyInvite } from '../../actions/invite_actions';
 import {
   deleteProject,
-  updateProject,
-  destroyInvite
+  updateProject
 } from '../../actions/project_actions';
 
-
-const mapStateToProps = state => ({
-  currentUserId: state.session.currentUser.id
-});
+const mapStateToProps = state => {
+  console.log(state.session.currentUser.id);
+  return ({
+    currentUserId: state.session.currentUser.id
+  });
+};
 
 const mapDispatchToProps = dispatch => ({
   destroyInvite: projectId => dispatch(destroyInvite(projectId)),

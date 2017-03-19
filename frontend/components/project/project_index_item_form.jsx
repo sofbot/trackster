@@ -11,6 +11,7 @@ class ProjectIndexItemForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
+    console.log(this.props);
   }
 
   handleTitleChange(e) {

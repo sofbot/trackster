@@ -189,4 +189,26 @@
 
 .team-content > .project-index-header {
   padding-top: 0;
+  justify-content: space-between;
+}
+
+.project-index-header-left {
+  display: flex;
+}
+
+span.create-invite-btn {
+  color: #b6d8b7;
+  border: 1px solid white;
+  font-size: 14px;
+  border-radius: 2px;
+  font-weight: 500;
+  line-height: 1.5;
+  font-family: open-sans, Helvetica, Arial, AppleEmoji, SegoeUIEmoji, EmojiOne, sans-serif;
+  padding: 8px 10px;
+  touch-action: manipulation;
+  white-space: nowrap;
+  transition: all .3s ease-out;
+  text-rendering: auto;
+  transition-property: background-color, color, opacity;
+  cursor: pointer;
 }

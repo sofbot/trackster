@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { destroyInvite } from '../../util/invite_api_util';
 import ProjectIndexItemFormContainer from './project_index_item_form_container';
 
 class ProjectIndexItem extends React.Component {
@@ -43,7 +44,6 @@ class ProjectIndexItem extends React.Component {
 
   render () {
     const showURL = `/projects/${this.props.project.id}`;
-
     let removeBtn;
     if (this.props.project.creator_id === this.props.currentUserId) {
       removeBtn = this.deleteBtn();
