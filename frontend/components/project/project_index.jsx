@@ -16,9 +16,9 @@ class ProjectIndex extends React.Component {
   getVisibleProjects(projects, filter) {
     switch(filter) {
       case 'my-projects':
-        return myProjects(projects);
+        return myProjects(projects, this.props.currentUser.id);
       case 'team-projects':
-        return teamProjects(projects);
+        return teamProjects(projects, this.props.currentUser.id);
     }
   }
 

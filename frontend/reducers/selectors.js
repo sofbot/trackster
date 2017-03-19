@@ -1,9 +1,9 @@
-const mine = project => window.currentUser.id === project.creator_id;
+const mine = (project, id) => id === project.creator_id;
 
-export const teamProjects = (projects) => {
-  return projects.filter(project => !mine(project));
+export const teamProjects = (projects, id) => {
+  return projects.filter(project => !mine(project, id));
 };
 
-export const myProjects = projects => {
-  return projects.filter(project => mine(project));
+export const myProjects = (projects, id) => {
+  return projects.filter(project => mine(project, id));
 };

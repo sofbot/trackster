@@ -9,9 +9,11 @@ class ProjectIndexItem extends React.Component {
     this.state = { editMode: false };
     this.handleDelete = this.handleDelete.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
+    console.log(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
     if (nextProps.teamProjects.length < 1) {
       document.getElementById('demo-project-invite').style.visibility = 'visible';
     }
@@ -26,7 +28,8 @@ class ProjectIndexItem extends React.Component {
   }
 
   handleLeave() {
-    this.props.destroyInvite(this.props.project.id)
+    this.props.destroyInvite(this.props.project.id);
+    console.log(this.props.teamProjects);
   }
 
 
@@ -79,7 +82,8 @@ class ProjectIndexItem extends React.Component {
               { removeBtn }
               <span className="update-project"
                 onClick={ this.toggleEdit }>
-                <i className="fa fa-pencil-square-o header-icon" aria-hidden="true"></i>
+                <i className="fa fa-pencil-square-o header-icon"
+                    aria-hidden="true"></i>
               </span>
             </div>
           </div>

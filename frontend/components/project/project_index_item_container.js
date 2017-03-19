@@ -8,10 +8,13 @@ import {
   updateProject
 } from '../../actions/project_actions';
 
-const mapStateToProps = state => ({
-  currentUserId: state.session.currentUser.id,
-  teamProjects: teamProjects(values(state.projects))
-});
+const mapStateToProps = state => {
+  let id = state.session.currentUser.id;
+  return ({
+    currentUserId: id,
+    teamProjects: teamProjects(values(state.projects), id)
+  });
+};
 
 
 const mapDispatchToProps = dispatch => ({
