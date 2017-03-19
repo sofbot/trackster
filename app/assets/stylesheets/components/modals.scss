@@ -103,9 +103,11 @@ input.modal-input {
   background-repeat: no-repeat;
   margin-top: 34px;
   cursor: pointer;
+  position: absolute;
+  right: 24px;
 }
 
-.teammates-field {
+.mates-field {
   width: 419px;
 }
 
@@ -116,20 +118,6 @@ i.fa.fa-floppy-o.fa-2x.header-icon {
 
 i.fa.fa-trash-o.header-icon.fa-2x {
     opacity: 0.4;
-}
-
-.teammate {
-  list-style: none;
-  text-align: left;
-  margin-left: 10px;
-  margin-top: 20px;
-}
-
-.teammate:before {
-  font-family: 'FontAwesome';
-  content: '\f067';
-  margin: 0 5px 0 -15px;
-  opacity: 0.5
 }
 
 .member-input-label {
@@ -143,4 +131,13 @@ i.fa.fa-trash-o.header-icon.fa-2x {
   color: #DF5557;
   visibility: hidden;
   margin-left: 17px;
+}
+
+#members-list {
+  top: 185px;
+  display: flex;
+}
+
+input.modal-input.teammates-field {
+    width: 414px;
 }

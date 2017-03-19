@@ -1,14 +1,18 @@
 import React from 'react';
 import { fetchUser } from '../../util/invite_api_util';
+import Autocomplete from '../autocomplete/autocomplete';
+import { values } from 'lodash';
 
 class MemberForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      member: ''
+      member: ' '
     };
     this.findFriend = this.findFriend.bind(this);
+    this.update = this.update.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    console.log(this.props);
   }
 
   update(field) {
@@ -17,11 +21,24 @@ class MemberForm extends React.Component {
     );
   }
 
-  findFriend() {
-    fetchUser(this.state.member)
+  handleChange(value) {
+    this.setState({ member: value });
+  }
+
+  findFriend(name) {
+    let username;
+    if (this.state.member === '' || typeof name === 'string') {
+      username = name;
+    } else {
+      username = this.state.member;
+    }
+    console.log(username);
+
+    fetchUser(username)
               .then((user => this.addMembers(user)),
                       err => this.displayError());
   }
+
 
   displayError() {
     document.getElementById('member-error').style.visibility = 'visible';
@@ -31,10 +48,6 @@ class MemberForm extends React.Component {
     document.getElementById('member-error').style.visibility = 'hidden';
   }
 
-
-  handleChange(e) {
-    this.setState({ member: e.target.value });
-  }
 
   addMembers(member) {
     const newMembers = this.props.memberIds.concat(member['id']);
@@ -51,7 +64,7 @@ class MemberForm extends React.Component {
   addMemberToList(member) {
     const memberList = document.getElementById('members-list');
     const newMember = document.createElement('li');
-    newMember.className = 'teammate';
+    newMember.className = 'teammate auto';
     newMember.innerHTML = member.username;
     memberList.appendChild(newMember);
   }
@@ -72,8 +85,13 @@ class MemberForm extends React.Component {
                 member not found
               </span>
             </div>
-            <input className="modal-input teammates-field"
-              onChange={ this.handleChange }></input>
+
+
+          <Autocomplete
+            names={ this.props.usernames }
+            handleChange={ this.handleChange }
+            findFriend={ this.findFriend }/>
+
           </div>
           <span onClick={ this.findFriend }></span>
         </form>

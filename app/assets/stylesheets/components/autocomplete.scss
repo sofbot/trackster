@@ -1,0 +1,59 @@
+.auto {
+  text-align: right;
+  list-style: none;
+  cursor: pointer;
+  width: 60px;
+  padding: 4px;
+  margin-left: 2px;
+  border-radius: 4px;
+  color: white;
+  border: 1px solid white;
+  background-color: #3e7293;
+  margin-bottom: 2px;
+  opacity: 0.5;
+}
+
+.auto-container > ul {
+  display: flex;
+  justify-content: flex-end;
+  width: 445px;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+
+.auto-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* AutoComplete */
+
+ .auto-enter {
+   opacity: 0.01;
+   transform: translateY(500%);
+ }
+
+ .auto-enter.auto-enter-active {
+   opacity: 1;
+   transform: translateY(0);
+   transition: opacity 500ms, transform 500ms;
+ }
+
+ .auto-leave {
+   opacity: 1;
+   transform: translateY(0);
+ }
+
+ .auto-leave.auto-leave-active {
+   opacity: 0.01;
+   transform: translateY(500%);
+   transition: opacity 500ms, transform 500ms;
+ }
+
+.teammate {
+  background-color: white;
+  color: #3e7293;
+  border: 1px solid #3e7293;
+  opacity: 1;
+}

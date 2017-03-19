@@ -3,6 +3,7 @@ import Dashboard from './dashboard';
 import { createProject } from '../../actions/project_actions';
 import { createInvite } from '../../actions/invite_actions';
 import { teamProjects } from '../../reducers/selectors';
+import { fetchAllUsers } from '../../actions/invite_actions';
 import { values } from 'lodash';
 
 
@@ -13,7 +14,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   createInvite: invite => dispatch(createInvite(invite)),
-  createProject: project => dispatch(createProject(project))
+  createProject: project => dispatch(createProject(project)),
+  fetchAllUsers: () => dispatch(fetchAllUsers())
 });
 
 export default connect(

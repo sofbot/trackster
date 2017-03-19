@@ -10,6 +10,10 @@ class Dashboard extends React.Component {
     this.newInvite = this.newInvite.bind(this);
   }
 
+  componentWillMount() {
+    this.props.fetchAllUsers();
+  }
+
   componentDidMount() {
     this.props.router.setRouteLeaveHook(this.props.route, () => {
       document.documentElement.style.backgroundColor = 'initial';

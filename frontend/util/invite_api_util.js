@@ -19,3 +19,10 @@ export const fetchUser = username => (
     url: `/api/users/${username}`
   })
 );
+
+export const fetchAllUsers = () => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/users'
+  })
+);

@@ -4,6 +4,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 import * as inviteAPI from './util/invite_api_util';
 import { fetchAllProjects } from './util/projects_api_util';
+import { fetchAllUsers } from './actions/invite_actions';
+import { getUsernames } from './reducers/selectors';
 import Modal from 'react-modal';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,6 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   window.createInvite = inviteAPI.createInvite;
   window.fetchAllProjects = fetchAllProjects;
+  window.fetchAllUsers = fetchAllUsers;
+  window.getUsernames = getUsernames;
 
   const root = document.getElementById('root');
   Modal.setAppElement(document.body);
