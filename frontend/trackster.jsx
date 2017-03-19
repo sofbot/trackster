@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import * as IActions from './actions/project_actions';
-import { fetchUser } from './util/invite_api_util';
+import * as inviteAPI from './util/invite_api_util';
+import { fetchAllProjects } from './util/projects_api_util';
 import Modal from 'react-modal';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.store = store;
+  window.createInvite = inviteAPI.createInvite;
+  window.fetchAllProjects = fetchAllProjects;
 
   const root = document.getElementById('root');
   Modal.setAppElement(document.body);

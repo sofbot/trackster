@@ -33,7 +33,14 @@ class Dashboard extends React.Component {
             <i className="fa fa-stack-overflow" aria-hidden="true"></i>
             <span className="project-index-heading">My Projects</span>
           </div>
-          <ProjectIndexContainer />
+          <ProjectIndexContainer filter={ "my-projects" } />
+        </div>
+        <div className="dashboard-body-content team-content">
+          <div className="project-index-header">
+            <i className="fa fa-stack-overflow" aria-hidden="true"></i>
+            <span className="project-index-heading">Team Projects</span>
+          </div>
+          <ProjectIndexContainer filter={ "team-projects" } />
         </div>
       </div>
     );
