@@ -8,6 +8,7 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     this.newInvite = this.newInvite.bind(this);
+    console.log(this.props);
   }
 
   componentDidMount() {

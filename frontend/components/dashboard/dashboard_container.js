@@ -4,7 +4,7 @@ import { createProject } from '../../actions/project_actions';
 import { createInvite } from '../../actions/invite_actions';
 
 const mapStateToProps = state => ({
-  currentUser: state.currentUser
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -13,6 +13,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Dashboard);
