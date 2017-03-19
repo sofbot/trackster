@@ -28,6 +28,10 @@ class Autocomplete extends React.Component {
   handleInput(event) {
     this.setState({ inputVal: event.currentTarget.value });
     this.props.handleChange(event.currentTarget.value);
+
+    if (this.props.names.includes(event.currentTarget.value)) {
+      this.clearName(event.currentTarget.value);
+    }
   }
 
 

@@ -57,3 +57,10 @@
   border: 1px solid #3e7293;
   opacity: 1;
 }
+
+#members-list {
+  display: flex;
+  padding-left: 27px;
+  width: 445px;
+  flex-wrap: wrap;
+}

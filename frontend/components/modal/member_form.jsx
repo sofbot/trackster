@@ -32,7 +32,6 @@ class MemberForm extends React.Component {
     } else {
       username = this.state.member;
     }
-    console.log(username);
 
     fetchUser(username)
               .then((user => this.addMembers(user)),
@@ -57,7 +56,7 @@ class MemberForm extends React.Component {
     }
 
     this.props.addMembersToState(newMembers);
-    this.resetForm();
+    this.clearField();
     this.removeError();
   }
 
@@ -67,11 +66,12 @@ class MemberForm extends React.Component {
     newMember.className = 'teammate auto';
     newMember.innerHTML = member.username;
     memberList.appendChild(newMember);
+    this.clearField();
   }
 
-  resetForm() {
-    const form = document.getElementsByClassName('add-members-form')[0];
-    form.reset();
+  clearField() {
+    const field = document.getElementsByClassName('teammates-field')[0];
+    field.value = "";
   }
 
   render() {
@@ -90,7 +90,8 @@ class MemberForm extends React.Component {
           <Autocomplete
             names={ this.props.usernames }
             handleChange={ this.handleChange }
-            findFriend={ this.findFriend }/>
+            findFriend={ this.findFriend }
+            clearField={ this.clearField }/>
 
           </div>
           <span onClick={ this.findFriend }></span>
