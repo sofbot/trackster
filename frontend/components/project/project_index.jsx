@@ -6,6 +6,7 @@ class ProjectIndex extends React.Component {
   constructor(props) {
     super(props);
     this.getVisibleProjects = this.getVisibleProjects.bind(this);
+    this.props
   }
 
   componentWillMount() {

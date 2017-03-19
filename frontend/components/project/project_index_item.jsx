@@ -9,7 +9,12 @@ class ProjectIndexItem extends React.Component {
     this.state = { editMode: false };
     this.handleDelete = this.handleDelete.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
-    console.log(this.props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.teamProjects.length < 1) {
+      document.getElementById('demo-project-invite').style.visibility = 'visible';
+    }
   }
 
   handleDelete() {
@@ -21,8 +26,12 @@ class ProjectIndexItem extends React.Component {
   }
 
   handleLeave() {
-    this.props.destroyInvite(this.props.project.id);
+    this.props.destroyInvite(this.props.project.id)
+  }
 
+
+  toggleDemoBtn(setting) {
+    document.getElementById('demo-project-invite').style.visibility = setting
   }
 
   deleteBtn() {
@@ -47,7 +56,7 @@ class ProjectIndexItem extends React.Component {
   render () {
     const showURL = `/projects/${this.props.project.id}`;
     let removeBtn;
-    if (this.props.project.creator_id === window.currentUser.id) {
+    if (this.props.project.creator_id === this.props.currentUserId) {
       removeBtn = this.deleteBtn();
     } else {
       removeBtn = this.leaveBtn();

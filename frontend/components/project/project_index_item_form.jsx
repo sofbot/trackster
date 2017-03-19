@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectIndexItem from './project_index_item';
+import ProjectIndexItemContainer from './project_index_item_container';
 
 class ProjectIndexItemForm extends React.Component {
   constructor(props) {
@@ -11,7 +11,6 @@ class ProjectIndexItemForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
-    console.log(this.props);
   }
 
   handleTitleChange(e) {
@@ -32,7 +31,7 @@ class ProjectIndexItemForm extends React.Component {
   render () {
     if (!this.state.editMode) {
       return (
-        <ProjectIndexItem project={this.props.project} />
+        <ProjectIndexItemContainer project={this.props.project} />
       );
     } else {
       return (
@@ -55,7 +54,5 @@ class ProjectIndexItemForm extends React.Component {
     }
   }
 }
-
-
 
 export default ProjectIndexItemForm;

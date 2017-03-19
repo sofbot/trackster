@@ -21,6 +21,7 @@ class Dashboard extends React.Component {
   newInvite() {
     const invite = { user_id: this.props.currentUser.id, project_id: 6 };
     this.props.createInvite(invite);
+    document.getElementById('demo-project-invite').style.visibility = 'hidden';
   }
 
   render() {
@@ -49,9 +50,7 @@ class Dashboard extends React.Component {
             </div>
             <span className="create-invite-btn"
                   id="demo-project-invite"
-                  onClick={ this.newInvite } >
-                  Demo Project Invite
-            </span>
+                  onClick={ this.newInvite } >Demo Project Invite</span>
           </div>
           <ProjectIndexContainer filter={ "team-projects" } />
         </div>
