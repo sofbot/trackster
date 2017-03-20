@@ -6,8 +6,8 @@ const mapStateToProps = (state, ownProps) => ({
   project: state.projects
 });
 
-const mapDispatchToProps = dispatch => ({
-  fetchProject: projectId => dispatch(fetchProject(projectId))
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  fetchProject: () => dispatch(fetchProject(ownProps.params.id))
 });
 
 export default connect(

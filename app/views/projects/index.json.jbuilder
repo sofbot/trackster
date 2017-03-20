@@ -4,4 +4,5 @@ json.array!(@projects) do |project|
   json.creator_id project.creator_id
   json.member_ids project.member_ids
   json.members project.members.map(&:username)
+  json.stories project.stories
 end

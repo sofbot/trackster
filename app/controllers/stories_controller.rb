@@ -14,7 +14,7 @@ class StoriesController < ApplicationController
     @story = Story.new(story_params)
     @story.user_id = current_user.id
     @story.project_id = params[:project_id]
-    @story.priority = Story.maximum(:priority) + 1
+    @story.priority = (Story.maximum(:priority) + 1 || 1)
 
     if @story.save
       render 'stories/show'

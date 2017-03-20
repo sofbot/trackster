@@ -1,14 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router';
+import {
+  IceboxStories,
+  CurrentStories,
+  DoneStories
+} from '../../reducers/selectors';
+import StoryContainer from './story_container';
 
 class StoryPanel extends React.Component {
   constructor(props) {
     super(props);
     this.handleClose = this.handleClose.bind(this);
+    this.filterStories = this.filterStories.bind(this);
   }
 
   handleClose(e) {
-    console.log(e.currentTarget);
     const target = this.findAncestor(e.currentTarget, 'story-panel-container');
     target.style.display = 'none';
   }
@@ -18,21 +24,45 @@ class StoryPanel extends React.Component {
     return el;
   }
 
+  filterStories(stories, filter) {
+    switch(filter) {
+      case 'icebox':
+        return IceboxStories(stories);
+      case 'current':
+        return CurrentStories(stories);
+      case 'done':
+        return DoneStories(stories);
+    }
+  }
+
   render() {
+    console.log(this.props);
+    const filteredStories = this.filterStories(
+      this.props.stories,
+      this.props.filter
+    );
+
     return(
       <div className="story-panel">
+        <header className="story-container-header">
+          <div className="story-header-left">
+            <span className="close-container" onClick={ this.handleClose }>
+              <i className="fa fa-times" aria-hidden="true"></i>
+            </span>
+            <p>{ this.props.filter }</p>
+          </div>
+          <Link className="add-story">
+            <i className="fa fa-plus" aria-hidden="true"></i>
+          </Link>
+        </header>
         <div className="story-container">
-          <header className="story-container-header">
-            <div className="story-header-left">
-              <span className="close-container" onClick={ this.handleClose }>
-                <i className="fa fa-times" aria-hidden="true"></i>
-              </span>
-              <p>{ this.props.filter }</p>
-            </div>
-            <Link className="add-story">
-              <i className="fa fa-plus" aria-hidden="true"></i>
-            </Link>
-          </header>
+          <ul>
+            {
+              filteredStories.map((story, idx) => (
+                <StoryContainer key={ idx } story={ story }/>
+              ))
+            }
+          </ul>
         </div>
       </div>
     );

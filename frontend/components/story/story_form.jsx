@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
 
 class StoryForm extends React.Component {
   constructor(props) {
@@ -7,7 +7,8 @@ class StoryForm extends React.Component {
   }
 
   render() {
-    storyURL = `/projects/${this.props.project.id}/new-story`;
+    const storyURL = `/projects/${this.props.project.id}/new-story`;
+
     return(
       <div className="story-nav">
         <Link className="add-story" to="/story">

@@ -3,7 +3,7 @@ import { createStory } from '../../actions/story_actions';
 import StoryNav from './story_nav';
 
 const mapStateToProps = state => ({
-  project: state.projects
+  project: state.project
 });
 
 const mapDispatchToProps = dispatch => ({
