@@ -10,8 +10,13 @@ class Autocomplete extends React.Component {
 
     this.selectName = this.selectName.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    this.filterMatches = this.filterMatches.bind(this);
   }
 
+  filterMatches(match) {
+    return !this.props.members.includes(match);
+  }
+  
   matches() {
     const matches = [];
 
@@ -22,7 +27,13 @@ class Autocomplete extends React.Component {
       }
     });
 
-    return matches;
+    let filteredMatches = matches;
+
+    if (this.props.members) {
+      filteredMatches = matches.filter(this.filterMatches);
+    }
+
+    return filteredMatches;
   }
 
   handleInput(event) {

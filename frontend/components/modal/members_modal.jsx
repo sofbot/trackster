@@ -13,18 +13,13 @@ class MembersModal extends React.Component {
       modalOpen: false,
       memberIds: [],
     };
-    console.log(this.props);
+    console.log(this.props.project);
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
     this.addMembersToState = this.addMembersToState.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-  }
-
   closeModal() {
-    this.props.clearErrors();
     this.setState({ modalOpen: false });
   }
 
@@ -34,7 +29,6 @@ class MembersModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.clearErrors();
     this.props.createProject(this.state).then(() => this.closeModal());
   }
 
@@ -53,14 +47,6 @@ class MembersModal extends React.Component {
     console.log(project);
   }
 
-  addExistingMembers() {
-    // const memberList = document.getElementById('members-list');
-    // const newMember = document.createElement('li');
-    // newMember.className = 'teammate auto';
-    // newMember.innerHTML = member.username;
-    // memberList.appendChild(newMember);
-  }
-
   render() {
     return (
       <span className="show-members">
@@ -73,15 +59,15 @@ class MembersModal extends React.Component {
           onRequestClose={ this.closeModal }
           contentLabel="MembersModal"
           style={ modalStyle }>
-          <div className="members-modal-title">
-            <h2> add / edit members</h2>
+          <div className="create-project-modal-title">
+            <h2> add / edit the { this.props.project.title } team</h2>
           </div>
-
-            <label className="modal-label">Project Title</label>
 
           <MemberFormContainer
               memberIds={ this.state.memberIds }
-              addMembersToState={ this.addMembersToState } />
+              addMembersToState={ this.addMembersToState }
+              members={ this.props.project.members }
+              project={ this.props.project }/>
 
           <div className="modal-footer">
             <span className="close-modal"

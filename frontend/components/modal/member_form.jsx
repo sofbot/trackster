@@ -15,6 +15,10 @@ class MemberForm extends React.Component {
     console.log(this.props);
   }
 
+  componentDidMount() {
+    this.initExistingMembers();
+  }
+
   update(field) {
     return e => (
       this.setState({[field]: e.target.value})
@@ -60,11 +64,21 @@ class MemberForm extends React.Component {
     this.removeError();
   }
 
+  initExistingMembers() {
+    if (this.props.members) {
+      this.props.members.forEach(member => this.addMemberToList(member));
+    }
+  }
+
   addMemberToList(member) {
     const memberList = document.getElementById('members-list');
     const newMember = document.createElement('li');
     newMember.className = 'teammate auto';
-    newMember.innerHTML = member.username;
+    if (typeof member === 'string') {
+      newMember.innerHTML = member;
+    } else {
+      newMember.innerHTML = member.username;
+    }
     memberList.appendChild(newMember);
     this.clearField();
   }
@@ -91,7 +105,8 @@ class MemberForm extends React.Component {
             names={ this.props.usernames }
             handleChange={ this.handleChange }
             findFriend={ this.findFriend }
-            clearField={ this.clearField }/>
+            clearField={ this.clearField }
+            members={ this.props.members }/>
 
           </div>
           <span onClick={ this.findFriend }></span>

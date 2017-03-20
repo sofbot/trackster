@@ -78,7 +78,7 @@ class ProjectIndexItem extends React.Component {
               </Link>
             </div>
             <div className="header-action-btns">
-              <MembersModal project={ this.props.project }/>
+              <MembersModal project={ this.props.project } />
               { removeBtn }
               <span className="update-project"
                 onClick={ this.toggleEdit }>
