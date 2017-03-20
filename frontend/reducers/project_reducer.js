@@ -16,10 +16,10 @@ const ProjectReducer = (state = _defaultState, action) => {
   let newState = Object.assign({}, state);
   switch(action.type) {
     case RECEIVE_PROJECT:
-      const newProject = { [action.project.id]: action.project };
+      const newProject = { [action.project.project.id]: action.project.project };
       return merge({}, state, newProject);
     case RECEIVE_SINGLE_PROJECT:
-      return action.project;
+      return action.project.project;
     case RECEIVE_PROJECTS:
       newState = {};
       action.projects.forEach((project) => (

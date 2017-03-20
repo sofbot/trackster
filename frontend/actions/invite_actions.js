@@ -13,7 +13,7 @@ export const fetchAllUsers = () => dispatch => {
     IUtil.fetchAllUsers()
           .then(users => dispatch(receiveAllUsers(users)))
   );
-}
+};
 
 export const destroyInvite = projectId => dispatch => (
   IUtil.destroyInvite(projectId)
@@ -21,7 +21,7 @@ export const destroyInvite = projectId => dispatch => (
 );
 
 
-export const createInvite = invite => dispatch => {
+export const createInvite = invite => dispatch => (
   IUtil.createInvite(invite)
-        .then(project => dispatch(receiveProject(project)));
-};
+    .then(project => dispatch(receiveProject(project)))
+);

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import { destroyInvite } from '../../util/invite_api_util';
 import ProjectIndexItemFormContainer from './project_index_item_form_container';
-import MembersModal from '../modal/members_modal';
+import MembersModalContainer from '../modal/members_modal_container';
 
 class ProjectIndexItem extends React.Component {
   constructor(props) {
@@ -10,7 +10,6 @@ class ProjectIndexItem extends React.Component {
     this.state = { editMode: false };
     this.handleDelete = this.handleDelete.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
-    console.log(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -58,11 +57,16 @@ class ProjectIndexItem extends React.Component {
   render () {
     const showURL = `/projects/${this.props.project.id}`;
     let removeBtn;
+    let membersModal;
+
     if (this.props.project.creator_id === this.props.currentUserId) {
       removeBtn = this.deleteBtn();
+      membersModal = <MembersModalContainer project={ this.props.project } />
     } else {
       removeBtn = this.leaveBtn();
     }
+
+
 
     if (this.state.editMode) {
       return(
@@ -78,7 +82,7 @@ class ProjectIndexItem extends React.Component {
               </Link>
             </div>
             <div className="header-action-btns">
-              <MembersModal project={ this.props.project } />
+              { membersModal }
               { removeBtn }
               <span className="update-project"
                 onClick={ this.toggleEdit }>

@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   def index
     @projects = current_user.projects
+    @team_projects = current_user.team_projects
     render 'projects/index'
   end
 
@@ -26,6 +27,9 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update(project_params)
+      if params["project"]["memberIds"]
+        @project.member_ids = @project.member_ids.concat(params["project"]["memberIds"].uniq)
+      end
       render 'projects/show'
     else
       render json: @project.errors.full_messages, status: 422
