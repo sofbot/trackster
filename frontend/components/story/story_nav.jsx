@@ -9,21 +9,26 @@ class StoryNav extends React.Component {
   render() {
     const storyURL = `/projects/${this.props.project.id}/new-story`;
     return(
-      <div className="story-nav">
-        <Link className="add-story" to={ storyURL }>
-          <i className="fa fa-plus" aria-hidden="true"></i>
-          <p>Add Story</p>
-        </Link>
-        <span className="current">
-          <p>Current</p>
-        </span>
-        <span className="icebox">
-          <p>Icebox</p>
-        </span>
-        <span className="done">
-          <p>Done</p>
-        </span>
-      </div>
+      <aside className="story-nav">
+        <div className="story-nav-header">
+          <span>{ this.props.project.title }</span>
+        </div>
+        <div className="story-nav-links">
+          <Link className="add-story" to={ storyURL }>
+            <i className="fa fa-plus" aria-hidden="true"></i>
+            <p>Add Story</p>
+          </Link>
+          <span className="current">
+            <p>Current</p>
+          </span>
+          <span className="icebox">
+            <p>Icebox</p>
+          </span>
+          <span className="done">
+            <p>Done</p>
+          </span>
+        </div>
+      </aside>
     );
   }
 }

@@ -21,7 +21,7 @@ class ProjectShowHeader extends React.Component {
     return (
       <div className="project-show-header">
         <div className="upper-header">
-          <span>{ this.props.project.title }</span>
+          <span>Trackster</span>
           <Link className="header-txt"
                 onClick={ this.handleLogout }>Logout</Link>
         </div>

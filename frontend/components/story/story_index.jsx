@@ -14,15 +14,19 @@ class StoryIndex extends React.Component {
   render() {
     // const storyURL = `/projects/${this.props.project.id}/new-story`;
     return(
-      <div className="panel-container">
-        <div className="current-container story-panel">
-          <StoryPanel filter="current" />
-        </div>
-        <div className="icebox-container story-panel">
-          <StoryPanel filter="icebox" />
-        </div>
-        <div className="done-container story-panel">
-          <StoryPanel filter="done" />
+      <div className="main">
+        <div className="panels">
+          <div className="table">
+            <div className="current-container story-panel-container">
+              <StoryPanel filter="Current" />
+            </div>
+            <div className="icebox-container story-panel-container">
+              <StoryPanel filter="Icebox" />
+            </div>
+            <div className="done-container story-panel-container">
+              <StoryPanel filter="Done" />
+            </div>
+          </div>
         </div>
       </div>
     );

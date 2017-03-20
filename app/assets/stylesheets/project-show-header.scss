@@ -2,16 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .project-show-header {
-    background-color: #3e7293;
-    height: 60px;
-    line-height: 34px;
-    color: #fff;
-    position: relative;
-    padding: 0 5px 0 0;
-    border-bottom: 1px solid #212121;
-    min-width: 750pt;
-    display: flex;
-    flex-direction: column;
+  background-color: #3e7293;
+  height: 60px;
+  line-height: 34px;
+  color: #fff;
+  position: relative;
+  border-bottom: 1px solid #212121;
+  min-width: 750pt;
+  display: flex;
+  flex-direction: column;
 }
 
 .upper-header {

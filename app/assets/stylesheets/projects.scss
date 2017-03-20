@@ -2,40 +2,103 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .project-container {
-    height: 90vh;
-    color: #555;
-    border: 1px solid black;
-    background-color: #212121;
-    overflow: hidden;
-    top: 61px;
-    position: absolute;
-    width: 100vw;
-    display: flex;
-}
-
-.story-nav {
-  width: 230px;
-}
-
-.story-container {
+  height: 90vh;
+  color: #555;
+  border: 1px solid black;
+  background-color: #212121;
+  overflow: hidden;
+  top: 61px;
+  position: absolute;
+  width: 99.8vw;
   display: flex;
-  width: 100%
 }
 
 .done-container {
   display: none;
 }
 
-.story-panel {
+.story-container-header {
+  display: flex;
+  align-items: baseline;
+  border-top: 1px solid rgb(57, 58, 60);
+  border: 1px;
+  color: #fff;
+  background-color: rgb(44, 45, 47);
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 5px;
+  text-transform: capitalize;
+}
+
+.story-header-left {
+  display: flex;
+  align-items: baseline;
+}
+
+.story-header-left > p {
+  padding-left: 10px;
+  font-size: 13px;
+}
+
+.story-nav-header {
+  height: 50px;
+  font-size: 13px;
+  border-top: 1px solid #393a3c;
+  border-bottom: 1px solid #000;
+  background-color: #2c2d2f;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+}
+
+aside.story-nav {
+  border-right: 1px solid #000;
+  background-color: #2f3337;
+  font-size: 12px;
+  min-width: 230px;
+  box-shadow: 5px 0 10px 0 rgba(0,0,0,.15);
+  width: 230px;
+}
+
+.panels {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.main {
+  top: 0;
+  bottom: 0;
+  left: 231px;
+  right: 0;
+  position: absolute;
+}
+
+.table {
+  width: 912px;
+  box-sizing: border-box;
+  padding: 0;
+  height: 100%;
+}
+
+.story-panel-container {
   position: relative;
   height: calc(100% - 1px);
   min-width: 320px;
   float: left;
   margin-left: 5px;
   border-bottom: 1px solid #000;
+  width: 451px;
 }
 
-.story-container {
+.story-panel {
   box-sizing: border-box;
   position: absolute;
   top: 0;
@@ -48,12 +111,17 @@
   flex-direction: column;
 }
 
-.story-container-header {
-    display: flex;
-    align-items: center;
-    border-top: 1px solid rgb(57, 58, 60);
-    border: 1px;
-    color: #fff;
-    font-size: 13px;
-    background-color: rgb(44, 45, 47);
+.story-nav-links {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+a.add-story {
+  display: flex;
+  align-items: baseline;
+  color: #555;
+}
+
+a.add-story > p {
+  margin-bottom: 0;
 }
