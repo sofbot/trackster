@@ -1,12 +1,12 @@
 class ProjectsController < ApplicationController
   def index
     @projects = current_user.projects
-    @team_projects = current_user.team_projects
     render 'projects/index'
   end
 
   def show
     @project = Project.find(params[:id])
+    @members = @project.members.map(&:username)
     render 'projects/show'
   end
 

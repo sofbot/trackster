@@ -1,2 +1,7 @@
-json.array! @projects, :id, :title, :creator_id, :member_ids
-json.array! @team_projects, :id, :title, :creator_id, :member_ids
+json.array!(@projects) do |project|
+  json.id project.id
+  json.title project.title
+  json.creator_id project.creator_id
+  json.member_ids project.member_ids
+  json.members project.members.map(&:username)
+end
