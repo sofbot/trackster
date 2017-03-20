@@ -12,7 +12,6 @@ class MemberForm extends React.Component {
     this.findFriend = this.findFriend.bind(this);
     this.update = this.update.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    console.log(this.props);
   }
 
   componentDidMount() {

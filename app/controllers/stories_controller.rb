@@ -42,6 +42,6 @@ class StoriesController < ApplicationController
 
   def story_params
     params.require(:story).permit(:title, :internal_state, :story_type,
-                                  :description, :ice_boxed)
+                                  :description, :ice_boxed, :priority)
   end
 end
