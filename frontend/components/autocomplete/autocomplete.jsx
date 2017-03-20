@@ -16,7 +16,7 @@ class Autocomplete extends React.Component {
   filterMatches(match) {
     return !this.props.members.includes(match);
   }
-  
+
   matches() {
     const matches = [];
 
@@ -27,13 +27,17 @@ class Autocomplete extends React.Component {
       }
     });
 
-    let filteredMatches = matches;
+    if (this.state.inputVal === "") {
+      return [];
+    } else {
+      let filteredMatches = matches;
 
-    if (this.props.members) {
-      filteredMatches = matches.filter(this.filterMatches);
+      if (this.props.members) {
+        filteredMatches = matches.filter(this.filterMatches);
+      }
+
+      return filteredMatches;
     }
-
-    return filteredMatches;
   }
 
   handleInput(event) {

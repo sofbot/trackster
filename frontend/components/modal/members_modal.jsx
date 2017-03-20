@@ -13,7 +13,6 @@ class MembersModal extends React.Component {
       modalOpen: false,
       memberIds: [],
     };
-    console.log(this.props.project);
     this.closeModal = this.closeModal.bind(this);
     this.openModal = this.openModal.bind(this);
     this.addMembersToState = this.addMembersToState.bind(this);
@@ -31,6 +30,7 @@ class MembersModal extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const updates = merge({}, this.props.project, this.state);
+    console.log(updates);
     this.props.updateProject(updates).then(() => this.closeModal());
   }
 

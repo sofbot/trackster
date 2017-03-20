@@ -5,7 +5,7 @@ class InvitesController < ApplicationController
       @project = invite.project
       render 'projects/show'
     else
-      render json: @invite.errors.full_messages, status: 422
+      render json: invite.errors.full_messages, status: 422
     end
   end
 

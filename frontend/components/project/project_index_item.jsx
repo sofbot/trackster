@@ -61,7 +61,7 @@ class ProjectIndexItem extends React.Component {
 
     if (this.props.project.creator_id === this.props.currentUserId) {
       removeBtn = this.deleteBtn();
-      membersModal = <MembersModalContainer project={ this.props.project } />
+      membersModal = <MembersModalContainer project={ this.props.project }/>;
     } else {
       removeBtn = this.leaveBtn();
     }

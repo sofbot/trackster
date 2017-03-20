@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = current_user.projects
-    @team_projects = current_user.team_projects
+    projects = current_user.projects
+    team_projects = current_user.team_projects
+    @projects = projects + team_projects
     render 'projects/index'
   end
 
@@ -16,7 +17,7 @@ class ProjectsController < ApplicationController
     @project.creator_id = current_user.id
     if @project.save
       if params["project"]["memberIds"]
-        @project.member_ids = params["project"]["memberIds"].uniq
+        @project.member_ids = (params["project"]["memberIds"].map(&:to_i)).uniq
       end
       render 'projects/show'
     else
@@ -28,7 +29,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     if @project.update(project_params)
       if params["project"]["memberIds"]
-        @project.member_ids = @project.member_ids.concat(params["project"]["memberIds"].uniq)
+        @project.member_ids = (@project.member_ids + (params["project"]["memberIds"]).map(&:to_i)).uniq
       end
       render 'projects/show'
     else
