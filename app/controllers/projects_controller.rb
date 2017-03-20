@@ -8,7 +8,6 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
-    @members = @project.members.map(&:username)
     render 'projects/show'
   end
 

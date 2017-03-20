@@ -1,21 +1,21 @@
-export const fetchStory = id => (
+export const fetchStory = storyId => (
   $.ajax({
     method: 'GET',
-    url: `/stories/${id}`
+    url: `/stories/${storyId}`
   })
 );
 
-export const fetchAllStories = project_id => (
+export const fetchAllStories = projectId => (
   $.ajax({
     method: 'GET',
-    url: `/projects/${project_id}/stories`
+    url: `/projects/${projectId}/stories`
   })
 );
 
-export const createStory = (project_id, story) => (
+export const createStory = (projectId, story) => (
   $.ajax({
     method: 'POST',
-     url: `projects/${project_id}/stories`,
+     url: `projects/${projectId}/stories`,
     data: { story }
   })
 );
@@ -28,9 +28,9 @@ export const updateStory = story => (
   })
 );
 
-export const destroyStory = id => (
+export const destroyStory = storyId => (
   $.ajax({
     method: 'DELETE',
-    url: `/stories/${id}`
+    url: `/stories/${storyId}`
   })
 );

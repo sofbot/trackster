@@ -10,4 +10,50 @@
     top: 61px;
     position: absolute;
     width: 100vw;
+    display: flex;
+}
+
+.story-nav {
+  width: 230px;
+}
+
+.story-container {
+  display: flex;
+  width: 100%
+}
+
+.done-container {
+  display: none;
+}
+
+.story-panel {
+  position: relative;
+  height: calc(100% - 1px);
+  min-width: 320px;
+  float: left;
+  margin-left: 5px;
+  border-bottom: 1px solid #000;
+}
+
+.story-container {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  border-left: 1px solid #111;
+  border-right: 1px solid #111;
+  background-color: #484f57;
+  display: flex;
+  flex-direction: column;
+}
+
+.story-container-header {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgb(57, 58, 60);
+    border: 1px;
+    color: #fff;
+    font-size: 13px;
+    background-color: rgb(44, 45, 47);
 }
