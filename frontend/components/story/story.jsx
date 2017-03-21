@@ -1,4 +1,5 @@
 import React from 'react';
+import DeleteModalContainer from '../modal/delete_modal_container';
 
 class Story extends React.Component {
   constructor(props) {
@@ -36,6 +37,10 @@ class Story extends React.Component {
     this.props.updateStory(this.state).then(this.collapseStory());
   }
 
+  handleDelete() {
+    this.props.destroyStory()
+  }
+
   render() {
     if (this.state.story === 'collapsed') {
       return(
@@ -65,6 +70,11 @@ class Story extends React.Component {
                 <input className="story-form-title"
                 value={ this.state.title }
                 onChange={ this.update('title') }></input>
+            </div>
+            <div className="story-form-btns">
+              <DeleteModalContainer story={ this.props.story }/>
+              <span className="story-form-close-btn"
+                    onClick={ this.collapseStory }>Close</span>
             </div>
             <select value={ this.state.story_type } onChange={ this.update('story_type') }>
               <option defaultValue="feature">feature</option>

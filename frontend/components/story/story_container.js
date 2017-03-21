@@ -9,9 +9,7 @@ import {
 
 
 const mapDispatchToProps = dispatch => ({
-  createStory: (projectId, story) => dispatch(createStory(projectId, story)),
   updateStory: story => dispatch(updateStory(story)),
-  fetchStory: storyId => dispatch(fetchStory(storyId)),
   destoryStory: storyId => dispatch(destroyStory(storyId))
 });
 
