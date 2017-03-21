@@ -50,7 +50,7 @@ class Dashboard extends React.Component {
           <div className="project-index-header">
             <div className="project-index-header-left">
               <i className="fa fa-stack-overflow" aria-hidden="true"></i>
-              <span className="project-index-heading">Team Projects</span>
+              <span className="project-index-heading">Projects You Contribute To</span>
             </div>
             <span className="create-invite-btn"
                   id="demo-project-invite"

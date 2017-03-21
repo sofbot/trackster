@@ -7,6 +7,7 @@ import {
   destroyStory
 } from '../../actions/story_actions';
 
+
 const mapDispatchToProps = dispatch => ({
   createStory: (projectId, story) => dispatch(createStory(projectId, story)),
   updateStory: story => dispatch(updateStory(story)),

@@ -66,8 +66,6 @@ class ProjectIndexItem extends React.Component {
       removeBtn = this.leaveBtn();
     }
 
-
-
     if (this.state.editMode) {
       return(
         <ProjectIndexItemFormContainer project={this.props.project} />

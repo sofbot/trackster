@@ -30,7 +30,9 @@ class MemberForm extends React.Component {
     this.setState({ member: value });
   }
 
-  findFriend(name) {
+  findFriend(e, name) {
+    e.preventDefault();
+
     let username;
     if (this.state.member === '' || typeof name === 'string') {
       username = name;
