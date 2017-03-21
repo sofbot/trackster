@@ -18,7 +18,7 @@ class StoryPanel extends React.Component {
     this.handleClose = this.handleClose.bind(this);
     this.filterStories = this.filterStories.bind(this);
     this.showForm = this.showForm.bind(this);
-    this.renderForm = this.renderForm.bind(this);
+    this.hideForm = this.hideForm.bind(this);
   }
 
   handleClose(e) {
@@ -42,21 +42,26 @@ class StoryPanel extends React.Component {
     }
   }
 
-  showForm(e) {
-    this.setState({ form: 'open'})
-  };
+  showForm() {
+    this.setState({ form: 'open'});
+  }
 
-  renderForm() {
-    if (this.state.form === 'open') {
-      return <StoryFormContainer />;
-    }
-  };
+  hideForm() {
+    this.setState({ form: 'closed'});
+  }
 
   render() {
     const filteredStories = this.filterStories(
       this.props.stories,
       this.props.filter
     );
+
+    let storyForm;
+    if (this.state.form === 'open') {
+      storyForm = <StoryFormContainer hideForm={ this.hideForm }/>
+    } else {
+      storyForm = <div></div>
+    }
 
     return(
       <div className="story-panel">
@@ -80,7 +85,7 @@ class StoryPanel extends React.Component {
             }
           </ul>
         </div>
-        { this.renderForm() }
+        { storyForm }
       </div>
     );
   }

@@ -10,6 +10,8 @@ class StoryForm extends React.Component {
       description: '',
       ice_boxed: true
     };
+
+    this.handleClose = this.handleClose.bind(this);
   }
 
   update(field) {
@@ -18,11 +20,17 @@ class StoryForm extends React.Component {
     );
   }
 
+  handleClose() {
+    this.props.hideForm();
+  }
+
   render() {
     return(
       <div className="story-form-container">
         <form className="story-form">
-
+          <span className="close-container" onClick={ this.handleClose }>
+            <i className="fa fa-times" aria-hidden="true"></i>
+          </span>
           <input className="story-form-title"
                 value={ this.state.title }
                 onChange={ this.update('title') }></input>
