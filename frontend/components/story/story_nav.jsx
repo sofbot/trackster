@@ -34,7 +34,7 @@ class StoryNav extends React.Component {
           </div>
           <ul>
             {
-              this.props.project.members.map((member, idx) => (
+              this.props.members.map((member, idx) => (
                 <li key={idx}>{ member }</li>
               ))
             }
