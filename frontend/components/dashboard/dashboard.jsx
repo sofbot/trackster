@@ -23,7 +23,7 @@ class Dashboard extends React.Component {
   }
 
   newInvite() {
-    const invite = { user_id: this.props.currentUser.id, project_id: 6 };
+    const invite = { user_id: this.props.currentUser.id, project_id: 40 };
     this.props.createInvite(invite);
     document.getElementById('demo-project-invite').style.visibility = 'hidden';
   }
