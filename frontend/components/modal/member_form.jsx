@@ -66,7 +66,7 @@ class MemberForm extends React.Component {
   }
 
   initExistingMembers() {
-    if (this.props.project.members) {
+    if (this.props.project && this.props.project.members) {
       this.props.project.members.forEach(member => this.addMemberToList(member));
     }
   }

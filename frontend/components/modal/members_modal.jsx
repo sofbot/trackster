@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { modalStyle } from './modal_style';
+import { MembersModalStyle } from './members_modal_style';
 import { values, merge } from 'lodash';
 import Modal from 'react-modal';
 import MemberFormContainer from './member_form_container';
@@ -60,7 +60,7 @@ class MembersModal extends React.Component {
           isOpen={ this.state.modalOpen }
           onRequestClose={ this.closeModal }
           contentLabel="MembersModal"
-          style={ modalStyle }>
+          style={ MembersModalStyle }>
           <div className="create-project-modal-title">
             <h2> add / edit the { this.props.project.title } team</h2>
           </div>

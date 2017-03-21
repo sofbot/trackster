@@ -10,9 +10,9 @@
   width: 445px;
   flex-wrap: wrap;
   padding-left: 0;
-  position: absolute;
-  top: 19.8vh;
+  margin-top: -35px
 }
+
 
 .auto {
   text-align: right;
@@ -20,7 +20,8 @@
   cursor: pointer;
   width: 60px;
   padding: 4px;
-  margin-left: 2px;
+  margin-left: 1px;
+  margin-right: 2px;
   border-radius: 4px;
   color: #59ac5a;
   border: 1px solid #59ac5a;
@@ -65,6 +66,7 @@
   padding-left: 27px;
   width: 445px;
   flex-wrap: wrap;
+  margin-top: 25px;
 }
 
 .teammate {
