@@ -3,7 +3,7 @@ import { createStory } from '../../actions/story_actions';
 import StoryForm from './story_form';
 
 const mapStateToProps = state => ({
-  project: state.projects
+  project: state.project
 });
 
 const mapDispatchToProps = dispatch => ({

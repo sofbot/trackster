@@ -5,9 +5,6 @@ class StoriesController < ApplicationController
     render 'stories/index'
   end
 
-  def new
-  end
-
   def show
     @story = Story.find(params[:id])
     render 'stories/show'
@@ -17,7 +14,7 @@ class StoriesController < ApplicationController
     @story = Story.new(story_params)
     @story.user_id = current_user.id
     @story.project_id = params[:project_id]
-    @story.priority = (Story.maximum(:priority) + 1 || 1)
+    @story.priority = (Story.maximum(:priority) ? (Story.maximum(:priority) + 1) : 1)
 
     if @story.save
       render 'stories/show'
