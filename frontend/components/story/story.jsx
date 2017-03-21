@@ -8,7 +8,16 @@ class Story extends React.Component {
   render() {
     return(
       <div className="story">
-        { this.props.story.title }
+        <div className="story-icons">
+          <i className="fa fa-folder-open-o" aria-hidden="true"></i>
+          <i className="fa fa-code-fork" aria-hidden="true"></i>
+        </div>
+        <div className="story-title">
+          { this.props.story.title }
+        </div>
+        <div className="story-buttons">
+          <span>Start</span>
+        </div>
       </div>
     );
   }

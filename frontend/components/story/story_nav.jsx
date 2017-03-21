@@ -28,6 +28,18 @@ class StoryNav extends React.Component {
             <p>Done</p>
           </span>
         </div>
+        <div className="project-team">
+          <div className="story-nav-header">
+            <span> team </span>
+          </div>
+          <ul>
+            {
+              this.props.project.members.map((member, idx) => (
+                <li key={idx}>{ member }</li>
+              ))
+            }
+          </ul>
+        </div>
       </aside>
     );
   }

@@ -36,7 +36,6 @@ class StoryPanel extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const filteredStories = this.filterStories(
       this.props.stories,
       this.props.filter

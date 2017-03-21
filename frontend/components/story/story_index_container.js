@@ -6,9 +6,6 @@ const mapStateToProps = state => ({
   project: state.project
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-}
-
 export default connect(
   mapStateToProps
 )(StoryIndex);

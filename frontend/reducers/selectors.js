@@ -5,13 +5,11 @@ export const IceboxStories = stories => (
   stories.filter(story => story.ice_boxed)
 );
 
-export const CurrentStories = stories => {
-  return (
-    stories.filter(story => (
-      !story.ice_boxed && !(story.internal_state === 'done')
-    ))
-  );
-};
+export const CurrentStories = stories => (
+  stories.filter(story => (
+    !story.ice_boxed && !(story.internal_state === 'done')
+  ))
+);
 
 
 export const DoneStories = stories => (
