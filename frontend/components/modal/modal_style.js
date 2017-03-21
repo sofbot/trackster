@@ -21,7 +21,7 @@ export const modalStyle = {
     border          : '1px solid #ccc',
     padding         : 0,
     width           : '545px',
-    height          : '500px',
+    height          : '350px',
     zIndex          : 11,
     backgroundColor : '#f6f6f6',
     boxShadow       : '0 2px 5px rgba(0,0,0,.4)'
