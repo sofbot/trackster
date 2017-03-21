@@ -7,8 +7,9 @@ import {
   destroyStory
 } from '../../actions/story_actions';
 
-const mapStateToProps = state => ({
-  stories: state.project.stories
+const mapStateToProps = (state, ownProps) => ({
+  stories: state.project.stories,
+  project: state.project
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -7,7 +7,7 @@ class StoryNav extends React.Component {
   }
 
   render() {
-    const storyURL = `/projects/${this.props.project.id}/new-story`;
+    const storyURL = `/projects/${this.props.project.id}/stories/new`;
     return(
       <aside className="story-nav">
         <div className="story-nav-header">

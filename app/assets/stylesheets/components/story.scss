@@ -41,3 +41,13 @@
   list-style: none;
   text-transform: capitalize;
 }
+
+.story-form-container {
+  width: 100%;
+}
+
+form.story-form {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}

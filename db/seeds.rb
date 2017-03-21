@@ -53,3 +53,5 @@ Invite.create!(user_id: vinson.id, project_id: aa.id)
 Invite.create!(user_id: fern.id, project_id: aa.id)
 Invite.create!(user_id: ryan.id, project_id: aa.id)
 Invite.create!(user_id: brandon.id, project_id: aa.id)
+
+Story.create!(title: 'create crud ui for stories', internal_state: 'unstarted', story_type: 'feature', ice_boxed: false, priority: 2, project_id: 1, user_id: 2)

@@ -5,6 +5,9 @@ class StoriesController < ApplicationController
     render 'stories/index'
   end
 
+  def new
+  end
+
   def show
     @story = Story.find(params[:id])
     render 'stories/show'

@@ -1,17 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import {
   IceboxStories,
   CurrentStories,
   DoneStories
 } from '../../reducers/selectors';
 import StoryContainer from './story_container';
+import StoryFormContainer from './story_form_container';
 
 class StoryPanel extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      form: 'closed'
+    };
+
     this.handleClose = this.handleClose.bind(this);
     this.filterStories = this.filterStories.bind(this);
+    this.showForm = this.showForm.bind(this);
+    this.renderForm = this.renderForm.bind(this);
   }
 
   handleClose(e) {
@@ -35,6 +42,16 @@ class StoryPanel extends React.Component {
     }
   }
 
+  showForm(e) {
+    this.setState({ form: 'open'})
+  };
+
+  renderForm() {
+    if (this.state.form === 'open') {
+      return <StoryFormContainer />;
+    }
+  };
+
   render() {
     const filteredStories = this.filterStories(
       this.props.stories,
@@ -50,7 +67,7 @@ class StoryPanel extends React.Component {
             </span>
             <p>{ this.props.filter }</p>
           </div>
-          <Link className="add-story">
+          <Link className="add-story" onClick={ this.showForm }>
             <i className="fa fa-plus" aria-hidden="true"></i>
           </Link>
         </header>
@@ -63,9 +80,10 @@ class StoryPanel extends React.Component {
             }
           </ul>
         </div>
+        { this.renderForm() }
       </div>
     );
   }
 }
 
-export default StoryPanel;
+export default withRouter(StoryPanel);

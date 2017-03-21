@@ -15,17 +15,20 @@ class StoryIndex extends React.Component {
             <div className="current-container story-panel-container">
               <StoryPanelContainer
                 filter="current"
-                stories={ this.props.project.stories }/>
+                stories={ this.props.project.stories }
+                children={ this.props.children }/>
             </div>
             <div className="icebox-container story-panel-container">
               <StoryPanelContainer
                 filter="icebox"
-                stories={ this.props.project.stories } />
+                stories={ this.props.project.stories }
+                children={ this.props.children } />
             </div>
             <div className="done-container story-panel-container">
               <StoryPanelContainer
                 filter="done"
-                stories={ this.props.project.stories } />
+                stories={ this.props.project.stories }
+                children={ this.props.children } />
             </div>
           </div>
         </div>

@@ -14,7 +14,7 @@ class Autocomplete extends React.Component {
   }
 
   filterMatches(match) {
-    return !this.props.members.includes(match);
+    return !this.props.members.map(member => member.username).includes(match);
   }
 
   matches() {

@@ -5,7 +5,6 @@ import AuthFormContainer from './auth/auth_form_container';
 import DashboardContainer from './dashboard/dashboard_container';
 import SplashContainer from './home/splash-container';
 import ProjectContainer from './project/project_container';
-import StoryFormContainer from './story/story_form_container';
 
 import {
   Router,
@@ -35,20 +34,17 @@ const Root = ({ store }) => {
         <Route path='/' component={ App } >
           <IndexRoute component={ SplashContainer } />
           <Route path='/signup'
-                  onEnter={_redirectIfLoggedIn}
-                  component={ AuthFormContainer } />
+            onEnter={_redirectIfLoggedIn}
+            component={ AuthFormContainer } />
           <Route path='/login'
-                  onEnter={_redirectIfLoggedIn}
-                  component={ AuthFormContainer } />
+            onEnter={_redirectIfLoggedIn}
+            component={ AuthFormContainer } />
           <Route path='/dashboard'
-                  onEnter={ _ensureLoggedIn }
-                  component={ DashboardContainer } />
+            onEnter={ _ensureLoggedIn }
+            component={ DashboardContainer } />
           <Route path='/projects/:id'
-                  component={ ProjectContainer }
-                  onEnter={ _ensureLoggedIn }>
-              <Route path='/projects/:project_id/stories/new-story'
-                    component={ StoryFormContainer } />
-          </Route>
+            component={ ProjectContainer }
+            onEnter={ _ensureLoggedIn } />
         </Route>
       </Router>
     </Provider>

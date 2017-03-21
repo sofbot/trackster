@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   resources :projects, only: [:index, :create, :destroy, :show, :update] do
-    resources :stories, only: [:index, :create]
+    resources :stories, only: [:index, :create, :new]
   end
   resources :stories, only: [:destroy, :show, :update]
   resources :invites, only: [:create, :destroy]

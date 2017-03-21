@@ -76,14 +76,18 @@ class MemberForm extends React.Component {
     const newMember = document.createElement('li');
     newMember.className = 'teammate auto';
     newMember.innerHTML = member.username;
+
     newMember.addEventListener('click', e => this.handleDelete(e, member.id));
     memberList.appendChild(newMember);
     this.clearField();
   }
 
   handleDelete(e, memberId) {
-    this.props.destroyInvite(memberId);
     e.currentTarget.style.display = 'none';
+
+    if (this.props.project.member_ids.includes(memberId)) {
+      this.props.destroyInvite(memberId);
+    }
   }
 
   clearField() {

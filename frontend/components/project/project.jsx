@@ -17,7 +17,7 @@ class Project extends React.Component {
     return (
       <div className="project-container">
         <StoryNavContainer />
-        <StoryIndexContainer />
+        <StoryIndexContainer children={ this.props.children } />
       </div>
     );
   }
