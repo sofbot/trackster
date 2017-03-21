@@ -76,7 +76,7 @@ aside.story-nav {
   overflow-y: hidden;
 }
 
-.main {
+.main-panels {
   top: 0;
   bottom: 0;
   left: 231px;
@@ -116,9 +116,10 @@ aside.story-nav {
   flex-direction: column;
 }
 
-.story-nav-links {
+.story-nav-links > ul {
+  list-style: none;
   padding-left: 20px;
-  padding-top: 20px;
+  font-size: 14px;
 }
 
 a.add-story {

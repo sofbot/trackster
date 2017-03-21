@@ -9,7 +9,7 @@ class StoryIndex extends React.Component {
 
   render(){
     return(
-      <div className="main">
+      <div className="main-panels">
         <div className="panels">
           <div className="table">
             <div className="current-container story-panel-container">
