@@ -28,7 +28,7 @@ class StoriesController < ApplicationController
     if @story.update(story_params)
       render 'stories/show'
     else
-      render json: ['story not found']
+      render json: ['fails']
     end
   end
 

@@ -22,6 +22,7 @@ class StoryForm extends React.Component {
   }
 
   handleSubmit() {
+    e.preventDefault();
     this.props.createStory(this.props.project.id, this.state).then(this.props.hideForm());
   }
 

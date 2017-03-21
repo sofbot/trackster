@@ -5,15 +5,16 @@ class Story extends React.Component {
     super(props);
     this.state = {
       story: 'collapsed',
-      title: 'Story title',
-      story_type: 'feature',
-      description: '',
-      ice_boxed: true,
-      internal_state: 'unstarted'
-    }
-    console.log(this.props);
+      title: `${this.props.story.title}`,
+      story_type: `${this.props.story.story_type}`,
+      description: `${this.props.story.description}`,
+      ice_boxed: `${this.props.story.ice_boxed}`,
+      internal_state: `${this.props.story.internal_state}`,
+      id: `${this.props.story.id}`
+    };
     this.collapseStory = this.collapseStory.bind(this);
     this.expandStory = this.expandStory.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   update(field) {
@@ -23,11 +24,16 @@ class Story extends React.Component {
   }
 
   expandStory() {
-    this.setState({ story: 'expanded'})
+    this.setState({ story: 'expanded'});
   }
 
   collapseStory() {
-    this.setState({ story: 'collapsed'})
+    this.setState({ story: 'collapsed'});
+  }
+
+  handleUpdate(e) {
+    e.preventDefault();
+    this.props.updateStory(this.state).then(this.collapseStory());
   }
 
   render() {
@@ -51,12 +57,12 @@ class Story extends React.Component {
     } else {
       return (
         <div className="expanded-story">
-          <form className="expanded-story-form">
+          <form className="expanded-story-form" onSubmit={ this.handleUpdate }>
             <div className="expanded-story-title">
               <i className="fa fa-folder-o"
                   aria-hidden="true"
                   onClick={ this.collapseStory }></i>
-              <input clasName="story-form-title"
+                <input className="story-form-title"
                 value={ this.state.title }
                 onChange={ this.update('title') }></input>
             </div>
