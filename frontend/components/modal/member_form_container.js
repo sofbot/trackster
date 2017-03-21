@@ -1,11 +1,19 @@
 import { connect } from 'react-redux';
 import MemberForm from './member_form';
-import { fetchAllUsers } from '../../actions/invite_actions';
+import { fetchAllUsers, destroyInvite } from '../../actions/invite_actions';
 
-const mapStateToProps = state => ({
-  usernames: state.session.allUsers
+const mapStateToProps = (state, ownProps) => ({
+  usernames: state.session.allUsers,
+  currentUser: state.session.currentUser,
+  project: ownProps.project
 });
 
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  destroyInvite: memberId => dispatch(destroyInvite(ownProps.project.id, memberId))
+});
+
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(MemberForm);

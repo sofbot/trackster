@@ -2,6 +2,7 @@ import React from 'react';
 import { fetchUser } from '../../util/invite_api_util';
 import Autocomplete from '../autocomplete/autocomplete';
 import { values } from 'lodash';
+import { withRouter } from 'react-router';
 
 class MemberForm extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class MemberForm extends React.Component {
     this.findFriend = this.findFriend.bind(this);
     this.update = this.update.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -37,7 +39,7 @@ class MemberForm extends React.Component {
     }
 
     fetchUser(username)
-              .then((user => this.addMembers(user)),
+              .then((member => this.addMembers(member)),
                       err => this.displayError());
   }
 
@@ -52,9 +54,9 @@ class MemberForm extends React.Component {
 
 
   addMembers(member) {
-    const newMembers = this.props.memberIds.concat(member['id']);
+    const newMembers = this.props.memberIds.concat(member.id);
 
-    if (this.props.memberIds.indexOf(member['id']) === -1) {
+    if (this.props.memberIds.indexOf(member.id) === -1) {
       this.addMemberToList(member);
     }
 
@@ -64,8 +66,8 @@ class MemberForm extends React.Component {
   }
 
   initExistingMembers() {
-    if (this.props.members) {
-      this.props.members.forEach(member => this.addMemberToList(member));
+    if (this.props.project.members) {
+      this.props.project.members.forEach(member => this.addMemberToList(member));
     }
   }
 
@@ -73,13 +75,15 @@ class MemberForm extends React.Component {
     const memberList = document.getElementById('members-list');
     const newMember = document.createElement('li');
     newMember.className = 'teammate auto';
-    if (typeof member === 'string') {
-      newMember.innerHTML = member;
-    } else {
-      newMember.innerHTML = member.username;
-    }
+    newMember.innerHTML = member.username;
+    newMember.addEventListener('click', e => this.handleDelete(e, member.id));
     memberList.appendChild(newMember);
     this.clearField();
+  }
+
+  handleDelete(e, memberId) {
+    this.props.destroyInvite(memberId);
+    e.currentTarget.style.display = 'none';
   }
 
   clearField() {
@@ -118,4 +122,4 @@ class MemberForm extends React.Component {
   }
 }
 
-export default MemberForm;
+export default withRouter(MemberForm);

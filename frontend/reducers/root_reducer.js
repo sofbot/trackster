@@ -6,9 +6,9 @@ import ErrorReducer from './error_reducer';
 
 const rootReducer = combineReducers({
   session: SessionReducer,
-  projects: ProjectsReducer,
   errors: ErrorReducer,
-  project: ProjectReducer
+  project: ProjectReducer,
+  projects: ProjectsReducer
 });
 
 export default rootReducer;

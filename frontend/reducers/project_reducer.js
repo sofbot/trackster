@@ -4,6 +4,7 @@ import {
   REMOVE_STORY,
   UPDATE_STORY
 } from '../actions/story_actions';
+import { REMOVE_MEMBER } from '../actions/invite_actions';
 import { merge } from 'lodash';
 
 const _defaultState = {
@@ -30,6 +31,10 @@ const ProjectReducer = (state = _defaultState, action) => {
     case REMOVE_STORY:
       let rmStoryIdx = newState.stories.indexOf(action.story);
       newState.stories.splice(rmStoryIdx, 1);
+      return newState;
+    case REMOVE_MEMBER:
+      const memberIdx = newState.members.indexOf(action.data.memberId);
+      newState.members.splice(memberIdx, 1);
       return newState;
     default:
       return state;

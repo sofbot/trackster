@@ -27,7 +27,7 @@ class ProjectIndexItem extends React.Component {
   }
 
   handleLeave() {
-    this.props.destroyInvite(this.props.project.id);
+    this.props.destroyInvite(this.props.project.id, this.props.currentUserId);
   }
 
 

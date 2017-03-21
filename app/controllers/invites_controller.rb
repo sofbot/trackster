@@ -10,10 +10,10 @@ class InvitesController < ApplicationController
   end
 
   def destroy
-    project = Project.find(params[:id])
-    invite = Invite.find_by(user_id: current_user.id, project_id: project.id)
+    @project = Project.find(params[:id])
+    invite = Invite.find_by(user_id: params[:memberId], project_id: @project.id)
     invite.destroy
-    render json: project
+    render 'projects/show'
   end
 
   private
