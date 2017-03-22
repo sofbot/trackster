@@ -40,14 +40,6 @@ class MemberForm extends React.Component {
       username = e;
     }
 
-    // debugger
-    // let username;
-    // if (this.state.member === '' || typeof e === 'string') {
-    //   username = name;
-    // } else {
-    //   username = this.state.member;
-    // }
-
     fetchUser(username)
               .then((member => this.addMembers(member)),
                       err => this.displayError());
@@ -95,7 +87,7 @@ class MemberForm extends React.Component {
   handleDelete(e, memberId) {
     e.currentTarget.style.display = 'none';
 
-    if (this.props.project.member_ids.includes(memberId)) {
+    if (this.props.project.members.map(member => member.id).includes(memberId)) {
       this.props.destroyInvite(memberId);
     }
   }

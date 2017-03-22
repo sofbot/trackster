@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ProjectIndexItem from './project_index_item';
-import { destroyInvite } from '../../actions/invite_actions';
+import { destroyInvitedProject } from '../../actions/invite_actions';
 import { teamProjects } from '../../reducers/selectors';
 import { values } from 'lodash';
 import {
@@ -18,7 +18,7 @@ const mapStateToProps = state => {
 
 
 const mapDispatchToProps = dispatch => ({
-  destroyInvite: (projectId, memberId) => dispatch(destroyInvite(projectId, memberId)),
+  destroyInvitedProject: (projectId, memberId) => dispatch(destroyInvitedProject(projectId, memberId)),
   deleteProject: projectId => dispatch(deleteProject(projectId)),
   updateProject: project => dispatch(updateProject(project))
 });

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { destroyInvite } from '../../util/invite_api_util';
 import ProjectIndexItemFormContainer from './project_index_item_form_container';
 import MembersModalContainer from '../modal/members_modal_container';
 
@@ -27,7 +26,7 @@ class ProjectIndexItem extends React.Component {
   }
 
   handleLeave() {
-    this.props.destroyInvite(this.props.project.id, this.props.currentUserId);
+    this.props.destroyInvitedProject(this.props.project.id, this.props.currentUserId);
   }
 
 

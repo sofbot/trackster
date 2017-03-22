@@ -3,6 +3,8 @@ import { receiveProject } from './project_actions';
 
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const REMOVE_MEMBER = 'REMOVE_MEMBER';
+export const REMOVE_MEMBER_AND_PROJECT = 'REMOVE_MEMBER_AND_PROJECT';
+
 
 export const receiveAllUsers = users => ({
   type: RECEIVE_ALL_USERS,
@@ -11,6 +13,11 @@ export const receiveAllUsers = users => ({
 
 export const removeMember = (projectId, memberId) => ({
   type: REMOVE_MEMBER,
+  data: {projectId: projectId, memberId: memberId}
+});
+
+export const removeMemberAndProject = (projectId, memberId) => ({
+  type: REMOVE_MEMBER_AND_PROJECT,
   data: {projectId: projectId, memberId: memberId}
 });
 
@@ -24,6 +31,11 @@ export const fetchAllUsers = () => dispatch => {
 export const destroyInvite = (projectId, memberId) => dispatch => (
   IUtil.destroyInvite(projectId, memberId)
     .then(() => dispatch(removeMember(projectId, memberId)))
+);
+
+export const destroyInvitedProject = (projectId, memberId) => dispatch => (
+  IUtil.destroyInvite(projectId, memberId)
+    .then(() => dispatch(removeMemberAndProject(projectId, memberId)))
 );
 
 
