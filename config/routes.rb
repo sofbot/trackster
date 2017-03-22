@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :create, :destroy, :show, :update] do
     resources :stories, only: [:index, :create, :new]
   end
-  resources :stories, only: [:destroy, :show, :update]
+  resources :stories, only: [:destroy, :show, :update] do
+    resources :tasks, only: [:index, :create, :update, :destroy]
+  end
   resources :invites, only: [:create, :destroy]
 
   root 'static_pages#root'

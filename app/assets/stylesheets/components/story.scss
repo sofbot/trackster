@@ -18,6 +18,9 @@
   cursor: move;
   text-align: left;
   width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .story-icons {
