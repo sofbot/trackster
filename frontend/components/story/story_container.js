@@ -7,6 +7,9 @@ import {
   destroyStory
 } from '../../actions/story_actions';
 
+const mapStateToProps = (state, ownProps) => ({
+  story: ownProps.story
+});
 
 const mapDispatchToProps = dispatch => ({
   updateStory: story => dispatch(updateStory(story)),
@@ -14,6 +17,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Story);

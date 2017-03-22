@@ -1,10 +1,38 @@
 import React from 'react';
 import DeleteModalContainer from '../modal/delete_modal_container';
 
+const stateTransform = {
+  'unstarted': 'start',
+  'start': 'finish',
+  'finish': 'deliver',
+  'deliver': 'accept/reject',
+  'reject': 'restart',
+  'restart': 'finish',
+  'accept': 'done'
+};
+
+
 class Story extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      story: 'collapsed',
+      title: '',
+      story_type: '',
+      description: '',
+      ice_boxed: '',
+      internal_state: '',
+      id: ''
+    };
+    this.collapseStory = this.collapseStory.bind(this);
+    this.expandStory = this.expandStory.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
+    this.toggleState = this.toggleState.bind(this);
+    this.updateState = this.updateState.bind(this);
+  }
+
+  componentWillMount(nextProps) {
+    this.setState({
       story: 'collapsed',
       title: `${this.props.story.title}`,
       story_type: `${this.props.story.story_type}`,
@@ -12,10 +40,7 @@ class Story extends React.Component {
       ice_boxed: `${this.props.story.ice_boxed}`,
       internal_state: `${this.props.story.internal_state}`,
       id: `${this.props.story.id}`
-    };
-    this.collapseStory = this.collapseStory.bind(this);
-    this.expandStory = this.expandStory.bind(this);
-    this.handleUpdate = this.handleUpdate.bind(this);
+    });
   }
 
   update(field) {
@@ -38,24 +63,58 @@ class Story extends React.Component {
   }
 
   handleDelete() {
-    this.props.destroyStory()
+    this.props.destroyStory();
+  }
+
+  updateState() {
+    this.props.updateStory(this.state);
+  }
+
+  toggleState(e) {
+    console.log(e.target);
+    console.log(this.state);
+    console.log(this.props.story);
+    this.setState({
+      internal_state: stateTransform[this.props.story.internal_state]
+    }, this.updateState);
+    // debugger
+    // switch (this.props.story.internal_state) {
+    //   case 'unstarted':
+    //     this.setState({internal_state: stateTransform['unstarted']}, this.updateState);
+    //   case 'start':
+    //     this.setState({internal_state: 'finish'}, this.updateState);
+    //   case 'finish':
+    //     this.setState({internal_state: 'deliver'}, this.updateState);
+    //   case 'deliver':
+    //     switch (e.target.innerHTML) {
+    //       case 'Accept':
+    //         this.setState({internal_state: 'accept'}, this.updateState);
+    //       case 'Reject':
+    //         this.setState({internal_state: 'reject'}, this.updateState);
+    //     }
+    //   case 'reject':
+    //     this.setState({internal_state: 'restart'}, this.updateState);
+    //   case 'restart':
+    //     this.setState({internal_state: 'start'}, this.updateState);
+    // }
   }
 
   render() {
     if (this.state.story === 'collapsed') {
       return(
         <div className="story">
-          <div className="story-icons">
+          <div className="story-icons"
+                onClick={ this.expandStory }>
             <i className="fa fa-folder-open-o"
-                aria-hidden="true"
-                onClick={ this.expandStory }></i>
+                aria-hidden="true"></i>
             <i className="fa fa-code-fork" aria-hidden="true"></i>
           </div>
           <div className="story-title">
-            { this.props.story.title }
+            { this.state.title }
           </div>
-          <div className="story-buttons">
-            <span>Start</span>
+
+          <div className="story-buttons" onClick={ this.toggleState }>
+            { stateTransform[this.props.story.internal_state] }
           </div>
         </div>
       );
@@ -86,7 +145,8 @@ class Story extends React.Component {
 
             <div className="story-description-field">
               <label>description</label>
-              <textarea onChange={ this.update('description') }></textarea>
+              <textarea onChange={ this.update('description') }
+                        value={ this.state.description }></textarea>
             </div>
 
             <div className="story-form-btns">

@@ -29,9 +29,8 @@ class DeleteModal extends React.Component {
 
   render() {
     return (
-      <span className="delete-modal">
-        <span className="open-delete-modal"
-          onClick={ this.openModal }> Delete </span>
+      <span className="delete-modal" onClick={ this.openModal }>
+        <span> Delete </span>
 
         <Modal
           isOpen={ this.state.modalOpen }
