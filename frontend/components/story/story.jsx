@@ -6,9 +6,7 @@ const stateTransform = {
   'start': 'finish',
   'finish': 'deliver',
   'deliver': 'accept/reject',
-  'reject': 'restart',
   'restart': 'finish',
-  'accept': 'done'
 };
 
 class Story extends React.Component {
@@ -75,12 +73,45 @@ class Story extends React.Component {
   }
 
   toggleState(e) {
-    this.setState({
-      internal_state: stateTransform[this.props.story.internal_state]
-    }, this.toggleIceBoxed);
+    if (e.target.innerHTML === 'accept') {
+      this.setState({ internal_state: 'done' }, this.updateState);
+    } else if (e.target.innerHTML === 'reject') {
+      this.setState({ internal_state: 'restart' }, this.updateState);
+    } else {
+      this.setState({
+        internal_state: stateTransform[this.props.story.internal_state]
+      }, this.toggleIceBoxed);
+    }
+    // switch (e.target.innerHTML) {
+    //   case 'accept':
+    //     this.setState({ internal_state: 'done' }, this.updateState);
+    //   case 'reject':
+    //     this.setState({ internal_state: 'restart' }, this.updateState);
+    //   default:
+    //     this.setState({
+    //       internal_state: stateTransform[this.props.story.internal_state]
+    //     }, this.toggleIceBoxed);
+    // }
   }
 
   render() {
+    const stateBtn = () => {
+      if ( stateTransform[this.props.story.internal_state] === 'accept/reject') {
+        return (
+          <div className="accept-reject-btns">
+            <span className='accept'>accept</span>
+            <span className='reject'>reject</span>
+          </div>
+        );
+      } else {
+        return (
+          <span className={ stateTransform[this.props.story.internal_state] }>
+            { stateTransform[this.props.story.internal_state] }
+          </span>
+        )
+      }
+    }
+
     if (this.state.story === 'collapsed') {
       return(
         <div className="story">
@@ -91,11 +122,11 @@ class Story extends React.Component {
             <i className="fa fa-code-fork" aria-hidden="true"></i>
           </div>
           <div className="story-title">
-            { this.state.title }
+            { this.props.story.title }
           </div>
 
           <div className="story-buttons" onClick={ this.toggleState }>
-            { stateTransform[this.props.story.internal_state] }
+            { stateBtn() }
           </div>
         </div>
       );
