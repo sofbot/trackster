@@ -225,3 +225,66 @@ span.story-submit-btn {
   text-transform: capitalize;
   font-size: 13px;
 }
+
+.story-buttons > span, .story-buttons > div > .accept, .story-buttons > div > .reject {
+  line-height: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 11px;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  margin-left: 2px;
+  padding: 3px 10px;
+  letter-spacing: .2px;
+  text-transform: capitalize;
+  color: #eee
+}
+
+.story-buttons > .start {
+  background-color: rgb(200, 203, 208);
+  border-color: rgb(172, 182, 193);
+  color: rgb(17, 17, 17);
+}
+
+.story-buttons > .finish {
+  background-color: #203e64;
+  border-color: #172c51;
+}
+
+.story-buttons > .finish:hover {
+  background-color: #172c51;
+  border-color: #111e40;
+}
+
+.story-buttons > .deliver {
+  background-color: #f39300;
+  border-color: #f08000;
+}
+
+.story-buttons > .deliver:hover {
+  background-color: #f08000;
+  border-color: #ec6b00;
+}
+
+.story-buttons > div > .accept {
+  background-color: rgb(98, 146, 0);
+  border-color: rgb(78, 130, 0);
+}
+
+.story-buttons > div > .accept:hover {
+  background-color: rgb(78, 130, 0);
+  border-color: rgb(60, 113, 0);
+}
+
+.story-buttons > div > .reject {
+  background-color: #a71f39;
+  border-color: #950828;
+  text-transform: capitalize;
+}
+
+.story-buttons > div > .reject:hover {
+  background-color: #950828;
+  border-color: #82001b;
+}

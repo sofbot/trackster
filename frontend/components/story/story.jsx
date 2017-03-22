@@ -82,16 +82,6 @@ class Story extends React.Component {
         internal_state: stateTransform[this.props.story.internal_state]
       }, this.toggleIceBoxed);
     }
-    // switch (e.target.innerHTML) {
-    //   case 'accept':
-    //     this.setState({ internal_state: 'done' }, this.updateState);
-    //   case 'reject':
-    //     this.setState({ internal_state: 'restart' }, this.updateState);
-    //   default:
-    //     this.setState({
-    //       internal_state: stateTransform[this.props.story.internal_state]
-    //     }, this.toggleIceBoxed);
-    // }
   }
 
   render() {
@@ -100,7 +90,7 @@ class Story extends React.Component {
         return (
           <div className="accept-reject-btns">
             <span className='accept'>accept</span>
-            <span className='reject'>reject</span>
+            <span className='reject'>Reject</span>
           </div>
         );
       } else {
