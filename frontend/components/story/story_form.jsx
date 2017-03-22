@@ -30,23 +30,38 @@ class StoryForm extends React.Component {
     return(
       <div className="story-form-container">
         <form className="story-form" onSubmit={ this.handleSubmit }>
-          <span className="close-container" onClick={ this.props.hideForm }>
-            <i className="fa fa-times" aria-hidden="true"></i>
-          </span>
-          <input className="story-form-title"
-                value={ this.state.title }
-                onChange={ this.update('title') }></input>
+          <div className="story-form-top">
+            <input className="story-form-title"
+              value={ this.state.title }
+              onChange={ this.update('title') }></input>
 
-          <select value={ this.state.story_type } onChange={ this.update('story_type') }>
-            <option defaultValue="feature">feature</option>
-            <option value='Bug'>bug</option>
-            <option value='Chore'>chore</option>
-            <option value='Release'>release</option>
-          </select>
+            <span className="form-close-container" onClick={ this.props.hideForm }>
+              <i className="fa fa-times" aria-hidden="true"></i>
+            </span>
+          </div>
 
-          <label>description</label>
-          <textarea onChange={ this.update('description') }></textarea>
-          <input type="submit" value="save"></input>
+          <div className="select-story-type">
+            <em>Story Type</em>
+            <select value={ this.state.story_type } onChange={ this.update('story_type') }>
+              <option defaultValue="feature"
+                      className="select-feature">feature</option>
+              <option value='Bug'>bug</option>
+              <option value='Chore'>chore</option>
+              <option value='Release'>release</option>
+            </select>
+          </div>
+
+          <div className="story-description-field">
+            <label>description</label>
+            <textarea onChange={ this.update('description') }></textarea>
+          </div>
+
+          <div className="story-form-btns">
+            <span onClick={ this.props.hideForm }
+                  className="cancel-btn">cancel</span>
+            <span className="story-submit-btn"
+                  onClick={ this.handleSubmit }>Save</span>
+          </div>
         </form>
       </div>
     );
