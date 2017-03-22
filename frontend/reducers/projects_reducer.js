@@ -3,7 +3,10 @@ import {
   RECEIVE_PROJECTS,
   REMOVE_PROJECT
 } from '../actions/project_actions';
-import { REMOVE_MEMBER, REMOVE_MEMBER_AND_PROJECT } from '../actions/invite_actions';
+import {
+  REMOVE_MEMBER,
+  REMOVE_MEMBER_AND_PROJECT
+} from '../actions/invite_actions';
 import { merge } from 'lodash';
 
 const ProjectsReducer = (state = {}, action) => {
@@ -33,10 +36,6 @@ const ProjectsReducer = (state = {}, action) => {
       delete newState[action.data.projectId];
       return newState;
     case REMOVE_MEMBER:
-      memberIdx = newState[action.data.projectId]
-                        .members.findIndex((member) => (
-                          member.id === action.data.memberId
-                        ));
       newState[action.data.projectId].members.splice(memberIdx, 1);
       return newState;
     default:

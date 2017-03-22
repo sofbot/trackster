@@ -11,7 +11,6 @@ const stateTransform = {
   'accept': 'done'
 };
 
-
 class Story extends React.Component {
   constructor(props) {
     super(props);
@@ -29,6 +28,7 @@ class Story extends React.Component {
     this.handleUpdate = this.handleUpdate.bind(this);
     this.toggleState = this.toggleState.bind(this);
     this.updateState = this.updateState.bind(this);
+    this.toggleIceBoxed = this.toggleIceBoxed.bind(this);
   }
 
   componentWillMount(nextProps) {
@@ -70,10 +70,14 @@ class Story extends React.Component {
     this.props.updateStory(this.state);
   }
 
+  toggleIceBoxed() {
+    this.setState({ ice_boxed: false }, this.updateState);
+  }
+
   toggleState(e) {
     this.setState({
       internal_state: stateTransform[this.props.story.internal_state]
-    }, this.updateState);
+    }, this.toggleIceBoxed);
   }
 
   render() {

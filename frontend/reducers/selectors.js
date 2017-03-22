@@ -11,7 +11,6 @@ export const CurrentStories = stories => (
   ))
 );
 
-
 export const DoneStories = stories => (
   stories.filter(story => story.internal_state === 'done')
 );
