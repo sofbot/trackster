@@ -1,7 +1,7 @@
 const mine = (project, id) => id === project.creator_id;
 
 
-export const IceboxStories = stories => (
+export const IceBoxStories = stories => (
   stories.filter(story => story.ice_boxed)
 );
 

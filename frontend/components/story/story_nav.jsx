@@ -11,8 +11,9 @@ class StoryNav extends React.Component {
     };
     this.showForm = this.showForm.bind(this);
     this.hideForm = this.hideForm.bind(this);
+    this.togglePanel = this.togglePanel.bind(this);
   }
-
+  
   showForm() {
     this.setState({ form: 'open'});
   }
@@ -21,13 +22,12 @@ class StoryNav extends React.Component {
     this.setState({ form: 'closed'});
   }
 
+  togglePanel(e) {
+    const id = `${e.currentTarget.classList[0]}-container`;
+    document.getElementById(id).style.display = 'block';
+  }
+
   render() {
-    // let storyForm;
-    // if (this.state.form === 'open') {
-    //   storyForm = <StoryFormContainer hideForm={ this.hideForm }/>;
-    // } else {
-    //   storyForm = <div></div>;
-    // }
 
     return(
       <aside className="story-nav">
@@ -35,17 +35,17 @@ class StoryNav extends React.Component {
           <span>{ this.props.project.title }</span>
         </div>
         <ul className="story-nav-links">
-          <li className="current panel-name">
+          <li className="current panel-name" onClick={ this.togglePanel }>
             <Link>
               <span>Current</span>
             </Link>
           </li>
-          <li className="back burner panel-name">
+          <li className="icebox panel-name" onClick={ this.togglePanel }>
             <Link>
-              <span>Back Burner</span>
+              <span>Icebox</span>
             </Link>
           </li>
-          <li className="done panel-name">
+          <li className="done panel-name" onClick={ this.togglePanel }>
             <Link>
               <span>Done</span>
             </Link>
@@ -69,10 +69,3 @@ class StoryNav extends React.Component {
 }
 
 export default StoryNav;
-
-// <li className="add-story">
-//   <Link onClick={ this.showForm }>
-//     <i className="fa fa-plus" aria-hidden="true"></i>
-//     <p>Add Story</p>
-//   </Link>
-// </li>

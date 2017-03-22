@@ -12,19 +12,19 @@ class StoryIndex extends React.Component {
       <div className="main-panels">
         <div className="panels">
           <div className="table">
-            <div className="current-container story-panel-container">
+            <div id="current-container" className="story-panel-container">
               <StoryPanelContainer
                 filter="current"
                 stories={ this.props.project.stories }
                 children={ this.props.children }/>
             </div>
-            <div className="icebox-container story-panel-container">
+            <div id="icebox-container" className="story-panel-container">
               <StoryPanelContainer
                 filter="icebox"
                 stories={ this.props.project.stories }
                 children={ this.props.children } />
             </div>
-            <div className="done-container story-panel-container">
+            <div id="done-container" className="story-panel-container">
               <StoryPanelContainer
                 filter="done"
                 stories={ this.props.project.stories }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import {
-  IceboxStories,
+  IceBoxStories,
   CurrentStories,
   DoneStories
 } from '../../reducers/selectors';
@@ -35,7 +35,7 @@ class StoryPanel extends React.Component {
   filterStories(stories, filter) {
     switch(filter) {
       case 'icebox':
-        return IceboxStories(stories);
+        return IceBoxStories(stories);
       case 'current':
         return CurrentStories(stories);
       case 'done':
