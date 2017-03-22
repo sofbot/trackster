@@ -288,3 +288,14 @@ span.story-submit-btn {
   background-color: #950828;
   border-color: #82001b;
 }
+
+.story-buttons > .restart {
+  background-color: #e0e2e5;
+  border-color: #c8cbd0;
+  color: rgb(17, 17, 17);
+}
+
+.story-buttons > .restart:hover {
+  background-color: #c8cbd0;
+  border-color: #acb6c1;
+}

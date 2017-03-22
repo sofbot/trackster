@@ -75,7 +75,7 @@ class Story extends React.Component {
   toggleState(e) {
     if (e.target.innerHTML === 'accept') {
       this.setState({ internal_state: 'done' }, this.updateState);
-    } else if (e.target.innerHTML === 'reject') {
+    } else if (e.target.innerHTML === 'Reject') {
       this.setState({ internal_state: 'restart' }, this.updateState);
     } else {
       this.setState({
@@ -93,14 +93,20 @@ class Story extends React.Component {
             <span className='reject'>Reject</span>
           </div>
         );
+      } else if (this.props.story.internal_state === 'restart') {
+        return (
+          <span className='restart'>restart</span>
+        );
+      } else if (this.props.story.internal_state === 'done') {
+        return;
       } else {
         return (
           <span className={ stateTransform[this.props.story.internal_state] }>
             { stateTransform[this.props.story.internal_state] }
           </span>
-        )
+        );
       }
-    }
+    };
 
     if (this.state.story === 'collapsed') {
       return(
