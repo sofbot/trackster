@@ -58,7 +58,7 @@ class StoryForm extends React.Component {
 
           <div className="story-form-btns">
             <span onClick={ this.props.hideForm }
-                  className="cancel-btn">cancel</span>
+                  className="cancel-btn">Cancel</span>
             <span className="story-submit-btn"
                   onClick={ this.handleSubmit }>Save</span>
           </div>

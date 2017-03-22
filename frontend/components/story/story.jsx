@@ -61,33 +61,44 @@ class Story extends React.Component {
       );
     } else {
       return (
-        <div className="expanded-story">
-          <form className="expanded-story-form" onSubmit={ this.handleUpdate }>
-            <div className="expanded-story-title">
-              <i className="fa fa-folder-o"
+        <div className="story-form-container">
+          <form className="story-form" onSubmit={ this.handleUpdate }>
+            <div className="story-form-top">
+              <div className="form-close-container expanded-form-close-container">
+                <i className="fa fa-folder-o"
                   aria-hidden="true"
                   onClick={ this.collapseStory }></i>
-                <input className="story-form-title"
+              </div>
+
+              <input className="story-form-title expanded-form-title"
                 value={ this.state.title }
                 onChange={ this.update('title') }></input>
             </div>
+            <div className="select-story-type">
+              <em>Story Type</em>
+              <select value={ this.state.story_type } onChange={ this.update('story_type') }>
+                <option defaultValue="feature">feature</option>
+                <option value='Bug'>bug</option>
+                <option value='Chore'>chore</option>
+                <option value='Release'>release</option>
+              </select>
+            </div>
+
+            <div className="story-description-field">
+              <label>description</label>
+              <textarea onChange={ this.update('description') }></textarea>
+            </div>
+
             <div className="story-form-btns">
               <DeleteModalContainer story={ this.props.story }/>
-              <span className="story-form-close-btn"
-                    onClick={ this.collapseStory }>Close</span>
+              <span className="cancel-btn"
+                onClick={ this.collapseStory }>Cancel</span>
+              <span className="story-submit-btn"
+                onClick={ this.collapseStory }>Save</span>
             </div>
-            <select value={ this.state.story_type } onChange={ this.update('story_type') }>
-              <option defaultValue="feature">feature</option>
-              <option value='Bug'>bug</option>
-              <option value='Chore'>chore</option>
-              <option value='Release'>release</option>
-            </select>
-            <label>description</label>
-            <textarea onChange={ this.update('description') }></textarea>
-            <input type="submit" value="save"></input>
           </form>
         </div>
-      )
+      );
     }
   }
 }

@@ -92,9 +92,15 @@ input.story-form-title {
   position: relative;
 }
 
-.form-close-container > i.fa.fa-times {
+.form-close-container > i {
   justify-content: center;
 }
+
+.expanded-form-close-container {
+  border: 0;
+  background-color: transparent;
+}
+
 
 .select-story-type {
   height: 28px;
@@ -171,7 +177,7 @@ textarea {
 }
 
 
-.story-form-btns > .cancel-btn, .story-submit-btn {
+.story-form-btns > .cancel-btn, .story-submit-btn, .delete-modal {
   border-radius: 4px;
   background-color: #dfdcd0;
   padding: 1px 7px;
@@ -184,6 +190,10 @@ textarea {
   font: 13px system-ui;
 }
 
+span.delete-modal {
+  margin-right: 2px;
+}
+
 span.story-submit-btn {
   background-color: #666;
   color: #fff;
@@ -191,4 +201,9 @@ span.story-submit-btn {
   font-size: 13px;
   text-transform: capitalize;
   border-color: #555;
+}
+
+.expanded-form-title {
+  margin-right: 0;
+  margin-left: 7px;
 }

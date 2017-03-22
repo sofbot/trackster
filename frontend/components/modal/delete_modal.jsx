@@ -29,12 +29,9 @@ class DeleteModal extends React.Component {
 
   render() {
     return (
-      <span className="show-members">
+      <span className="delete-modal">
         <span className="open-delete-modal"
-          onClick={ this.openModal }>
-          <i className="fa fa-trash-o header-icon"
-              aria-hidden="true"></i>
-        </span>
+          onClick={ this.openModal }> Delete </span>
 
         <Modal
           isOpen={ this.state.modalOpen }
