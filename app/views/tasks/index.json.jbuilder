@@ -1,1 +1,1 @@
-json.array! @tasks, :id, :complete, :body
+json.array! @tasks, :id, :complete, :body, :story_id

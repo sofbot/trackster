@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import * as TaskUtil from './util/task_api_util';
+import * as TaskUtil from './actions/task_actions';
 import Modal from 'react-modal';
 
 document.addEventListener('DOMContentLoaded', () => {

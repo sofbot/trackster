@@ -1,10 +1,3 @@
-export const fetchTasks = storyId => (
-  $.ajax({
-    method: 'GET',
-    url: `/stories/${storyId}/tasks`
-  })
-);
-
 export const createTask = task => (
   $.ajax({
     method: 'POST',
