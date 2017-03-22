@@ -131,7 +131,7 @@ class Story extends React.Component {
               <span className="cancel-btn"
                 onClick={ this.collapseStory }>Cancel</span>
               <span className="story-submit-btn"
-                onClick={ this.collapseStory }>Save</span>
+                onClick={ this.handleUpdate }>Save</span>
             </div>
           </form>
         </div>

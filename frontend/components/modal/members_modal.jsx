@@ -30,7 +30,6 @@ class MembersModal extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const updates = merge({}, this.props.project, this.state);
-    console.log(updates);
     this.props.updateProject(updates).then(() => this.closeModal());
   }
 
@@ -46,7 +45,6 @@ class MembersModal extends React.Component {
 
   getMembers(projectId) {
     const project = fetchProject(projectId);
-    console.log(project);
   }
 
   render() {
