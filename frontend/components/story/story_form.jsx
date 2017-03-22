@@ -27,6 +27,7 @@ class StoryForm extends React.Component {
   }
 
   render() {
+    debugger
     return(
       <div className="story-form-container">
         <form className="story-form" onSubmit={ this.handleSubmit }>

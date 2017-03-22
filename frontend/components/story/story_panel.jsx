@@ -11,6 +11,7 @@ import StoryFormContainer from './story_form_container';
 class StoryPanel extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       form: 'closed'
     };

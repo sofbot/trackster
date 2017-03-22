@@ -71,32 +71,9 @@ class Story extends React.Component {
   }
 
   toggleState(e) {
-    console.log(e.target);
-    console.log(this.state);
-    console.log(this.props.story);
     this.setState({
       internal_state: stateTransform[this.props.story.internal_state]
     }, this.updateState);
-    // debugger
-    // switch (this.props.story.internal_state) {
-    //   case 'unstarted':
-    //     this.setState({internal_state: stateTransform['unstarted']}, this.updateState);
-    //   case 'start':
-    //     this.setState({internal_state: 'finish'}, this.updateState);
-    //   case 'finish':
-    //     this.setState({internal_state: 'deliver'}, this.updateState);
-    //   case 'deliver':
-    //     switch (e.target.innerHTML) {
-    //       case 'Accept':
-    //         this.setState({internal_state: 'accept'}, this.updateState);
-    //       case 'Reject':
-    //         this.setState({internal_state: 'reject'}, this.updateState);
-    //     }
-    //   case 'reject':
-    //     this.setState({internal_state: 'restart'}, this.updateState);
-    //   case 'restart':
-    //     this.setState({internal_state: 'start'}, this.updateState);
-    // }
   }
 
   render() {
