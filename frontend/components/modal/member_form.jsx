@@ -30,15 +30,23 @@ class MemberForm extends React.Component {
     this.setState({ member: value });
   }
 
-  findFriend(e, name) {
-    e.preventDefault();
-
+  findFriend(e) {
     let username;
-    if (this.state.member === '' || typeof name === 'string') {
-      username = name;
-    } else {
+
+    if (typeof e === 'object') {
+      e.preventDefault();
       username = this.state.member;
+    } else {
+      username = e;
     }
+
+    // debugger
+    // let username;
+    // if (this.state.member === '' || typeof e === 'string') {
+    //   username = name;
+    // } else {
+    //   username = this.state.member;
+    // }
 
     fetchUser(username)
               .then((member => this.addMembers(member)),
