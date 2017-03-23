@@ -10,7 +10,8 @@ const stateTransform = {
   'finish': 'deliver',
   'deliver': 'accept/reject',
   'restart': 'finish',
-  'reject': 'restart'
+  'reject': 'restart',
+  'done': 'restart'
 };
 
 class Story extends React.Component {
@@ -113,8 +114,6 @@ class Story extends React.Component {
             <span className='reject'>Reject</span>
           </div>
         );
-      } else if (this.props.story.internal_state === 'done') {
-        return;
       } else {
         return (
           <span className={ stateTransform[this.props.story.internal_state] }>

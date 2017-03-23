@@ -22,6 +22,10 @@ class StoryPanel extends React.Component {
     this.hideForm = this.hideForm.bind(this);
   }
 
+  componentDidMount(){
+    document.getElementById('done-container').style.display = 'none';
+  }
+
   handleClose(e) {
     const target = this.findAncestor(e.currentTarget, 'story-panel-container');
     target.style.display = 'none';
