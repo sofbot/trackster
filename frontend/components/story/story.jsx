@@ -17,6 +17,7 @@ const stateTransform = {
 class Story extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       story: 'collapsed',
       title: '',
@@ -27,6 +28,7 @@ class Story extends React.Component {
       id: '',
       tasks: []
     };
+
     this.collapseStory = this.collapseStory.bind(this);
     this.expandStory = this.expandStory.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
@@ -177,7 +179,7 @@ class Story extends React.Component {
               {
                 this.props.story.tasks.map((task, idx) => (
                   <TaskContainer task={ task }
-                                  key={ idx }
+                                  key={ task.id }
                                   removeTask={ this.removeTask } />
                 ))
               }

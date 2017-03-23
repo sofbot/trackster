@@ -13,7 +13,7 @@ class StoryNav extends React.Component {
     this.hideForm = this.hideForm.bind(this);
     this.togglePanel = this.togglePanel.bind(this);
   }
-  
+
   showForm() {
     this.setState({ form: 'open'});
   }
