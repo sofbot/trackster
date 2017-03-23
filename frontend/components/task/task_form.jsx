@@ -31,7 +31,7 @@ class TaskForm extends React.Component {
     return (
       <div className="task-list">
         <div className="task-left">
-          <input type="checkbox"></input>
+          <input type="checkbox" disabled="disabled"></input>
           <input className="edit-task-body"
                   id="edit-task-input"
                   ref={ node => this.field = node }
