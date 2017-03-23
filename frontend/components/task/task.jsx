@@ -52,10 +52,12 @@ class Task extends React.Component {
     if (this.state.edit === true) {
       return (
         <div className="task-list">
-          <input type="checkbox"></input>
-          <input className="edit-task-body"
-                  onChange={ this.handleChange }
-                  value={ this.state.body }></input>
+          <div className="task-left">
+            <input type="checkbox"></input>
+            <input className="edit-task-body"
+              onChange={ this.handleChange }
+              value={ this.state.body }></input>
+          </div>
           <div className="task-save" onClick={ this.updateTask }>
             <i className="fa fa-floppy-o" aria-hidden="true"></i>
           </div>
@@ -64,9 +66,11 @@ class Task extends React.Component {
     } else {
       return (
         <div className="task-list">
-          <input type="checkbox" onChange={ this.handleComplete }></input>
-          <div className="task-body" onClick={ this.toggleEdit }>
-            { this.props.task.body }
+          <div className="task-left">
+            <input type="checkbox" onChange={ this.handleComplete }></input>
+            <div className="task-body" onClick={ this.toggleEdit }>
+              { this.props.task.body }
+            </div>
           </div>
           <div className="task-delete" onClick={ this.handleDelete }>
             <i className="fa fa-trash-o" aria-hidden="true"></i>

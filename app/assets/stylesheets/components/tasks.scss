@@ -1,0 +1,72 @@
+.tasks-container > h4 {
+  color: #000;
+  font-size: 11px;
+  text-align: left;
+  font-weight: 600;
+  line-height: 16px;
+  margin-top: 14px;
+  text-transform: uppercase;
+}
+
+.task-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-left {
+  display: flex;
+  align-items: center;
+  width: 90%
+}
+
+.task-list {
+  display: flex;
+  justify-content: space-between;
+  background: #e9e8e0;
+  padding: 4px 10px 0 4px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 18px;
+  overflow: hidden;
+  border-radius: 3px;
+  align-items: baseline;
+}
+
+.task-list:hover {
+  background-color: #d7d4c8
+}
+
+.task-body {
+  letter-spacing: .1px;
+  margin: 3px 39px 2px 12px;
+  cursor: pointer;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  width: 90%;
+  text-align: left;
+}
+
+.edit-task-body {
+  overflow: hidden;
+  word-wrap: break-word;
+  line-height: 20px;
+  padding: 2px 4px 0;
+  text-align: left;
+  resize: none;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #adb0b7;
+  font-size: 12px;
+  letter-spacing: .1px;
+  margin-left: 10px;
+  width: 100%
+}
+
+.task-save > .fa-floppy-o:hover {
+  background-color: #d7d4c8
+}
+
+.task-delete {
+  cursor: pointer;
+}

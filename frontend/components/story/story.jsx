@@ -188,6 +188,7 @@ class Story extends React.Component {
             </div>
 
             <div className="tasks-container">
+              <h4>tasks</h4>
               {
                 this.props.story.tasks.map((task, idx) => (
                   <TaskContainer task={ task }
