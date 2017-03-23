@@ -26,6 +26,12 @@ const storySource = {
     if (!monitor.getDropResult()) {
       return;
     } else {
+
+      // need to traverse dom, if destination.priority < updatedStory.priority
+        // place below (updatedStory.priority = destination.priority - 1)
+      // else
+        // place above ()
+
       let destination = monitor.getDropResult();
       let updatedStory = merge({}, props.story);
       updatedStory.priority = (destination.priority - 1);
@@ -71,7 +77,7 @@ class Story extends Component {
     this.selectStory = this.selectStory.bind(this);
   }
 
-  componentWillMount(nextProps) {
+  componentDidMount() {
     this.setState({
       story: 'collapsed',
       title: this.props.story.title,
@@ -121,7 +127,10 @@ class Story extends Component {
   }
 
   updateState() {
-    this.props.updateStory(this.state);
+    let updatedStory = merge({}, this.props.story)
+    updatedStory.internal_state = this.state.internal_state;
+    updatedStory.ice_boxed = this.state.ice_boxed;
+    this.props.updateStory(updatedStory);
   }
 
   toggleIceBoxed() {
@@ -169,7 +178,6 @@ class Story extends Component {
 
       return connectDragSource(
         <div className="story"
-              ref={ node => this.selectedStory = node }
               style={ {opacity: isDragging ? 0.5 : 1} }>
           <div className="story-icons"
                 onClick={ this.expandStory }>
