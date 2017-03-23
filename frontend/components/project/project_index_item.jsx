@@ -57,10 +57,16 @@ class ProjectIndexItem extends React.Component {
     const showURL = `/projects/${this.props.project.id}`;
     let removeBtn;
     let membersModal;
+    let editBtn;
 
     if (this.props.project.creator_id === this.props.currentUserId) {
       removeBtn = this.deleteBtn();
       membersModal = <MembersModalContainer project={ this.props.project }/>;
+      editBtn = <span className="update-project"
+        onClick={ this.toggleEdit }>
+        <i className="fa fa-pencil-square-o header-icon"
+            aria-hidden="true"></i>
+        </span>;
     } else {
       removeBtn = this.leaveBtn();
     }
@@ -81,11 +87,8 @@ class ProjectIndexItem extends React.Component {
             <div className="header-action-btns">
               { membersModal }
               { removeBtn }
-              <span className="update-project"
-                onClick={ this.toggleEdit }>
-                <i className="fa fa-pencil-square-o header-icon"
-                    aria-hidden="true"></i>
-              </span>
+              { editBtn }
+
             </div>
           </div>
           <div className="project-index-body">

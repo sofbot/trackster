@@ -53,7 +53,7 @@ class DeleteModal extends React.Component {
             <span className="submit-delete delete-footer-btn"
                   onClick={ this.handleSubmit }
                   aria-hidden="true"> Delete </span>
-                <span className="delete-footer-btn delete-close"
+            <span className="delete-footer-btn delete-close"
               onClick={ this.closeModal }> Cancel </span>
           </div>
         </Modal>

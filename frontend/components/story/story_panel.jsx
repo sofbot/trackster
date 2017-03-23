@@ -81,16 +81,18 @@ class StoryPanel extends React.Component {
             <i className="fa fa-plus" aria-hidden="true"></i>
           </Link>
         </header>
-        <div className="story-container">
-          <ul>
-            {
-              filteredStories.map((story, idx) => (
-                <StoryContainer key={ idx } story={ story }/>
-              ))
-            }
-          </ul>
+        <div className="story-content-container">
+          <div className="story-container">
+            <ul>
+              {
+                filteredStories.map((story, idx) => (
+                  <StoryContainer key={ idx } story={ story }/>
+                ))
+              }
+            </ul>
+          </div>
+          { storyForm }
         </div>
-        { storyForm }
       </div>
     );
   }
