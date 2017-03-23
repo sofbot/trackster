@@ -32,8 +32,6 @@ class Story extends React.Component {
     this.toggleState = this.toggleState.bind(this);
     this.updateState = this.updateState.bind(this);
     this.toggleIceBoxed = this.toggleIceBoxed.bind(this);
-    this.updateStoryTask = this.updateStoryTask.bind(this);
-    this.addTask = this.addTask.bind(this);
     this.removeTask = this.removeTask.bind(this);
   }
 
@@ -52,27 +50,15 @@ class Story extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.story.tasks !== this.state.tasks) {
-      this.setState({ tasks: nextProps.story.tasks })
+      this.setState({ tasks: nextProps.story.tasks });
     }
-  }
-
-  updateStoryTask(updatedTask) {
-    let taskIdx = this.state.tasks.findIndex(task => task.id === updatedTask.id);
-    let newState = merge({}, this.state);
-    newState.tasks[taskIdx] = updatedTask
-    this.setState({ tasks: newState.tasks })
   }
 
   removeTask(removedTask) {
     let taskIdx = this.state.tasks.findIndex(task => task.id === removedTask.id);
     let newState = merge({}, this.state);
-    newState.tasks.splice(taskIdx, 1)
-    this.setState({ tasks: newState.tasks })
-  }
-
-  addTask(task) {
-    let tasks = this.state.tasks.push(task);
-    this.setState({ tasks: tasks })
+    newState.tasks.splice(taskIdx, 1);
+    this.setState({ tasks: newState.tasks });
   }
 
   update(field) {
