@@ -22,9 +22,19 @@ const storySource = {
     return { storyId: props.id };
   },
   endDrag(props, monitor, component) {
-    let updatedStory = merge({}, props.story);
-    updatedStory.priority = (monitor.getDropResult().priority - 1)
-    props.updateStory(updatedStory);
+
+    if (!monitor.getDropResult()) {
+      return;
+    } else {
+      let destination = monitor.getDropResult();
+      let updatedStory = merge({}, props.story);
+      updatedStory.priority = (destination.priority - 1);
+
+      if (destination.ice_boxed !== updatedStory.ice_boxed) {
+        updatedStory.ice_boxed = destination.ice_boxed;
+      }
+      props.updateStory(updatedStory);
+    }
   }
 };
 
