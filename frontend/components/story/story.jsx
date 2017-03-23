@@ -1,5 +1,8 @@
 import React from 'react';
 import DeleteModalContainer from '../modal/delete_modal_container';
+import TaskContainer from '../task/task_container';
+import TaskFormContainer from '../task/task_form_container';
+import { merge } from 'lodash';
 
 const stateTransform = {
   'unstarted': 'start',
@@ -20,7 +23,8 @@ class Story extends React.Component {
       description: '',
       ice_boxed: '',
       internal_state: '',
-      id: ''
+      id: '',
+      tasks: []
     };
     this.collapseStory = this.collapseStory.bind(this);
     this.expandStory = this.expandStory.bind(this);
@@ -28,18 +32,47 @@ class Story extends React.Component {
     this.toggleState = this.toggleState.bind(this);
     this.updateState = this.updateState.bind(this);
     this.toggleIceBoxed = this.toggleIceBoxed.bind(this);
+    this.updateStoryTask = this.updateStoryTask.bind(this);
+    this.addTask = this.addTask.bind(this);
+    this.removeTask = this.removeTask.bind(this);
   }
 
   componentWillMount(nextProps) {
     this.setState({
       story: 'collapsed',
-      title: `${this.props.story.title}`,
-      story_type: `${this.props.story.story_type}`,
-      description: `${this.props.story.description}`,
-      ice_boxed: `${this.props.story.ice_boxed}`,
-      internal_state: `${this.props.story.internal_state}`,
-      id: `${this.props.story.id}`
+      title: this.props.story.title,
+      story_type: this.props.story.story_type,
+      description: this.props.story.description,
+      ice_boxed: this.props.story.ice_boxed,
+      internal_state: this.props.story.internal_state,
+      id: this.props.story.id,
+      tasks: this.props.story.tasks
     });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.story.tasks !== this.state.tasks) {
+      this.setState({ tasks: nextProps.story.tasks })
+    }
+  }
+
+  updateStoryTask(updatedTask) {
+    let taskIdx = this.state.tasks.findIndex(task => task.id === updatedTask.id);
+    let newState = merge({}, this.state);
+    newState.tasks[taskIdx] = updatedTask
+    this.setState({ tasks: newState.tasks })
+  }
+
+  removeTask(removedTask) {
+    let taskIdx = this.state.tasks.findIndex(task => task.id === removedTask.id);
+    let newState = merge({}, this.state);
+    newState.tasks.splice(taskIdx, 1)
+    this.setState({ tasks: newState.tasks })
+  }
+
+  addTask(task) {
+    let tasks = this.state.tasks.push(task);
+    this.setState({ tasks: tasks })
   }
 
   update(field) {
@@ -152,6 +185,17 @@ class Story extends React.Component {
               <label>description</label>
               <textarea onChange={ this.update('description') }
                         value={ this.state.description }></textarea>
+            </div>
+
+            <div className="tasks-container">
+              {
+                this.props.story.tasks.map((task, idx) => (
+                  <TaskContainer task={ task }
+                                  key={ idx }
+                                  removeTask={ this.removeTask } />
+                ))
+              }
+              <TaskFormContainer story={ this.props.story } />
             </div>
 
             <div className="story-form-btns">

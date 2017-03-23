@@ -9,5 +9,6 @@ json.array!(@stories) do |story|
     json.id task.id
     json.body task.body
     json.complete task.complete
+    json.story_id task.story_id
   end
 end
