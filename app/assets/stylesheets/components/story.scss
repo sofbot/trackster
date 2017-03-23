@@ -234,6 +234,10 @@ span.story-submit-btn {
   font-size: 13px;
 }
 
+.close-container > i {
+    opacity: 0.2;
+}
+
 .story-buttons > span, .story-buttons > div > .accept, .story-buttons > div > .reject {
   line-height: 20px;
   font-weight: 600;

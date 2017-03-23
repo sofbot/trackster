@@ -11,16 +11,17 @@ class TaskForm extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.createTask = this.createTask.bind(this);
+    this.clearField = this.clearField.bind(this);
   }
 
   createTask() {
-    this.props.createTask(this.state);
-    this.clearForm();
+    this.props.createTask(this.state).then(this.clearField);
   }
 
-  clearForm(){
-    document.getElementById("edit-task-input").innerHTML = "Add a task";
+  clearField() {
+    this.field.value = '';
   }
+
 
   handleChange(e) {
     this.setState({ body: e.target.value });
@@ -33,8 +34,8 @@ class TaskForm extends React.Component {
           <input type="checkbox"></input>
           <input className="edit-task-body"
                   id="edit-task-input"
-                  onChange={ this.handleChange }
-                  value={ this.state.body }></input>
+                  ref={ node => this.field = node }
+                  onChange={ this.handleChange }></input>
         </div>
 
         <div className="task-save" onClick={ this.createTask }>
