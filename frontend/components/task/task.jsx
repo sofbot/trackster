@@ -44,12 +44,7 @@ class Task extends React.Component {
 
   handleDelete() {
     this.props.destroyTask(this.state)
-              .then(task => this.props.removeTask(task))
-              .then(this.clearForm());
-  }
-
-  clearForm(){
-    document.getElementById("edit-task-input").innerHTML = "Add a task";
+              .then(task => this.props.removeTask(task));
   }
 
   render() {

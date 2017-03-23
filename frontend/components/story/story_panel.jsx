@@ -1,19 +1,23 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link } from 'react-router';
 import {
   IceBoxStories,
   CurrentStories,
   DoneStories
 } from '../../reducers/selectors';
+import StoryPanelSpot from './story_panel_spot';
 import StoryContainer from './story_container';
 import StoryFormContainer from './story_form_container';
+
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
 class StoryPanel extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      form: 'closed'
+      form: 'closed',
     };
 
     this.handleClose = this.handleClose.bind(this);
@@ -65,9 +69,9 @@ class StoryPanel extends React.Component {
 
     let storyForm;
     if (this.state.form === 'open') {
-      storyForm = <StoryFormContainer hideForm={ this.hideForm }/>
+      storyForm = <StoryFormContainer hideForm={ this.hideForm }/>;
     } else {
-      storyForm = <div></div>
+      storyForm = <div></div>;
     }
 
     return(
@@ -88,7 +92,9 @@ class StoryPanel extends React.Component {
             <ul>
               {
                 filteredStories.map((story, idx) => (
-                  <StoryContainer key={ idx } story={ story }/>
+                  <StoryPanelSpot key={ idx }
+                                  story={ story }
+                                  priority={ story.priority } />
                 ))
               }
             </ul>
@@ -100,4 +106,4 @@ class StoryPanel extends React.Component {
   }
 }
 
-export default withRouter(StoryPanel);
+export default DragDropContext(HTML5Backend)(StoryPanel);

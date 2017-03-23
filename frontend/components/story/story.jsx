@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
+import { ItemTypes } from '../../util/constants.js';
+import { DragSource } from 'react-dnd';
+
 import DeleteModalContainer from '../modal/delete_modal_container';
 import TaskContainer from '../task/task_container';
 import TaskFormContainer from '../task/task_form_container';
@@ -14,7 +17,25 @@ const stateTransform = {
   'done': 'restart'
 };
 
-class Story extends React.Component {
+const storySource = {
+  beginDrag(props) {
+    return { storyId: props.id };
+  },
+  endDrag(props, monitor, component) {
+    let updatedStory = merge({}, props.story);
+    updatedStory.priority = (monitor.getDropResult().priority - 1)
+    props.updateStory(updatedStory);
+  }
+};
+
+function collect(connect, monitor) {
+  return {
+    connectDragSource: connect.dragSource(),
+    isDragging: monitor.isDragging()
+  }
+}
+
+class Story extends Component {
   constructor(props) {
     super(props);
 
@@ -26,7 +47,8 @@ class Story extends React.Component {
       ice_boxed: '',
       internal_state: '',
       id: '',
-      tasks: []
+      tasks: [],
+      selected: 'false'
     };
 
     this.collapseStory = this.collapseStory.bind(this);
@@ -36,6 +58,7 @@ class Story extends React.Component {
     this.updateState = this.updateState.bind(this);
     this.toggleIceBoxed = this.toggleIceBoxed.bind(this);
     this.removeTask = this.removeTask.bind(this);
+    this.selectStory = this.selectStory.bind(this);
   }
 
   componentWillMount(nextProps) {
@@ -107,7 +130,13 @@ class Story extends React.Component {
     }
   }
 
+  selectStory() {
+    this.selectedStory.selected = (this.state.selected ? 'false' : 'true');
+  }
+
   render() {
+
+
     const stateBtn = () => {
       if ( stateTransform[this.props.story.internal_state] === 'accept/reject') {
         return (
@@ -126,8 +155,12 @@ class Story extends React.Component {
     };
 
     if (this.state.story === 'collapsed') {
-      return(
-        <div className="story">
+      const { connectDragSource, isDragging } = this.props;
+
+      return connectDragSource(
+        <div className="story"
+              ref={ node => this.selectedStory = node }
+              style={ {opacity: isDragging ? 0.5 : 1} }>
           <div className="story-icons"
                 onClick={ this.expandStory }>
             <i className="fa fa-folder-open-o"
@@ -137,6 +170,7 @@ class Story extends React.Component {
           <div className="story-title">
             { this.props.story.title }
             { this.props.story.priority }
+            { this.state.selected }
           </div>
 
           <div className="story-buttons" onClick={ this.toggleState }>
@@ -201,4 +235,9 @@ class Story extends React.Component {
   }
 }
 
-export default Story;
+Story.propTypes = {
+  connectDragSource: PropTypes.func.isRequired,
+  isDragging: PropTypes.bool.isRequired
+}
+
+export default DragSource(ItemTypes.STORY, storySource, collect)(Story);
