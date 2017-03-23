@@ -59,7 +59,7 @@ class Task extends React.Component {
           <div className="task-left">
             <input className="edit-task-body"
               onChange={ this.handleChange }
-              value={ this.state.body }></input>
+              value={ this.state.body } />
           </div>
           <div className="task-save" onClick={ this.updateTask }>
             <i className="fa fa-floppy-o" aria-hidden="true"></i>
