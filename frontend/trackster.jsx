@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import * as TaskUtil from './actions/task_actions';
+import * as storyUtil from './actions/story_actions';
 import Modal from 'react-modal';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,10 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.store = store;
-  window.createTask = TaskUtil.createTask;
-  window.fetchTasks = TaskUtil.fetchTasks;
-  window.updateTask = TaskUtil.updateTask;
-  window.destroyTask = TaskUtil.destroyTask;
+  window.updateStory = storyUtil.updateStory;
 
   const root = document.getElementById('root');
   Modal.setAppElement(document.body);

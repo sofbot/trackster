@@ -136,6 +136,7 @@ class Story extends React.Component {
           </div>
           <div className="story-title">
             { this.props.story.title }
+            { this.props.story.priority }
           </div>
 
           <div className="story-buttons" onClick={ this.toggleState }>

@@ -59,7 +59,9 @@ class StoryPanel extends React.Component {
     const filteredStories = this.filterStories(
       this.props.stories,
       this.props.filter
-    );
+    ).sort((a, b) => (
+      a.priority - b.priority
+    ));
 
     let storyForm;
     if (this.state.form === 'open') {
