@@ -12,18 +12,24 @@ export const DeleteModalStyle = {
     alignItems      : 'center',
   },
 
-  content : {
-    position        : 'relative',
-    top             : 0,
-    left            : 0,
-    right           : 0,
-    bottom          : 0,
-    border          : '1px solid #ccc',
-    padding         : 0,
-    width           : '545px',
-    height          : '300px',
-    zIndex          : 11,
-    backgroundColor : '#f6f6f6',
-    boxShadow       : '0 2px 5px rgba(0,0,0,.4)'
-  }
+  content :  {
+    position: 'relative',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    border: '1 solid rgb(204, 204, 204)',
+    background: 'rgb(246, 246, 246)',
+    overflow: 'auto',
+    borderRadius: 4,
+    outline: 'none',
+    padding: 0,
+    width: 600,
+    height: 200,
+    zIndex: 11,
+    boxShadow: '0 4 20 rgba(0,0,0,.8)',
+    fontSize: 13,
+    display: 'flex',
+    flexDirection: 'column',
+}
 };

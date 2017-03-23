@@ -35,18 +35,25 @@ class DeleteModal extends React.Component {
         <Modal
           isOpen={ this.state.modalOpen }
           onRequestClose={ this.closeModal }
-          contentLabel="MembersModal"
+          contentLabel="DeleteModal"
           style={ DeleteModalStyle }>
           <div className="create-project-modal-title">
             <h2> Delete Story</h2>
           </div>
-          <span> { this.props.story.title } </span>
+          <div className="delete-modal-body">
+            <div className="delete-modal-content">
+              <span className="delete-modal-item">
+                <i className="fa fa-code-fork" aria-hidden="true"></i>
+                { this.props.story.title }
+              </span>
+            </div>
+          </div>
 
-          <div className="modal-footer">
-            <span className="submit-delete"
+          <div className="modal-footer delete-footer">
+            <span className="submit-delete delete-footer-btn"
                   onClick={ this.handleSubmit }
                   aria-hidden="true"> Delete </span>
-            <span className="close-modal"
+                <span className="delete-footer-btn delete-close"
               onClick={ this.closeModal }> Cancel </span>
           </div>
         </Modal>
