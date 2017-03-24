@@ -57,7 +57,7 @@ class ProjectIndexItem extends React.Component {
       return 'no stories yet'
     } else {
       const completeStories = this.props.project.stories.filter(story => story.internal_state === 'done');
-      const percentCompletion = (completeStories.length / this.props.project.stories.length)*100;
+      const percentCompletion = Math.ceil((completeStories.length / this.props.project.stories.length)*100);
       return `${percentCompletion}% complete`;
     }
   }
