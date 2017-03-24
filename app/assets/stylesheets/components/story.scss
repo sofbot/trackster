@@ -284,9 +284,14 @@ span.story-submit-btn {
 }
 
 .story-buttons > .start {
-  background-color: rgb(200, 203, 208);
-  border-color: rgb(172, 182, 193);
-  color: rgb(17, 17, 17);
+  background-color: #e0e2e5;
+  border-color: #c8cbd0;
+  color: #111;
+}
+
+.story-buttons > .start:hover {
+    background-color: #c8cbd0;
+    border-color: #acb6c1;
 }
 
 .story-buttons > .finish {
@@ -383,9 +388,24 @@ span.story-submit-btn {
   background-color: #efefef;
 }
 
-.done-story {
+#done-container > .story-panel > .story-content-container >
+.story-container > ul > div > .story {
   background-color: #daebcf;
   border-top: 1px solid #eefce2 !important;
   border-bottom: 1px solid #c3d5b4 !important;
   cursor: default;
+}
+
+#done-container > .story-panel > .story-content-container >
+.story-container > ul > div > .story > .story-buttons > .restart {
+  background-color: transparent;
+  border-color: #c8cbd0;
+  color: #c8cbd0;
+}
+
+#done-container > .story-panel > .story-content-container >
+.story-container > ul > div > .story > .story-buttons > .restart:hover {
+  background-color: #c8cbd0;
+  border-color: #acb6c1;
+  color: #111;
 }

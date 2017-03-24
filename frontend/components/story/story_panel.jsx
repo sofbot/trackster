@@ -34,6 +34,10 @@ class StoryPanel extends React.Component {
     document.getElementById('done-container').style.display = 'none';
   }
 
+  componentWillReceiveProps(nextProps) {
+
+  }
+
   handleClose(e) {
     const target = this.findAncestor(e.currentTarget, 'story-panel-container');
     target.style.display = 'none';

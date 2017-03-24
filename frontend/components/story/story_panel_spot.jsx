@@ -10,7 +10,15 @@ const storyTarget = {
     return props.story;
   },
   hover(props, monitor, component) {
-    if (monitor.getItem().storyId === component.props.story.id) {
+    if (monitor.getItem().internal_state === 'unstarted' && component.props.story.internal_state !== 'unstarted') {
+      return;
+    } else if (monitor.getItem().internal_state === 'done' && component.props.story.internal_state !== 'done') {
+      return;
+    } else if (monitor.getItem().storyId === component.props.story.id) {
+      return;
+    } else if (monitor.getItem().internal_state !== 'unstarted' && component.props.story.internal_state === 'unstarted') {
+      return;
+    } else if (monitor.getItem().internal_state !== 'done' && component.props.story.internal_state === 'done') {
       return;
     } else {
       const hoverTarget = findDOMNode(component);
@@ -31,10 +39,6 @@ function collect(connect, monitor) {
 class StoryPanelSpot extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      hover: false,
-    };
   }
 
   render() {
@@ -52,7 +56,8 @@ class StoryPanelSpot extends Component {
       <div>
         <StoryContainer story={ story }
           lastTarget={ lastTarget }
-          dropTarget={ dropTarget }/>
+          dropTarget={ dropTarget }
+          index={ index }/>
         { isOver }
       </div>
     );

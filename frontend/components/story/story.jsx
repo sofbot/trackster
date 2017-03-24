@@ -20,23 +20,21 @@ const stateTransform = {
 const storySource = {
   beginDrag(props) {
     return {
-      storyId: props.story.id
+      storyId: props.story.id,
+      internal_state: props.story.internal_state
     };
   },
   endDrag(props, monitor, component) {
-    props.lastTarget.style.marginTop = '0';
+    if (props.lastTarget) {
+      props.lastTarget.style.marginTop = '0';
+    }
 
-    // if (!monitor.getDropResult()) {
-    if (!props.dropTarget.props.story){
+    if (!props.dropTarget){
       return;
     } else {
-      // let destination = monitor.getDropResult();
       let destination = props.dropTarget.props.story;
       let updatedStory = merge({}, props.story);
 
-      if (destination.ice_boxed !== updatedStory.ice_boxed) {
-        updatedStory.ice_boxed = destination.ice_boxed;
-      }
       updatedStory.priority = (destination.priority - 1);
       props.updateStory(updatedStory)
             .then(() => props.fetchAllStories(props.story.project_id));
