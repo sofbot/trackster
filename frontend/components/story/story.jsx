@@ -18,7 +18,9 @@ const stateTransform = {
 
 const storySource = {
   beginDrag(props) {
-    return { storyId: props.id };
+    return {
+      storyId: props.story.id
+    };
   },
   endDrag(props, monitor, component) {
     if (!monitor.getDropResult()) {
@@ -30,9 +32,7 @@ const storySource = {
       if (destination.ice_boxed !== updatedStory.ice_boxed) {
         updatedStory.ice_boxed = destination.ice_boxed;
       }
-
       updatedStory.priority = (destination.priority + 1);
-
       props.updateStory(updatedStory)
             .then(() => props.fetchAllStories(props.story.project_id));
     }
@@ -69,7 +69,6 @@ class Story extends Component {
     this.updateState = this.updateState.bind(this);
     this.toggleIceBoxed = this.toggleIceBoxed.bind(this);
     this.removeTask = this.removeTask.bind(this);
-    this.selectStory = this.selectStory.bind(this);
   }
 
   componentDidMount() {
@@ -118,11 +117,11 @@ class Story extends Component {
   }
 
   handleDelete() {
-    this.props.destroyStory();
+    this.props.destroyStory().then();
   }
 
   updateState() {
-    let updatedStory = merge({}, this.props.story)
+    let updatedStory = merge({}, this.props.story);
     updatedStory.internal_state = this.state.internal_state;
     updatedStory.ice_boxed = this.state.ice_boxed;
     this.props.updateStory(updatedStory);
@@ -144,13 +143,7 @@ class Story extends Component {
     }
   }
 
-  selectStory() {
-    this.selectedStory.selected = (this.state.selected ? 'false' : 'true');
-  }
-
   render() {
-
-
     const stateBtn = () => {
       if ( stateTransform[this.props.story.internal_state] === 'accept/reject') {
         return (
@@ -173,7 +166,13 @@ class Story extends Component {
 
       return connectDragSource(
         <div className="story"
-              style={ {opacity: isDragging ? 0.5 : 1} }>
+              style={{
+                  opacity: (isDragging ? 0.3 : 1),
+                  borderTop: (isDragging ? '1px dashed black' : '1px solid #fff'),
+                  borderBottom: (isDragging ? '1px dashed black' : '1px solid #ddd'),
+                  borderLeft: (isDragging ? '1px dashed black' : 'none'),
+                  borderRight: (isDragging ? '1px dashed black' : 'none'),
+                }}>
           <div className="story-icons"
                 onClick={ this.expandStory }>
             <i className="fa fa-folder-open-o"
@@ -250,6 +249,6 @@ class Story extends Component {
 Story.propTypes = {
   connectDragSource: PropTypes.func.isRequired,
   isDragging: PropTypes.bool.isRequired
-}
+};
 
 export default DragSource(ItemTypes.STORY, storySource, collect)(Story);

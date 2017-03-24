@@ -93,7 +93,8 @@ class StoryPanel extends React.Component {
             <ul>
               {
                 filteredStories.map((story, idx) => (
-                  <StoryPanelSpot key={ idx }
+                  <StoryPanelSpot key={ story.id }
+                                  index={ idx }
                                   story={ story }
                                   priority={ story.priority } />
                 ))
