@@ -175,6 +175,9 @@
 
 .header-action-btns {
   display: flex;
+  position: relative;
+  top: -6px;
+  height:100%
 }
 
 .project-index-body > p {

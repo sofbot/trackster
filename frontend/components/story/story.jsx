@@ -232,7 +232,8 @@ class Story extends Component {
             </div>
 
             <div className="story-form-btns">
-              <DeleteModalContainer story={ this.props.story }/>
+              <DeleteModalContainer title={ this.props.story.title }
+                                    storyId={ this.props.story.id }/>
               <span className="cancel-btn"
                 onClick={ this.collapseStory }>Cancel</span>
               <span className="story-submit-btn"

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import ProjectIndexItemFormContainer from './project_index_item_form_container';
 import MembersModalContainer from '../modal/members_modal_container';
+import DeleteProjectContainer from '../modal/delete_project_container';
 
 class ProjectIndexItem extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class ProjectIndexItem extends React.Component {
     this.state = { editMode: false };
     this.handleDelete = this.handleDelete.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
+    this.completion = this.completion.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -36,10 +38,8 @@ class ProjectIndexItem extends React.Component {
 
   deleteBtn() {
     return (
-      <span className='delete-project'
-        onClick={ this.handleDelete }>
-        <i className="fa fa-trash-o header-icon" aria-hidden="true"></i>
-      </span>
+      <DeleteProjectContainer title={ this.props.project.title }
+                    projectId={ this.props.project.id }/>
     );
   }
 
@@ -52,6 +52,15 @@ class ProjectIndexItem extends React.Component {
     );
   }
 
+  completion() {
+    if (this.props.project.stories.length === 0) {
+      return 'no stories yet'
+    } else {
+      const completeStories = this.props.project.stories.filter(story => story.internal_state === 'done');
+      const percentCompletion = (completeStories.length / this.props.project.stories.length)*100;
+      return `${percentCompletion}% complete`;
+    }
+  }
 
   render () {
     const showURL = `/projects/${this.props.project.id}`;
@@ -92,7 +101,9 @@ class ProjectIndexItem extends React.Component {
             </div>
           </div>
           <div className="project-index-body">
-            <p>info and stuff</p>
+            <div className="percent-complete">
+              { this.completion() }
+            </div>
           </div>
         </div>
       );

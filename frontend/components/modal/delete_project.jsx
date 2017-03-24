@@ -2,7 +2,7 @@ import React from 'react';
 import { DeleteModalStyle } from './delete_modal_style';
 import Modal from 'react-modal';
 
-class DeleteModal extends React.Component {
+class DeleteProjectModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,14 +24,17 @@ class DeleteModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.destroyStory(this.props.storyId)
-              .then(this.closeModal());
+      this.props.deleteProject(this.props.projectId)
+                .then(this.closeModal());
   }
 
   render() {
     return (
-      <span className="delete-modal story-delete" onClick={ this.openModal }>
-        <span> Delete </span>
+      <span className="delete-modal" onClick={ this.openModal }>
+        <span className='delete-project'
+          onClick={ this.handleDelete }>
+          <i className="fa fa-trash-o header-icon" aria-hidden="true"></i>
+        </span>
 
         <Modal
           isOpen={ this.state.modalOpen }
@@ -39,7 +42,7 @@ class DeleteModal extends React.Component {
           contentLabel="DeleteModal"
           style={ DeleteModalStyle }>
           <div className="create-project-modal-title">
-            <h2> Delete Story</h2>
+            <h2> Delete Project</h2>
           </div>
           <div className="delete-modal-body">
             <div className="delete-modal-content">
@@ -51,7 +54,7 @@ class DeleteModal extends React.Component {
           </div>
 
           <div className="modal-footer delete-footer">
-            <span className="submit-delete delete-footer-btn story-delete"
+            <span className="submit-delete delete-footer-btn"
                   onClick={ this.handleSubmit }
                   aria-hidden="true"> Delete </span>
             <span className="delete-footer-btn delete-close"
@@ -63,4 +66,4 @@ class DeleteModal extends React.Component {
   }
 }
 
-export default DeleteModal;
+export default DeleteProjectModal;

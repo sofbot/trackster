@@ -185,7 +185,7 @@ textarea {
 }
 
 
-.story-form-btns > .cancel-btn, .story-submit-btn, .delete-modal {
+.story-form-btns > .cancel-btn, .story-submit-btn, .story-delete {
   border-radius: 4px;
   background-color: #dfdcd0;
   padding: 1px 7px;
@@ -198,7 +198,7 @@ textarea {
   font: 13px system-ui;
 }
 
-span.delete-modal {
+span.story-delete {
   margin-right: 2px;
 }
 
