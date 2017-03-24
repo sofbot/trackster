@@ -18,13 +18,16 @@ class StoryPanel extends React.Component {
 
     this.state = {
       form: 'closed',
-      story_order: []
+      prevTarget: false,
+      dropTarget: false
     };
 
     this.handleClose = this.handleClose.bind(this);
     this.filterStories = this.filterStories.bind(this);
     this.showForm = this.showForm.bind(this);
     this.hideForm = this.hideForm.bind(this);
+    this.handleHover = this.handleHover.bind(this);
+    this.getTarget = this.getTarget.bind(this);
   }
 
   componentDidMount(){
@@ -60,6 +63,18 @@ class StoryPanel extends React.Component {
     this.setState({ form: 'closed'});
   }
 
+  handleHover(target) {
+    if (this.state.prevTarget) {
+      this.state.prevTarget.style.marginTop = '0';
+    }
+    target.style.marginTop = '28px';
+    this.setState({ prevTarget: target });
+  }
+
+  getTarget(component) {
+    this.setState({ dropTarget: component });
+  }
+
   render() {
     const filteredStories = this.filterStories(
       this.props.stories,
@@ -93,10 +108,14 @@ class StoryPanel extends React.Component {
             <ul>
               {
                 filteredStories.map((story, idx) => (
-                  <StoryPanelSpot key={ story.id }
-                                  index={ idx }
-                                  story={ story }
-                                  priority={ story.priority } />
+                  <StoryPanelSpot
+                    key={ story.id }
+                    index={ idx }
+                    story={ story }
+                    handleHover={ this.handleHover }
+                    lastTarget={ this.state.prevTarget }
+                    dropTarget={ this.state.dropTarget }
+                    getTarget={ this.getTarget }/>
                 ))
               }
             </ul>

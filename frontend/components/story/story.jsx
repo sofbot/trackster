@@ -5,6 +5,7 @@ import DeleteModalContainer from '../modal/delete_modal_container';
 import TaskContainer from '../task/task_container';
 import TaskFormContainer from '../task/task_form_container';
 import { merge } from 'lodash';
+import { findDOMNode } from 'react-dom';
 
 const stateTransform = {
   'unstarted': 'start',
@@ -23,16 +24,20 @@ const storySource = {
     };
   },
   endDrag(props, monitor, component) {
-    if (!monitor.getDropResult()) {
+    props.lastTarget.style.marginTop = '0';
+
+    // if (!monitor.getDropResult()) {
+    if (!props.dropTarget.props.story){
       return;
     } else {
-      let destination = monitor.getDropResult();
+      // let destination = monitor.getDropResult();
+      let destination = props.dropTarget.props.story;
       let updatedStory = merge({}, props.story);
 
       if (destination.ice_boxed !== updatedStory.ice_boxed) {
         updatedStory.ice_boxed = destination.ice_boxed;
       }
-      updatedStory.priority = (destination.priority + 1);
+      updatedStory.priority = (destination.priority - 1);
       props.updateStory(updatedStory)
             .then(() => props.fetchAllStories(props.story.project_id));
     }
@@ -69,6 +74,9 @@ class Story extends Component {
     this.updateState = this.updateState.bind(this);
     this.toggleIceBoxed = this.toggleIceBoxed.bind(this);
     this.removeTask = this.removeTask.bind(this);
+    this.isDone = this.isDone.bind(this);
+    this.handleHoverOn = this.handleHoverOn.bind(this);
+    this.handleHoverOff = this.handleHoverOff.bind(this);
   }
 
   componentDidMount() {
@@ -82,6 +90,10 @@ class Story extends Component {
       id: this.props.story.id,
       tasks: this.props.story.tasks
     });
+  }
+
+  isDone() {
+    return this.props.story.internal_state === 'done';
   }
 
   componentWillReceiveProps(nextProps) {
@@ -143,6 +155,14 @@ class Story extends Component {
     }
   }
 
+  handleHoverOff() {
+    console.log('hover off');
+  }
+
+  handleHoverOn() {
+    console.log('hover on');
+  }
+
   render() {
     const stateBtn = () => {
       if ( stateTransform[this.props.story.internal_state] === 'accept/reject') {
@@ -171,8 +191,8 @@ class Story extends Component {
                   borderTop: (isDragging ? '1px dashed black' : '1px solid #fff'),
                   borderBottom: (isDragging ? '1px dashed black' : '1px solid #ddd'),
                   borderLeft: (isDragging ? '1px dashed black' : 'none'),
-                  borderRight: (isDragging ? '1px dashed black' : 'none'),
-                }}>
+                  borderRight: (isDragging ? '1px dashed black' : 'none')
+                }} >
           <div className="story-icons"
                 onClick={ this.expandStory }>
             <i className="fa fa-folder-open-o"

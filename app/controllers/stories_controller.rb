@@ -43,12 +43,18 @@ class StoriesController < ApplicationController
       end
 
         pivot = @story.priority
-        right = stories.select{ |story| story.priority >= pivot }
+        left = stories.select{ |story| story.priority <= pivot }
 
-        right.each do |story|
-          story.priority += 1
+        left.each do |story|
+          story.priority -= 1
           story.save
         end
+        # right = stories.select{ |story| story.priority >= pivot }
+        #
+        # right.each do |story|
+        #   story.priority += 1
+        #   story.save
+        # end
 
     end
 

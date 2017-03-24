@@ -8,17 +8,16 @@ import { findDOMNode } from 'react-dom';
 const storyTarget = {
   drop(props) {
     return props.story;
+  },
+  hover(props, monitor, component) {
+    if (monitor.getItem().storyId === component.props.story.id) {
+      return;
+    } else {
+      const hoverTarget = findDOMNode(component);
+      props.handleHover(hoverTarget);
+      props.getTarget(component);
+    }
   }
-  // hover(props, monitor, component) {
-  //   let hoverTarget = findDOMNode(component);
-  //   if (hoverTarget === findDOMNode(monitor.getItem())) {
-  //     return
-  //   } else {
-  //     hoverTarget.style.marginTop = '28px';
-  //     // console.log(hoverTarget);
-  //   }
-  //   // console.log(hoverTarget);
-  // }
 };
 
 function collect(connect, monitor) {
@@ -30,12 +29,30 @@ function collect(connect, monitor) {
 
 
 class StoryPanelSpot extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      hover: false,
+    };
+  }
+
   render() {
-    const { priority, connectDropTarget, isOver, story, index } = this.props;
+    const {
+      priority,
+      connectDropTarget,
+      isOver, story,
+      lastTarget,
+      getTarget,
+      dropTarget,
+      index
+    } = this.props;
 
     return connectDropTarget(
       <div>
-        <StoryContainer story={ story } index={ index } />
+        <StoryContainer story={ story }
+          lastTarget={ lastTarget }
+          dropTarget={ dropTarget }/>
         { isOver }
       </div>
     );
@@ -43,8 +60,11 @@ class StoryPanelSpot extends Component {
 }
 
 StoryPanelSpot.propTypes = {
-  priority: PropTypes.number.isRequired,
-  isOver: PropTypes.bool.isRequired
+  story: PropTypes.object.isRequired,
+  isOver: PropTypes.bool.isRequired,
+  handleHover: PropTypes.func,
+  getTarget: PropTypes.func,
+  index: PropTypes.number
 };
 
 export default DropTarget(ItemTypes.STORY, storyTarget, collect)(StoryPanelSpot);
