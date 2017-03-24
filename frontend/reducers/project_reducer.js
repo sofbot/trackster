@@ -33,11 +33,12 @@ const ProjectReducer = (state = _defaultState, action) => {
       newState.stories.push(action.story.story);
       return merge({}, state, newState);
     case UPDATE_STORY:
+    debugger
       let storyIdx = newState.stories.findIndex(story => story.id === action.story.story.id);
       newState.stories[storyIdx] = action.story.story;
       return merge({}, state, newState);
     case REMOVE_STORY:
-      let rmStoryIdx = newState.stories.indexOf(action.story.story);
+      let rmStoryIdx = newState.stories.indexOf(action.story);
       newState.stories.splice(rmStoryIdx, 1);
       return newState;
     case REMOVE_MEMBER:

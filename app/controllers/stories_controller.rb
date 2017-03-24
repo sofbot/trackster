@@ -27,7 +27,7 @@ class StoriesController < ApplicationController
     @story = Story.find(params[:id])
 
     # updating priority
-    if @story.priority != params[:story][:priority]
+    if params[:story][:priority]
       @story.priority = params[:story][:priority]
 
       if @story.internal_state === 'done'

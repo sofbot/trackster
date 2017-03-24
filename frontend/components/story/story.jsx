@@ -117,7 +117,7 @@ class Story extends Component {
   }
 
   handleDelete() {
-    this.props.destroyStory().then();
+    this.props.destroyStory();
   }
 
   updateState() {
@@ -181,7 +181,6 @@ class Story extends Component {
           </div>
           <div className="story-title">
             { this.props.story.title }
-            { this.props.story.priority }
           </div>
 
           <div className="story-buttons" onClick={ this.toggleState }>
