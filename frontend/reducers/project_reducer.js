@@ -2,7 +2,8 @@ import { RECEIVE_SINGLE_PROJECT } from '../actions/project_actions';
 import {
   RECEIVE_STORY,
   REMOVE_STORY,
-  UPDATE_STORY
+  UPDATE_STORY,
+  RECEIVE_STORIES
 } from '../actions/story_actions';
 import {
   RECEIVE_TASK,
@@ -25,6 +26,9 @@ const ProjectReducer = (state = _defaultState, action) => {
   switch(action.type) {
     case RECEIVE_SINGLE_PROJECT:
       return action.project.project;
+    case RECEIVE_STORIES:
+      newState.stories = action.stories;
+      return newState;
     case RECEIVE_STORY:
       newState.stories.push(action.story.story);
       return merge({}, state, newState);

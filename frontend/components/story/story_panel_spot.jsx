@@ -24,9 +24,7 @@ class StoryPanelSpot extends Component {
 
     return connectDropTarget(
       <div>
-        <StoryContainer story={ story }>
-          { this.props.children }
-        </StoryContainer>
+        <StoryContainer story={ story } />
         { isOver }
       </div>
     );

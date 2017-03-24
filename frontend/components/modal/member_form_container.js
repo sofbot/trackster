@@ -3,7 +3,6 @@ import MemberForm from './member_form';
 import { fetchAllUsers, destroyInvite } from '../../actions/invite_actions';
 
 const mapStateToProps = (state, ownProps) =>{
-debugger
 return ({
   usernames: state.session.allUsers,
   currentUser: state.session.currentUser,

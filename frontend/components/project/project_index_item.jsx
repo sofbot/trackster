@@ -92,7 +92,7 @@ class ProjectIndexItem extends React.Component {
             </div>
           </div>
           <div className="project-index-body">
-            <p> % progress goes here, mby member list too </p>
+            <p>info and stuff</p>
           </div>
         </div>
       );

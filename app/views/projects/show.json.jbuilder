@@ -13,6 +13,7 @@ json.project do
     json.description story.description
     json.ice_boxed story.ice_boxed
     json.priority story.priority
+    json.project_id story.project_id
     json.tasks story.tasks do |task|
       json.id task.id
       json.body task.body

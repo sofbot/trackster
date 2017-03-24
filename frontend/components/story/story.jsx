@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { ItemTypes } from '../../util/constants.js';
 import { DragSource } from 'react-dnd';
-
 import DeleteModalContainer from '../modal/delete_modal_container';
 import TaskContainer from '../task/task_container';
 import TaskFormContainer from '../task/task_form_container';
@@ -22,24 +21,20 @@ const storySource = {
     return { storyId: props.id };
   },
   endDrag(props, monitor, component) {
-
     if (!monitor.getDropResult()) {
       return;
     } else {
-
-      // need to traverse dom, if destination.priority < updatedStory.priority
-        // place below (updatedStory.priority = destination.priority - 1)
-      // else
-        // place above ()
-
       let destination = monitor.getDropResult();
       let updatedStory = merge({}, props.story);
-      updatedStory.priority = (destination.priority - 1);
 
       if (destination.ice_boxed !== updatedStory.ice_boxed) {
         updatedStory.ice_boxed = destination.ice_boxed;
       }
-      props.updateStory(updatedStory);
+
+      updatedStory.priority = (destination.priority + 1);
+
+      props.updateStory(updatedStory)
+            .then(() => props.fetchAllStories(props.story.project_id));
     }
   }
 };
@@ -48,7 +43,7 @@ function collect(connect, monitor) {
   return {
     connectDragSource: connect.dragSource(),
     isDragging: monitor.isDragging()
-  }
+  };
 }
 
 class Story extends Component {
@@ -188,7 +183,6 @@ class Story extends Component {
           <div className="story-title">
             { this.props.story.title }
             { this.props.story.priority }
-            { this.state.selected }
           </div>
 
           <div className="story-buttons" onClick={ this.toggleState }>

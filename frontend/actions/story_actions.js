@@ -4,10 +4,16 @@ import { receiveErrors } from './session_actions';
 export const RECEIVE_STORY = 'RECEIVE_STORY';
 export const REMOVE_STORY = 'REMOVE_STORY';
 export const UPDATE_STORY = 'UPDATE_STORY';
+export const RECEIVE_STORIES = 'RECEIVE_STORIES';
 
 export const receiveStory = story => ({
   type: RECEIVE_STORY,
   story
+});
+
+export const receiveStories = stories => ({
+  type: RECEIVE_STORIES,
+  stories
 });
 
 export const receiveUpdate = story => ({
@@ -31,8 +37,17 @@ export const updateStory = story => dispatch => (
         .then(updatedStory => dispatch(receiveUpdate(updatedStory)),
               err => dispatch(receiveErrors(err)))
 );
+
 export const destroyStory = storyId => dispatch => (
   SUtil.destroyStory(storyId)
         .then(story => dispatch(removeStory(story)),
               err => dispatch(receiveErrors(err)))
 );
+
+export const fetchAllStories = projectId => dispatch => (
+  SUtil.fetchAllStories(projectId)
+        .then(stories => {
+          return(
+            dispatch(receiveStories(stories))
+          )
+        }));

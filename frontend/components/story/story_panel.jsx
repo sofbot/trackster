@@ -18,6 +18,7 @@ class StoryPanel extends React.Component {
 
     this.state = {
       form: 'closed',
+      story_order: []
     };
 
     this.handleClose = this.handleClose.bind(this);

@@ -25,6 +25,33 @@ class StoriesController < ApplicationController
 
   def update
     @story = Story.find(params[:id])
+
+    # updating priority
+    if @story.priority != params[:story][:priority]
+      @story.priority = params[:story][:priority]
+
+      if @story.internal_state === 'done'
+        stories = Story.where(project_id: params[:story][:project_id],
+                              internal_state: 'done')
+                       .where.not(id: @story.id)
+                       .order(:priority)
+      else
+        stories = Story.where(project_id: params[:story][:project_id],
+                        ice_boxed: params[:story][:ice_boxed])
+                       .where.not(id: @story.id)
+                       .order(priority: :desc)
+      end
+
+        pivot = @story.priority
+        right = stories.select{ |story| story.priority >= pivot }
+
+        right.each do |story|
+          story.priority += 1
+          story.save
+        end
+
+    end
+
     if @story.update(story_params)
       render 'stories/show'
     else

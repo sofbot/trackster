@@ -2,16 +2,18 @@ import { connect } from 'react-redux';
 import Story from './story';
 import {
   fetchStory,
-  createStory,
   updateStory,
-  destroyStory
+  destroyStory,
+  fetchAllStories
 } from '../../actions/story_actions';
 
 const mapStateToProps = (state, ownProps) => ({
+  state: state,
   story: ownProps.story
 });
 
 const mapDispatchToProps = dispatch => ({
+  fetchAllStories: projectId => dispatch(fetchAllStories(projectId)),
   updateStory: story => dispatch(updateStory(story)),
   destoryStory: storyId => dispatch(destroyStory(storyId))
 });

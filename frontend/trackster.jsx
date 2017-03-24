@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.store = store;
-  window.updateStory = storyUtil.updateStory;
+  window.fetchAllStories = storyUtil.fetchAllStories;
+  window.fetchStory = storyUtil.fetchStory;
 
   const root = document.getElementById('root');
   Modal.setAppElement(document.body);
