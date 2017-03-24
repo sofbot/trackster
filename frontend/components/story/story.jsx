@@ -72,9 +72,6 @@ class Story extends Component {
     this.updateState = this.updateState.bind(this);
     this.toggleIceBoxed = this.toggleIceBoxed.bind(this);
     this.removeTask = this.removeTask.bind(this);
-    this.isDone = this.isDone.bind(this);
-    this.handleHoverOn = this.handleHoverOn.bind(this);
-    this.handleHoverOff = this.handleHoverOff.bind(this);
   }
 
   componentDidMount() {
@@ -88,10 +85,6 @@ class Story extends Component {
       id: this.props.story.id,
       tasks: this.props.story.tasks
     });
-  }
-
-  isDone() {
-    return this.props.story.internal_state === 'done';
   }
 
   componentWillReceiveProps(nextProps) {
@@ -151,14 +144,6 @@ class Story extends Component {
         internal_state: stateTransform[this.props.story.internal_state]
       }, this.toggleIceBoxed);
     }
-  }
-
-  handleHoverOff() {
-    console.log('hover off');
-  }
-
-  handleHoverOn() {
-    console.log('hover on');
   }
 
   render() {
