@@ -28,7 +28,6 @@ class ProjectShowHeader extends React.Component {
         <div className="lower-header header-txt">
           <Link to={ storiesURL }><span>Stories</span></Link>
           <Link to="/dashboard"><span>Projects</span></Link>
-          <Link><span>Members</span></Link>
         </div>
       </div>
     );
