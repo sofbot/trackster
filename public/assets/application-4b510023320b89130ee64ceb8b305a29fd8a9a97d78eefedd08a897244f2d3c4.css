@@ -1,0 +1,1846 @@
+@charset "UTF-8";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+/* line 1, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/base/reset.scss */
+html, body, div, h1, figure, img, label, input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "open-sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.2px;
+  text-align: center;
+  background: transparent;
+}
+
+/* line 12, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/base/reset.scss */
+img {
+  width: 100%;
+}
+
+/* line 16, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/base/reset.scss */
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 1, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 115px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+
+/* line 10, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.header > a > h1, .header > h1 {
+  color: #f39e40;
+  font-weight: 500;
+  font-size: 29px;
+}
+
+/* line 16, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.splash-main {
+  position: absolute;
+  top: 35vh;
+  padding: 10px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+/* line 27, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.splash-main > a {
+  background-color: #f39e40;
+  border-radius: 3px;
+  padding: 4px 8px;
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+}
+
+/* line 36, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+figure {
+  border-bottom: 3px solid #f39e40;
+  background-color: rgba(80, 129, 178, 0.88);
+  display: flex;
+  justify-content: center;
+}
+
+/* line 43, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+figure > img {
+  margin-top: 1px;
+  margin-bottom: -4px;
+  height: 538px;
+}
+
+/* line 49, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.splash-heading {
+  color: white;
+  padding: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* line 56, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.auth-links > a {
+  margin: 20px;
+  color: #5081b2;
+}
+
+/* line 61, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.auth-links > a:last-of-type {
+  background-color: #f39e40;
+  border-radius: 3px;
+  padding: 4px 8px;
+  font-size: 14px;
+  color: white;
+}
+
+/* line 69, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.splash-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://www.pivotaltracker.com/marketing_assets/home/android/bg-icons-532228cc6c8316ef688d7f2d6d87a8a4cc2b4216d86a9152e8919c6e016b66f6.png");
+  background-color: rgba(80, 129, 178, 0.88);
+  width: 100%;
+  height: 170px;
+}
+
+/* line 79, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.contact-txt {
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  padding-right: 10vw;
+}
+
+/* line 85, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.contact-txt > h3 {
+  font-weight: 300;
+}
+
+/* line 89, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.contact-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 20vw;
+  padding-left: 10vw;
+}
+
+/* line 97, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.page-container {
+  width: 960px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 104, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.text-block, .info {
+  display: flex;
+}
+
+/* line 108, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.info {
+  flex-direction: row;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+/* line 114, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.text-block {
+  flex-direction: column;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+/* line 120, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+h2.text-block-primary {
+  flex-basis: 100%;
+  max-width: 100%;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+/* line 128, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+h2.text-block-secondary {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 30px;
+  margin: 0 0 24px;
+  flex-basis: 83.333%;
+  max-width: 70%;
+}
+
+/* line 137, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.info-img {
+  max-height: 330px;
+  width: 100%;
+  flex-basis: 50%;
+}
+
+/* line 143, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.info-text {
+  flex-basis: 50%;
+  max-width: 50%;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* line 150, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.footer-right, .footer-center {
+  margin-left: 3%;
+  font-size: 13px;
+}
+
+/* line 155, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.footer-left {
+  font-size: 13px;
+}
+
+/* line 159, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.footer-left > a, .footer-right > a, .footer-center > a,
+.cl-left > a, .cl-right > a {
+  margin-bottom: 5px;
+  color: #a9bfd7;
+  display: block;
+  text-align: left;
+}
+
+/* line 167, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.cl-left > a, .cl-right > a {
+  color: black;
+  font-weight: 300;
+}
+
+/* line 173, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+footer {
+  width: 100%;
+  height: 14vh;
+  background-color: #426581;
+  display: flex;
+  border-top: 1px solid #f39e40;
+}
+
+/* line 181, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+footer > h1 {
+  color: #a9bfd7;
+  text-align: left;
+  margin-left: 40px;
+  padding-top: 3vh;
+}
+
+/* line 189, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 80%;
+  height: 100%;
+}
+
+/* line 204, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: left;
+}
+
+/* line 211, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/main.scss */
+p {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+  padding-right: 25px;
+}
+
+/* line 1, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/btns.scss */
+.demo > a {
+  background: transparent;
+  color: #ffffff;
+  font-size: 24px;
+  border: 1px solid #ffffff;
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: 300;
+}
+
+/* line 11, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/btns.scss */
+.demo > a > span {
+  margin-right: 10px;
+}
+
+/* line 15, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/btns.scss */
+.demo > a:after {
+  content: url("https://www.pivotaltracker.com/marketing_assets/button-arrow-white-436ec49a23d02087fd4034eaf07d0c6eda66022064f06ce686a900a055417325.svg");
+  vertical-align: -webkit-baseline-middle;
+}
+
+/* line 19, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/btns.scss */
+.demo > a:hover:after {
+  content: url("https://www.pivotaltracker.com/marketing_assets/button-arrow-c856bd22ee864fcfceb6073671a7b0208ca6226fa7617c8003b577931963f62c.svg");
+}
+
+/* line 23, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/btns.scss */
+.demo > a:hover {
+  background-color: #ffffff;
+  color: rgba(80, 129, 178, 0.88);
+}
+
+/* line 28, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/btns.scss */
+.demo-auth {
+  width: 290px;
+  background: #ffffff;
+  display: block;
+  box-sizing: border-box;
+  margin: 1.5rem auto;
+  height: 42px;
+  border-radius: 3px;
+  box-shadow: 0px 1px #BDBDBD;
+  border: 1px solid #F3F3F3;
+  line-height: 42px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* line 44, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/btns.scss */
+.demo-auth > span {
+  color: #757575;
+}
+
+/* line 1, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/header.scss */
+.auth-links > span {
+  font-size: 11px;
+  font-weight: 900;
+  color: #5f5f5f;
+  letter-spacing: 1px;
+  line-height: 60px;
+}
+
+/* line 9, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/header.scss */
+#signup-link {
+  background-color: white;
+  padding: 0;
+  border-radius: 0;
+  font-weight: 600;
+  color: #426FA0;
+  margin: 0;
+  line-height: 60px;
+  font-size: 13px;
+}
+
+/* line 20, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/header.scss */
+.header-signup, .header-login {
+  padding-bottom: 2px;
+  padding-top: 2px;
+}
+
+/* line 25, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/header.scss */
+#logout-home {
+  color: #5081b2;
+  background-color: transparent;
+}
+
+/* line 1, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/header.scss */
+.auth-links > span {
+  font-size: 11px;
+  font-weight: 900;
+  color: #5f5f5f;
+  letter-spacing: 1px;
+  line-height: 60px;
+}
+
+/* line 9, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/header.scss */
+#signup-link {
+  background-color: white;
+  padding: 0;
+  border-radius: 0;
+  font-weight: 600;
+  color: #426FA0;
+  margin: 0;
+  line-height: 60px;
+  font-size: 13px;
+}
+
+/* line 20, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/header.scss */
+.header-signup, .header-login {
+  padding-bottom: 2px;
+  padding-top: 2px;
+}
+
+/* line 25, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/header.scss */
+#logout-home {
+  color: #5081b2;
+  background-color: transparent;
+}
+
+/* line 1, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/auth.scss */
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 118vh;
+  background-color: #f3f4f4;
+}
+
+/* line 9, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/auth.scss */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 475px;
+  background: white;
+  border-radius: 3px;
+  border: 1px solid #DDD;
+  padding: 32px 30px;
+  margin: 50px auto 0 auto;
+}
+
+/* line 20, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/auth.scss */
+.form-container > h3 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #444;
+  padding-bottom: 14px;
+}
+
+/* line 28, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/auth.scss */
+.form-container > label {
+  text-align: left;
+  color: #888;
+  font-weight: 400;
+  line-height: 15px;
+  width: 100%;
+  letter-spacing: 0.5px;
+}
+
+/* line 37, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/auth.scss */
+.form-container > input {
+  padding: 14px 8px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  margin-top: 8px;
+  border-radius: 3px;
+  border: 1px solid #5F5F5F;
+}
+
+/* line 48, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/auth.scss */
+.form-container > input:last-of-type {
+  background: #5384AE;
+  color: white;
+  height: 44px;
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  font-family: system-ui;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 59, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/auth.scss */
+.or-container {
+  width: 100%;
+  border-top: 1px solid;
+  margin-top: 2.5rem;
+  border-color: #C1C1C1;
+}
+
+/* line 66, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/auth.scss */
+.or {
+  display: block;
+  margin-top: -12px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #f3f4f4;
+  width: 55px;
+  text-align: center;
+  color: #A7A6A5;
+  font-size: 18px;
+  line-height: 1em;
+  font-weight: 500;
+}
+
+/* line 80, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/auth.scss */
+.contact-link {
+  background: url("https://www.pivotaltracker.com//images/v7/signin/social-mail-logo.svg");
+}
+
+/* line 85, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/auth.scss */
+.errors {
+  background: #FFF7F8;
+  border-radius: 2px;
+  border: 1px solid #E48E8E;
+  color: #DF5557;
+  text-align: left;
+  margin: -10px auto 25px auto;
+  font-size: 13px;
+  font-weight: 200;
+  padding: 18px 20px;
+}
+
+/* line 1, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+#logout-dashboard {
+  background-color: transparent;
+  color: white;
+}
+
+/* line 6, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.dashboard-body {
+  background-color: #eee;
+}
+
+/* line 10, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.dashboard-body-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 15, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.dashboard-header {
+  background-color: #3e7293;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 34px;
+  border-bottom: 1px solid #212121;
+  min-width: 750px;
+  width: 100%;
+  padding: 0;
+}
+
+/* line 26, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.dashboard-header > h1 {
+  color: white;
+  font-size: 20px;
+  margin-left: 2vw;
+}
+
+/* line 32, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.dashboard-logout {
+  margin-right: 10vw;
+}
+
+/* line 36, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.dashboard-l-left {
+  margin-left: 10vw;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  border-bottom: 3px solid #ed7d1a;
+}
+
+/* line 44, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.dashboard-l-left > span {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 49, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.dashboard-l-right {
+  margin-right: 12vw;
+}
+
+/* line 53, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.dashboard-l-right > a:hover {
+  background-color: #4b974b;
+}
+
+/* line 57, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.d-lower {
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  font-size: 1pc;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 750px;
+  height: 55px;
+}
+
+/* line 69, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.dashboard-l-right > a {
+  background-color: #59ac5a;
+  color: white;
+  border: 1px solid transparent;
+  font-size: 14px;
+  border-radius: 2px;
+  font-weight: 500;
+  line-height: 1.5;
+  font-family: open-sans, Helvetica, Arial, AppleEmoji, SegoeUIEmoji, EmojiOne, sans-serif;
+  padding: 8px 10px;
+  touch-action: manipulation;
+  white-space: nowrap;
+  transition: all .3s ease-out;
+  text-rendering: auto;
+  transition-property: background-color, color, opacity;
+}
+
+/* line 86, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.project-index-header {
+  padding-bottom: 60px;
+  display: flex;
+  padding: 5vw 12vw;
+  color: #4f575e;
+}
+
+/* line 93, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.project-index-heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: 500;
+  margin-left: 6px;
+  color: #4f575e;
+}
+
+/* line 102, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.fa {
+  height: 20px;
+  width: 20px;
+  display: flex !important;
+}
+
+/* line 108, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.projects-index-container {
+  margin-left: 10vw;
+}
+
+/* line 112, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.projects-index-container > ul {
+  margin-left: 0;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+}
+
+/* line 120, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.project-index-item {
+  flex-direction: column;
+  height: 140px;
+  width: 333px;
+  background: white;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  display: flex;
+  margin-bottom: 40px;
+  margin-right: 40px;
+}
+
+/* line 133, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.project-index-item-header {
+  border-bottom: 2px solid #efefef;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 4px;
+}
+
+/* line 140, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.project-index-item-title {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+/* line 146, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.project-index-item-title > a, .edit-title {
+  line-height: 26px;
+  font-size: 1pc;
+  font-weight: 600;
+  color: #3c4858;
+  vertical-align: top;
+  max-width: 177px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* line 158, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.project-index-item-title > a:hover {
+  color: #2c6ebd;
+}
+
+/* line 162, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.header-icon {
+  width: 42px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 170, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.header-action-btns > span:hover, .close-modal:hover {
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+/* line 176, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.header-action-btns {
+  display: flex;
+  position: relative;
+  top: -6px;
+  height: 100%;
+}
+
+/* line 183, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.project-index-body > p {
+  font-weight: 500;
+  font-size: 14px;
+  padding-left: 20px;
+  color: #666;
+}
+
+/* line 190, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.team-content > .project-index-header {
+  padding-top: 0;
+  justify-content: space-between;
+}
+
+/* line 195, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+.project-index-header-left {
+  display: flex;
+}
+
+/* line 199, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/dashboard.scss */
+#demo-project-invite {
+  color: #b6d8b7;
+  border: 1px solid white;
+  font-size: 14px;
+  border-radius: 2px;
+  font-weight: 500;
+  line-height: 1.5;
+  font-family: open-sans, Helvetica, Arial, AppleEmoji, SegoeUIEmoji, EmojiOne, sans-serif;
+  padding: 8px 10px;
+  touch-action: manipulation;
+  white-space: nowrap;
+  transition: all .3s ease-out;
+  text-rendering: auto;
+  transition-property: background-color, color, opacity;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+/* line 1, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/project-index.scss */
+.fa-undo:hover, .fa-floppy-o:hover {
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+/* line 7, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/project-index.scss */
+.edit-title {
+  box-shadow: 0 0 5px #44acf6;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #44acf6;
+  text-align: left;
+  margin-left: 15px;
+  margin-right: 40px;
+}
+
+/* line 17, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/project-index.scss */
+.edit-body {
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 66%;
+}
+
+/* line 24, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/project-index.scss */
+.edit-body-container {
+  display: flex;
+}
+
+/* line 28, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/project-index.scss */
+.project-index-body > p {
+  max-height: 55px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* line 34, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/project-index.scss */
+.fa-user-plus {
+  opacity: 0.6;
+}
+
+/* line 38, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/project-index.scss */
+.project-index-body {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+
+/* line 45, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/project-index.scss */
+.percent-complete {
+  color: #666666;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+/* line 1, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+form.create-project-form {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 25px;
+}
+
+/* line 9, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+.create-project-modal-title {
+  color: #333;
+  font-weight: 100;
+  padding: 9pt 23px;
+  background-color: white;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  height: 35px;
+}
+
+/* line 22, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+.create-project-modal-title > h2 {
+  text-align: left;
+  line-height: 36px;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-rendering: optimizeLegibility;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+/* line 34, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+.modal-label {
+  color: #666;
+  line-height: 24px;
+  font-size: 9pt;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* line 42, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+input.modal-input {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #333;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: left;
+  padding: 8px 1pc;
+}
+
+/* line 52, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+.modal-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  border-top: 1px solid #ccc;
+  height: 50px;
+}
+
+/* line 64, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+.close-modal {
+  cursor: pointer;
+}
+
+/* line 68, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+.modal-footer > i {
+  margin-right: 25px;
+}
+
+/* line 72, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+.modal-errors {
+  margin-left: 27px;
+  margin-right: 27px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 3px;
+}
+
+/* line 80, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+.modal-inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 85, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+.add-members-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 28px;
+  margin-top: 5px;
+  height: 43%;
+}
+
+/* line 94, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+.add-members-form > span {
+  width: 40px;
+  display: flex;
+  align-content: center;
+  align-items: flex-end;
+  height: 40px;
+  margin-left: 0px;
+  opacity: 0.4;
+  background-image: url(https://cdn4.iconfinder.com/data/icons/keyboard-solid-style/24/arrow-enter-128.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 34px;
+  cursor: pointer;
+  position: absolute;
+  right: 24px;
+}
+
+/* line 111, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+.create-project-form + .members-container > .add-members-form {
+  height: 31%;
+}
+
+/* line 115, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+.mates-field {
+  width: 419px;
+}
+
+/* line 119, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+i.fa.fa-floppy-o.fa-2x.header-icon {
+  opacity: 0.6;
+  margin-left: 10px;
+}
+
+/* line 124, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+i.fa.fa-trash-o.header-icon.fa-2x {
+  opacity: 0.4;
+}
+
+/* line 128, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+.member-input-label {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-top: 10px;
+}
+
+/* line 135, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+#member-error {
+  color: #DF5557;
+  visibility: hidden;
+  margin-left: 17px;
+}
+
+/* line 141, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+input.modal-input.teammates-field {
+  width: 414px;
+}
+
+/* line 145, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/modals.scss */
+.members-container {
+  margin-top: 30px;
+  height: 50%;
+}
+
+/* line 4, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/project-show-header.scss */
+.project-show-header {
+  background-color: #3e7293;
+  height: 60px;
+  line-height: 34px;
+  color: #fff;
+  position: relative;
+  border-bottom: 1px solid #212121;
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 15, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/project-show-header.scss */
+.upper-header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+/* line 22, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/project-show-header.scss */
+.upper-header > span {
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+}
+
+/* line 29, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/project-show-header.scss */
+.lower-header {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  line-height: 11px;
+  top: 30px;
+  position: absolute;
+  text-rendering: optimizeLegibility;
+}
+
+/* line 40, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/project-show-header.scss */
+.header-txt > a, .header-txt {
+  display: inline-block;
+  height: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #cadce4;
+}
+
+/* line 49, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/project-show-header.scss */
+.lower-header > a {
+  padding: 4px 0 0 23px;
+  transition: color .1s ease-in;
+  -moz-transition: color .1s ease-in;
+  -webkit-transition: color .1s ease-in;
+  -o-transition: color .1s ease-in;
+}
+
+/* line 57, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/project-show-header.scss */
+.lower-header > a:after {
+  content: '';
+  height: 9pt;
+  width: 1px;
+  display: inline-block;
+  margin-left: 22px;
+  position: relative;
+  top: 2px;
+  background-color: #fff;
+  opacity: .1;
+}
+
+/* line 69, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/project-show-header.scss */
+.lower-header > a:hover {
+  color: white;
+}
+
+/* line 73, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/project-show-header.scss */
+.lower-header > a:first-of-type {
+  margin-top: 3px;
+  color: #fff;
+  border-bottom: 3px solid #9fb8c8;
+  cursor: default;
+}
+
+/* line 4, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/projects.scss */
+.project-container {
+  height: 100%;
+  color: #555;
+  border: 1px solid black;
+  background-color: #212121;
+  overflow: hidden;
+  top: 61px;
+  position: absolute;
+  width: 99.87vw;
+  display: flex;
+  border-bottom: 2px solid black;
+}
+
+/* line 17, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/projects.scss */
+.done-container {
+  display: none;
+}
+
+/* line 21, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/projects.scss */
+.story-container-header {
+  display: flex;
+  align-items: baseline;
+  border-top: 1px solid #393a3c;
+  border: 1px;
+  color: #fff;
+  background-color: #2c2d2f;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 5px;
+  text-transform: capitalize;
+}
+
+/* line 34, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/projects.scss */
+.story-header-left {
+  display: flex;
+  align-items: baseline;
+}
+
+/* line 39, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/projects.scss */
+.story-header-left > p {
+  padding-left: 10px;
+  font-size: 13px;
+}
+
+/* line 44, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/projects.scss */
+.story-nav-header {
+  height: 50px;
+  font-size: 13px;
+  border-top: 1px solid #393a3c;
+  border-bottom: 1px solid #000;
+  background-color: #2c2d2f;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+}
+
+/* line 59, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/projects.scss */
+aside.story-nav {
+  border-right: 1px solid #000;
+  background-color: #2f3337;
+  font-size: 12px;
+  min-width: 230px;
+  box-shadow: 5px 0 10px 0 rgba(0, 0, 0, 0.15);
+  width: 230px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+}
+
+/* line 70, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/projects.scss */
+.panels {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* line 79, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/projects.scss */
+.main-panels {
+  top: 0;
+  bottom: 0;
+  left: 231px;
+  right: 0;
+  position: absolute;
+}
+
+/* line 87, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/projects.scss */
+.table {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  padding-right: 1px;
+}
+
+/* line 96, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/projects.scss */
+.story-panel-container {
+  position: relative;
+  height: calc(100% - 1px);
+  min-width: 320px;
+  float: left;
+  margin-left: 5px;
+  border-bottom: 1px solid #000;
+  flex: 1;
+}
+
+/* line 106, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/projects.scss */
+.story-panel {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  border-left: 1px solid #111;
+  border-right: 1px solid #111;
+  background-color: #484f57;
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 119, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/projects.scss */
+.story-nav-links > ul {
+  list-style: none;
+  padding-left: 20px;
+  font-size: 14px;
+}
+
+/* line 125, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/projects.scss */
+a.add-story {
+  display: flex;
+  align-items: baseline;
+  color: #555;
+}
+
+/* line 131, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/projects.scss */
+a.add-story > p {
+  margin-bottom: 0;
+}
+
+/* line 1, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/autocomplete.scss */
+.auto-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 7, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/autocomplete.scss */
+.auto-container > ul {
+  display: flex;
+  justify-content: flex-end;
+  width: 445px;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-top: -35px;
+  margin-bottom: 0;
+}
+
+/* line 18, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/autocomplete.scss */
+.auto {
+  text-align: right;
+  list-style: none;
+  cursor: pointer;
+  width: 60px;
+  padding: 4px;
+  margin-left: 1px;
+  margin-right: 2px;
+  border-radius: 4px;
+  color: #59ac5a;
+  border: 1px solid #59ac5a;
+  background-color: transparent;
+  margin-bottom: 2px;
+  opacity: 0.6;
+}
+
+/* line 34, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/autocomplete.scss */
+.auto:hover {
+  background-color: #59ac5a;
+  color: #eee;
+  border: 1px solid transparent;
+  opacity: 1;
+}
+
+/* AutoComplete */
+/* line 43, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/autocomplete.scss */
+.auto-enter {
+  opacity: 0.01;
+  transform: translateY(500%);
+}
+
+/* line 48, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/autocomplete.scss */
+.auto-enter.auto-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms, transform 500ms;
+}
+
+/* line 54, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/autocomplete.scss */
+.auto-leave {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* line 59, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/autocomplete.scss */
+.auto-leave.auto-leave-active {
+  opacity: 0.01;
+  transform: translateY(500%);
+  transition: opacity 500ms, transform 500ms;
+}
+
+/* line 65, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/autocomplete.scss */
+#members-list {
+  display: flex;
+  padding-left: 27px;
+  width: 445px;
+  flex-wrap: wrap;
+  margin-top: 3px;
+}
+
+/* line 73, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/autocomplete.scss */
+.teammate {
+  background-color: #59ac5a;
+  color: white;
+  border: 1px solid transparent;
+  opacity: 1;
+}
+
+/* line 80, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/autocomplete.scss */
+.teammate:hover {
+  background-color: #950828;
+  color: #eee;
+  border: 1px solid #82001b;
+}
+
+/* line 1, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-content-container {
+  overflow-y: auto;
+  height: 92%;
+}
+
+/* line 6, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-container > ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 11, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story {
+  background-color: #f4f4f4;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+/* line 22, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-title {
+  cursor: move;
+  text-align: left;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* line 31, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-icons {
+  display: flex;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* line 37, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-buttons {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+/* line 42, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-nav-header:last-of-type {
+  border-top: 2px solid #262a2e;
+}
+
+/* line 46, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.project-team > ul {
+  padding-left: 25px;
+  text-align: left;
+  list-style: none;
+  text-transform: capitalize;
+}
+
+/* line 53, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+form.story-form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 15px 0;
+}
+
+/* line 59, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-form-container {
+  width: 100%;
+  background: #f1f0ea;
+  box-shadow: inset 0 0 3px #888;
+}
+
+/* line 65, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+input.story-form-title {
+  padding-left: 0;
+  text-align: left;
+  position: relative;
+  padding: 2px 4px 1px;
+  overflow: hidden;
+  word-wrap: break-word;
+  height: 23px;
+  min-height: 23px;
+  margin-bottom: 3px;
+  resize: none;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: .1px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  width: 93%;
+  margin-right: 10px;
+}
+
+/* line 87, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-form-top {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+/* line 93, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.form-close-container {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #f6f6f6;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* line 103, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.form-close-container > i {
+  justify-content: center;
+}
+
+/* line 107, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.expanded-form-close-container {
+  border: 0;
+  background-color: transparent;
+}
+
+/* line 113, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.select-story-type {
+  height: 28px;
+  line-height: 28px;
+  padding: 0 9px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f6f6f6;
+  border: 1px solid #ccc;
+  width: 50%;
+  align-items: baseline;
+}
+
+/* line 125, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.select-story-type > em {
+  color: #505050;
+  text-transform: uppercase;
+  font-style: normal;
+  font-size: 10px;
+}
+
+/* line 132, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+select {
+  font-size: 11px;
+  background: transparent;
+  border: none;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+/* line 140, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.select-feature:before {
+  content: "";
+}
+
+/* line 144, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-description-field {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+/* line 151, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-description-field > label {
+  color: #000;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: .2px;
+}
+
+/* line 160, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+textarea {
+  font-family: open-sans,AppleEmoji,SegoeUIEmoji,EmojiOne,helvetica,arial,sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 2px 4px 1px;
+  width: 100%;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 3px;
+  cursor: pointer;
+  min-height: 41px;
+  letter-spacing: .1px;
+  color: #4a4a4a;
+  resize: none;
+}
+
+/* line 176, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-form-btns {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* line 183, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-submit-btn {
+  margin-left: 3px;
+}
+
+/* line 188, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-form-btns > .cancel-btn, .story-submit-btn, .story-delete {
+  border-radius: 4px;
+  background-color: #dfdcd0;
+  padding: 1px 7px;
+  height: 22px;
+  color: #666;
+  border: 1px solid transparent;
+  text-transform: lowercase;
+  font-weight: 700;
+  cursor: pointer;
+  font: 13px system-ui;
+}
+
+/* line 201, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+span.story-delete {
+  margin-right: 2px;
+}
+
+/* line 205, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.delete-modal-body {
+  background-color: #fafafa;
+  flex: 1 1 auto;
+  display: flex;
+  overflow: auto;
+  align-items: center;
+  max-height: 89px;
+}
+
+/* line 214, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.delete-modal-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* line 221, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.delete-modal-item {
+  border: 1px solid #c1c1c1;
+  max-height: 45vh;
+  overflow-y: auto;
+  padding: 9px 9px 6px 15px;
+  display: flex;
+  width: 80%;
+  align-items: baseline;
+  color: #DF5557;
+  background: #FFF7F8;
+  border: 1px solid #E48E8E;
+}
+
+/* line 234, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+span.story-submit-btn {
+  background-color: #666;
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: capitalize;
+  border-color: #555;
+}
+
+/* line 243, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.expanded-form-title {
+  margin-right: 0;
+  margin-left: 7px;
+}
+
+/* line 248, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-nav-links {
+  padding: 0;
+}
+
+/* line 252, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.panel-name {
+  color: #8ac7ff;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  padding: 11px 8px 15px 34px;
+  height: 28px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  line-height: 14.4px;
+  text-align: left;
+  text-transform: capitalize;
+  font-size: 13px;
+}
+
+/* line 266, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.close-container > i {
+  opacity: 0.2;
+}
+
+/* line 270, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-buttons > span, .story-buttons > div > .accept, .story-buttons > div > .reject {
+  line-height: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 11px;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  margin-left: 2px;
+  padding: 3px 10px;
+  letter-spacing: .2px;
+  text-transform: capitalize;
+  color: #eee;
+}
+
+/* line 286, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-buttons > .start {
+  background-color: #e0e2e5;
+  border-color: #c8cbd0;
+  color: #111;
+}
+
+/* line 292, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-buttons > .start:hover {
+  background-color: #c8cbd0;
+  border-color: #acb6c1;
+}
+
+/* line 297, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-buttons > .finish {
+  background-color: #203e64;
+  border-color: #172c51;
+}
+
+/* line 302, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-buttons > .finish:hover {
+  background-color: #172c51;
+  border-color: #111e40;
+}
+
+/* line 307, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-buttons > .deliver {
+  background-color: #f39300;
+  border-color: #f08000;
+}
+
+/* line 312, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-buttons > .deliver:hover {
+  background-color: #f08000;
+  border-color: #ec6b00;
+}
+
+/* line 317, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-buttons > div > .accept {
+  background-color: #629200;
+  border-color: #4e8200;
+}
+
+/* line 322, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-buttons > div > .accept:hover {
+  background-color: #4e8200;
+  border-color: #3c7100;
+}
+
+/* line 327, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-buttons > div > .reject {
+  background-color: #a71f39;
+  border-color: #950828;
+  text-transform: capitalize;
+}
+
+/* line 333, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-buttons > div > .reject:hover {
+  background-color: #950828;
+  border-color: #82001b;
+}
+
+/* line 338, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-buttons > .restart {
+  background-color: #e0e2e5;
+  border-color: #c8cbd0;
+  color: #111111;
+}
+
+/* line 344, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.story-buttons > .restart:hover {
+  background-color: #c8cbd0;
+  border-color: #acb6c1;
+}
+
+/* line 349, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.delete-footer {
+  justify-content: space-between;
+}
+
+/* line 353, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.delete-footer-btn {
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 2px;
+  text-transform: capitalize;
+  touch-action: manipulation;
+  white-space: nowrap;
+  transition-property: background-color,color,opacity;
+  transition: all .3s ease-out;
+  font-size: 14px;
+  padding: 8px 10px;
+}
+
+/* line 369, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.submit-delete {
+  background-color: #bd2c00;
+  color: #fff;
+  margin-left: 25px;
+}
+
+/* line 375, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.submit-delete:hover {
+  background-color: #972300;
+}
+
+/* line 379, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.delete-close {
+  color: #333;
+  background: none;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 25px;
+}
+
+/* line 387, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+.delete-close:hover {
+  background-color: #efefef;
+}
+
+/* line 391, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+#done-container > .story-panel > .story-content-container >
+.story-container > ul > div > .story {
+  background-color: #daebcf;
+  border-top: 1px solid #eefce2 !important;
+  border-bottom: 1px solid #c3d5b4 !important;
+  cursor: default;
+}
+
+/* line 399, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+#done-container > .story-panel > .story-content-container >
+.story-container > ul > div > .story > .story-buttons > .restart {
+  background-color: transparent;
+  border-color: #c8cbd0;
+  color: #c8cbd0;
+}
+
+/* line 406, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/story.scss */
+#done-container > .story-panel > .story-content-container >
+.story-container > ul > div > .story > .story-buttons > .restart:hover {
+  background-color: #c8cbd0;
+  border-color: #acb6c1;
+  color: #111;
+}
+
+/* line 1, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/tasks.scss */
+.tasks-container > h4 {
+  color: #000;
+  font-size: 11px;
+  text-align: left;
+  font-weight: 600;
+  line-height: 16px;
+  margin-top: 14px;
+  text-transform: uppercase;
+}
+
+/* line 11, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/tasks.scss */
+.task-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 16, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/tasks.scss */
+.task-left {
+  display: flex;
+  align-items: center;
+  width: 90%;
+}
+
+/* line 22, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/tasks.scss */
+.task-list {
+  display: flex;
+  justify-content: space-between;
+  background: #e9e8e0;
+  padding: 4px 10px 0 4px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 18px;
+  overflow: hidden;
+  border-radius: 3px;
+  align-items: baseline;
+}
+
+/* line 35, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/tasks.scss */
+.task-list:hover {
+  background-color: #d7d4c8;
+}
+
+/* line 39, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/tasks.scss */
+.task-body {
+  letter-spacing: .1px;
+  margin: 3px 39px 2px 12px;
+  cursor: pointer;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  width: 90%;
+  text-align: left;
+}
+
+/* line 50, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/tasks.scss */
+.edit-task-body {
+  overflow: hidden;
+  word-wrap: break-word;
+  line-height: 20px;
+  padding: 2px 4px 0;
+  text-align: left;
+  resize: none;
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid #adb0b7;
+  font-size: 12px;
+  letter-spacing: .1px;
+  margin-left: 10px;
+  width: 100%;
+}
+
+/* line 66, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/tasks.scss */
+.task-save > .fa-floppy-o:hover {
+  background-color: #d7d4c8;
+}
+
+/* line 70, /Users/sofiachen/Desktop/sofbot/trackster/app/assets/stylesheets/components/tasks.scss */
+.task-delete {
+  cursor: pointer;
+}
