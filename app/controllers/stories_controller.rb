@@ -41,7 +41,6 @@ class StoriesController < ApplicationController
                        .where.not(id: @story.id)
                        .order(priority: :desc)
       end
-
         pivot = @story.priority
         left = stories.select{ |story| story.priority <= pivot }
 
@@ -49,13 +48,6 @@ class StoriesController < ApplicationController
           story.priority -= 1
           story.save
         end
-        # right = stories.select{ |story| story.priority >= pivot }
-        #
-        # right.each do |story|
-        #   story.priority += 1
-        #   story.save
-        # end
-
     end
 
     if @story.update(story_params)
