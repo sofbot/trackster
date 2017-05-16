@@ -34,7 +34,7 @@ class TaskForm extends React.Component {
           <input type="checkbox" disabled="disabled"></input>
           <input className="edit-task-body"
                   id="edit-task-input"
-                  ref={ node => this.field = node }
+                  ref={ node => (this.field = node) }
                   onChange={ this.handleChange }></input>
         </div>
 

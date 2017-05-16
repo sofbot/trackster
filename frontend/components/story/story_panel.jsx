@@ -8,20 +8,17 @@ import {
 import StoryPanelSpot from './story_panel_spot';
 import StoryContainer from './story_container';
 import StoryFormContainer from './story_form_container';
-
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 
 class StoryPanel extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       form: 'closed',
       prevTarget: false,
       dropTarget: false
     };
-
     this.handleClose = this.handleClose.bind(this);
     this.filterStories = this.filterStories.bind(this);
     this.showForm = this.showForm.bind(this);
@@ -32,10 +29,6 @@ class StoryPanel extends React.Component {
 
   componentDidMount(){
     document.getElementById('done-container').style.display = 'none';
-  }
-
-  componentWillReceiveProps(nextProps) {
-
   }
 
   handleClose(e) {
@@ -123,7 +116,7 @@ class StoryPanel extends React.Component {
                 ))
               }
             </ul>
-          </div>
+          < /div>
           { storyForm }
         </div>
       </div>

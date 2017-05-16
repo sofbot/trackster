@@ -18,7 +18,8 @@ const mapStateToProps = state => {
 
 
 const mapDispatchToProps = dispatch => ({
-  destroyInvitedProject: (projectId, memberId) => dispatch(destroyInvitedProject(projectId, memberId)),
+  destroyInvitedProject: (projectId, memberId) => (
+    dispatch(destroyInvitedProject(projectId, memberId))),
   deleteProject: projectId => dispatch(deleteProject(projectId)),
   updateProject: project => dispatch(updateProject(project))
 });

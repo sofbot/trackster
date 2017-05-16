@@ -23,7 +23,8 @@ class StoryForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createStory(this.props.project.id, this.state).then(this.props.hideForm());
+    this.props.createStory(this.props.project.id, this.state)
+      .then(this.props.hideForm());
   }
 
   render() {
@@ -35,14 +36,16 @@ class StoryForm extends React.Component {
               value={ this.state.title }
               onChange={ this.update('title') }></input>
 
-            <span className="form-close-container" onClick={ this.props.hideForm }>
+            <span className="form-close-container"
+              onClick={ this.props.hideForm }>
               <i className="fa fa-times" aria-hidden="true"></i>
             </span>
           </div>
 
           <div className="select-story-type">
             <em>Story Type</em>
-            <select value={ this.state.story_type } onChange={ this.update('story_type') }>
+            <select value={ this.state.story_type }
+              onChange={ this.update('story_type') }>
               <option defaultValue="feature"
                       className="select-feature">feature</option>
               <option value='Bug'>bug</option>

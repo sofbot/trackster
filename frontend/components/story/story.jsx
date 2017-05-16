@@ -94,7 +94,8 @@ class Story extends Component {
   }
 
   removeTask(removedTask) {
-    let taskIdx = this.state.tasks.findIndex(task => task.id === removedTask.id);
+    let taskIdx = this.state.tasks.findIndex(task => (
+      task.id === removedTask.id));
     let newState = merge({}, this.state);
     newState.tasks.splice(taskIdx, 1);
     this.setState({ tasks: newState.tasks });
@@ -147,8 +148,9 @@ class Story extends Component {
   }
 
   render() {
+    const { story } = this.props;
     const stateBtn = () => {
-      if ( stateTransform[this.props.story.internal_state] === 'accept/reject') {
+      if ( stateTransform[story.internal_state] === 'accept/reject') {
         return (
           <div className="accept-reject-btns">
             <span className='accept'>accept</span>
@@ -157,8 +159,8 @@ class Story extends Component {
         );
       } else {
         return (
-          <span className={ stateTransform[this.props.story.internal_state] }>
-            { stateTransform[this.props.story.internal_state] }
+          <span className={ stateTransform[story.internal_state] }>
+            { stateTransform[story.internal_state] }
           </span>
         );
       }
@@ -169,13 +171,13 @@ class Story extends Component {
 
       return connectDragSource(
         <div className="story"
-              style={{
-                  opacity: (isDragging ? 0.3 : 1),
-                  borderTop: (isDragging ? '1px dashed black' : '1px solid #fff'),
-                  borderBottom: (isDragging ? '1px dashed black' : '1px solid #ddd'),
-                  borderLeft: (isDragging ? '1px dashed black' : 'none'),
-                  borderRight: (isDragging ? '1px dashed black' : 'none')
-                }} >
+          style={{
+              opacity: isDragging ? 0.3 : 1,
+              borderTop: isDragging ? '1px dashed black' : '1px solid #fff',
+              borderBottom: isDragging ? '1px dashed black' : '1px solid #ddd',
+              borderLeft: isDragging ? '1px dashed black' : 'none',
+              borderRight: isDragging ? '1px dashed black' : 'none'
+            }} >
           <div className="story-icons"
                 onClick={ this.expandStory }>
             <i className="fa fa-folder-open-o"
@@ -183,7 +185,7 @@ class Story extends Component {
             <i className="fa fa-code-fork" aria-hidden="true"></i>
           </div>
           <div className="story-title">
-            { this.props.story.title }
+            { story.title }
           </div>
 
           <div className="story-buttons" onClick={ this.toggleState }>
@@ -196,7 +198,8 @@ class Story extends Component {
         <div className="story-form-container">
           <form className="story-form" onSubmit={ this.handleUpdate }>
             <div className="story-form-top">
-              <div className="form-close-container expanded-form-close-container">
+              <div className="form-close-container
+                    expanded-form-close-container">
                 <i className="fa fa-folder-o"
                   aria-hidden="true"
                   onClick={ this.collapseStory }></i>
@@ -208,7 +211,8 @@ class Story extends Component {
             </div>
             <div className="select-story-type">
               <em>Story Type</em>
-              <select value={ this.state.story_type } onChange={ this.update('story_type') }>
+              <select value={ this.state.story_type }
+                onChange={ this.update('story_type') }>
                 <option defaultValue="feature">feature</option>
                 <option value='Bug'>bug</option>
                 <option value='Chore'>chore</option>
@@ -225,18 +229,18 @@ class Story extends Component {
             <div className="tasks-container">
               <h4>tasks</h4>
               {
-                this.props.story.tasks.map((task, idx) => (
+                story.tasks.map((task, idx) => (
                   <TaskContainer task={ task }
                                   key={ task.id }
                                   removeTask={ this.removeTask } />
                 ))
               }
-              <TaskFormContainer story={ this.props.story } />
+              <TaskFormContainer story={ story } />
             </div>
 
             <div className="story-form-btns">
-              <DeleteModalContainer title={ this.props.story.title }
-                                    storyId={ this.props.story.id }/>
+              <DeleteModalContainer title={ story.title }
+                                    storyId={ story.id }/>
               <span className="cancel-btn"
                 onClick={ this.collapseStory }>Cancel</span>
               <span className="story-submit-btn"

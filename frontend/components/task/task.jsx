@@ -20,7 +20,7 @@ class Task extends React.Component {
   }
 
   componentDidMount() {
-    this.box.checked = (this.props.task.complete ? 'checked' : '')
+    this.box.checked = (this.props.task.complete ? 'checked' : '');
   }
 
   toggleEdit() {
@@ -33,8 +33,9 @@ class Task extends React.Component {
   }
 
   handleComplete(e) {
-    const completion = (this.state.complete ? false : true)
-    this.setState({ complete: completion }, () => this.props.updateTask(this.state));
+    const completion = (this.state.complete ? false : true);
+    this.setState({ complete: completion },
+      () => this.props.updateTask(this.state));
   }
 
   updateTask() {
@@ -67,7 +68,7 @@ class Task extends React.Component {
           <div className="task-left">
             <input type="checkbox"
                     onChange={ this.handleComplete }
-                    ref={ node => this.box = node }></input>
+                    ref={ node => (this.box = node) }></input>
             <div className="task-body" onClick={ this.toggleEdit }>
               { this.props.task.body }
             </div>

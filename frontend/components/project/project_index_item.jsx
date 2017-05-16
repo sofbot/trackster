@@ -15,7 +15,8 @@ class ProjectIndexItem extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.teamProjects.length < 1) {
-      document.getElementById('demo-project-invite').style.visibility = 'visible';
+      document.getElementById('demo-project-invite')
+        .style.visibility = 'visible';
     }
   }
 
@@ -28,7 +29,10 @@ class ProjectIndexItem extends React.Component {
   }
 
   handleLeave() {
-    this.props.destroyInvitedProject(this.props.project.id, this.props.currentUserId);
+    this.props.destroyInvitedProject(
+      this.props.project.id,
+      this.props.currentUserId
+    );
   }
 
 
@@ -38,8 +42,9 @@ class ProjectIndexItem extends React.Component {
 
   deleteBtn() {
     return (
-      <DeleteProjectContainer title={ this.props.project.title }
-                    projectId={ this.props.project.id }/>
+      <DeleteProjectContainer
+        title={ this.props.project.title }
+        projectId={ this.props.project.id }/>
     );
   }
 
@@ -53,24 +58,29 @@ class ProjectIndexItem extends React.Component {
   }
 
   completion() {
-    if (this.props.project.stories.length === 0) {
-      return 'no stories yet'
+    const { project } = this.props;
+    if (project.stories.length === 0) {
+      return 'no stories yet';
     } else {
-      const completeStories = this.props.project.stories.filter(story => story.internal_state === 'done');
-      const percentCompletion = Math.ceil((completeStories.length / this.props.project.stories.length)*100);
+      const completeStories = project.stories.filter(story => (
+        story.internal_state === 'done'));
+      const percentCompletion = Math.ceil(
+        (completeStories.length / project.stories.length)*100
+      );
       return `${percentCompletion}% complete`;
     }
   }
 
   render () {
-    const showURL = `/projects/${this.props.project.id}`;
+    const { project, currentUserId } = this.props;
+    const showURL = `/projects/${project.id}`;
     let removeBtn;
     let membersModal;
     let editBtn;
 
-    if (this.props.project.creator_id === this.props.currentUserId) {
+    if (project.creator_id === currentUserId) {
       removeBtn = this.deleteBtn();
-      membersModal = <MembersModalContainer project={ this.props.project }/>;
+      membersModal = <MembersModalContainer project={ project }/>;
       editBtn = <span className="update-project"
         onClick={ this.toggleEdit }>
         <i className="fa fa-pencil-square-o header-icon"
@@ -82,7 +92,7 @@ class ProjectIndexItem extends React.Component {
 
     if (this.state.editMode) {
       return(
-        <ProjectIndexItemFormContainer project={this.props.project} />
+        <ProjectIndexItemFormContainer project={project} />
       );
     } else {
       return (
@@ -90,7 +100,7 @@ class ProjectIndexItem extends React.Component {
           <div className="project-index-item-header">
             <div className="project-index-item-title">
               <Link to={showURL}>
-                { this.props.project.title }
+                { project.title }
               </Link>
             </div>
             <div className="header-action-btns">

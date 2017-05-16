@@ -15,7 +15,8 @@ class Header extends React.Component {
           <div className="header">
             <h1>trackster</h1>
             <div className="auth-links" onClick={ this.props.clearErrors }>
-              <a href="/" id="logout-home" onClick={ this.props.logout }>log out</a>
+              <a href="/" id="logout-home"
+                onClick={ this.props.logout }>log out</a>
             </div>
           </div>
         );
@@ -59,7 +60,8 @@ class Header extends React.Component {
         <div className="header dashboard-header">
           <h1>trackster</h1>
           <div className="auth-links dashboard-logout">
-            <a href="/" id="logout-dashboard" onClick={ this.props.logout }>log out</a>
+            <a href="/" id="logout-dashboard"
+              onClick={ this.props.logout }>log out</a>
           </div>
         </div>
       );

@@ -10,15 +10,19 @@ const storyTarget = {
     return props.story;
   },
   hover(props, monitor, component) {
-    if (monitor.getItem().internal_state === 'unstarted' && component.props.story.internal_state !== 'unstarted') {
+    if (monitor.getItem().internal_state === 'unstarted'
+        && component.props.story.internal_state !== 'unstarted') {
       return;
-    } else if (monitor.getItem().internal_state === 'done' && component.props.story.internal_state !== 'done') {
+    } else if (monitor.getItem().internal_state === 'done'
+      && component.props.story.internal_state !== 'done') {
       return;
     } else if (monitor.getItem().storyId === component.props.story.id) {
       return;
-    } else if (monitor.getItem().internal_state !== 'unstarted' && component.props.story.internal_state === 'unstarted') {
+    } else if (monitor.getItem().internal_state !== 'unstarted'
+      && component.props.story.internal_state === 'unstarted') {
       return;
-    } else if (monitor.getItem().internal_state !== 'done' && component.props.story.internal_state === 'done') {
+    } else if (monitor.getItem().internal_state !== 'done'
+      && component.props.story.internal_state === 'done') {
       return;
     } else {
       const hoverTarget = findDOMNode(component);
@@ -72,4 +76,7 @@ StoryPanelSpot.propTypes = {
   index: PropTypes.number
 };
 
-export default DropTarget(ItemTypes.STORY, storyTarget, collect)(StoryPanelSpot);
+export default DropTarget(
+  ItemTypes.STORY,
+  storyTarget,
+  collect)(StoryPanelSpot);

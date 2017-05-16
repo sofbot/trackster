@@ -11,7 +11,9 @@ return ({
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  destroyInvite: memberId => dispatch(destroyInvite(ownProps.project.id, memberId))
+  destroyInvite: memberId => (
+    dispatch(destroyInvite(ownProps.project.id, memberId))
+  )
 });
 
 
